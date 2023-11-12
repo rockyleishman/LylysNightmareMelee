@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "PlayerDataObject", menuName = "Data/PlayerDataObject", order = 0)]
 public class PlayerData : ScriptableObject
 {
     [SerializeField] public PlayerController Player;
@@ -9,6 +10,9 @@ public class PlayerData : ScriptableObject
     internal float CurrentHP;
 
     [SerializeField] public float MovementSpeed = 5.0f;
+
+    [SerializeField] public float InitialPillowAttackDamage = 10.0f;
+    [SerializeField] public float PillowAttackActiveTime = 0.1f;
 
     internal float SpecialCharge;
 }

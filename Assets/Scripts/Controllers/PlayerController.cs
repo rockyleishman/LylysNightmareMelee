@@ -3,8 +3,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour, IHitPoints
 {
-    [SerializeField] public float MovementSpeed = 5.0f;
     private Vector2 _moveInput;
+
+    public GameObject PlayerDirectionObject;
 
     private void FixedUpdate()
     {
@@ -20,7 +21,13 @@ public class PlayerController : MonoBehaviour, IHitPoints
         }
 
         //apply movement
-        transform.Translate(_moveInput * MovementSpeed * Time.deltaTime);
+        transform.Translate(_moveInput * DataManager.Instance.PlayerDataObject.MovementSpeed * Time.deltaTime);
+
+        //rotate direction object
+        if (_moveInput.magnitude > 0.0f)
+        {
+            PlayerDirectionObject.transform.rotation = Quaternion.LookRotation(Vector3.forward, new Vector3(-_moveInput.x, -_moveInput.y));
+        }
     }
 
     #region InputMethods
@@ -28,7 +35,6 @@ public class PlayerController : MonoBehaviour, IHitPoints
     private void OnMove(InputValue value)
     {
         _moveInput = value.Get<Vector2>();
-        Debug.Log(_moveInput);
     }
 
     private void OnAimWithJoystick(InputValue value)
@@ -43,7 +49,7 @@ public class PlayerController : MonoBehaviour, IHitPoints
 
     private void OnAttack()
     {
-        //TODO: attack
+        EventManager.Instance.PillowAttackTriggered.TriggerEvent(this, null);
     }
 
     private void OnSpecialAttack()
