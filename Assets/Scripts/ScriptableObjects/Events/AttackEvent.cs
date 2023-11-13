@@ -16,11 +16,11 @@ public class AttackEvent : ScriptableObject
         _listeners.Remove(listener);
     }
 
-    public void TriggerEvent(Vector3 attackOrigin, Vector3 attackDirection, MonoBehaviour attackTarget)
+    public void TriggerEvent(MonoBehaviour attacker, MonoBehaviour attackTarget)
     {
         foreach (AttackEventListener listener in _listeners)
         {
-            listener.OnTriggered(attackOrigin, attackDirection, attackTarget);
+            listener.OnTriggered(attacker, attackTarget);
         }
     }
 }
