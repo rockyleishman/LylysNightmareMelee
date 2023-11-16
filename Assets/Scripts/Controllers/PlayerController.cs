@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour, IHitPoints
 
     public GameObject PlayerDirectionObject;
 
-    private void FixedUpdate()
+    private void Update()
     {
         Movement();
     }
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour, IHitPoints
         }
 
         //apply movement
-        transform.Translate(_moveInput * DataManager.Instance.PlayerDataObject.MovementSpeed * Time.deltaTime);
+        transform.Translate(_moveInput * DataManager.Instance.PlayerDataObject.MovementSpeed * DataManager.Instance.PlayerDataObject.MovementSpeedMultiplier * Time.deltaTime);
 
         //rotate direction object
         if (_moveInput.magnitude > 0.0f)
@@ -101,7 +101,9 @@ public class PlayerController : MonoBehaviour, IHitPoints
             DataManager.Instance.PlayerDataObject.CurrentHP = currentHP;
         }
 
-        //TODO: trigger effect
+        //trigger effects
+        EventManager.Instance.ScreenShakeTriggered.TriggerEvent(transform.position);
+        //TODO: trigger particle effect
     }
 
     public void OnDeath()

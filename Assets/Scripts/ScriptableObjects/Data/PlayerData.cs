@@ -6,16 +6,21 @@ public class PlayerData : ScriptableObject
     [SerializeField] public PlayerController Player;
     [SerializeField] public GameObject Cursor;
 
-    [SerializeField] public float InitialMaxHP = 100.0f;
-    internal float MaxHP;
+    [SerializeField] public float MaxHP = 100.0f;
     internal float CurrentHP;
 
-    [SerializeField] public float InitialMovementSpeed = 5.0f;
-    internal float MovementSpeed;
+    [SerializeField] public float MovementSpeed = 5.0f;
 
-    [SerializeField] public float InitialPillowAttackDamage = 10.0f;
-    internal float PillowAttackDamage;
+    [SerializeField] public float PillowAttackDamage = 10.0f;
+    [SerializeField] public float PillowAttackKnockback = 10.0f;
+
     [SerializeField] public float PillowAttackActiveTime = 0.1f;
 
     internal float SpecialCharge;
+
+    //multipliers
+    internal float HPMultiplier;
+    internal float MovementSpeedMultiplier;
+    internal float DamageMultiplier;
+    internal float KnockbackMultiplier;
 }

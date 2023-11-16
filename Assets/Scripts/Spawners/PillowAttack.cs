@@ -164,7 +164,7 @@ public class PillowAttack : MonoBehaviour
 
         if (enemy != null)
         {
-            enemy.DamageHP(DataManager.Instance.PlayerDataObject.PillowAttackDamage);
+            enemy.DamageHP(DataManager.Instance.PlayerDataObject.PillowAttackDamage * DataManager.Instance.PlayerDataObject.DamageMultiplier);
         }
     }
 }
