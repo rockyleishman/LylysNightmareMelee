@@ -21,8 +21,11 @@ public class GameManager : Singleton<GameManager>
         DataManager.Instance.LevelDataObject.MaxEnemyCount = DataManager.Instance.LevelDataObject.InitialMaxEnemyCount;
         DataManager.Instance.LevelDataObject.MaxEnemyCountUnrounded = DataManager.Instance.LevelDataObject.InitialMaxEnemyCount;
 
-        //set initial player stats
-        DataManager.Instance.PlayerDataObject.PillowAttackDamage = DataManager.Instance.PlayerDataObject.InitialPillowAttackDamage;
+        //set initial player stat multipliers
+        DataManager.Instance.PlayerDataObject.HPMultiplier = 1.0f;
+        DataManager.Instance.PlayerDataObject.MovementSpeedMultiplier = 1.0f;
+        DataManager.Instance.PlayerDataObject.DamageMultiplier = 1.0f;
+        DataManager.Instance.PlayerDataObject.KnockbackMultiplier = 1.0f;
     }
 
     public void IncreaseDifficulty()
