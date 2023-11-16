@@ -21,7 +21,6 @@ public class PillowAttack : MonoBehaviour
     [SerializeField] public GameObject WSWAndSW;
     [SerializeField] public GameObject SWAndSSW;
     [SerializeField] public GameObject SSWAndS;
-
     private bool IsRightSwing;
 
     private void Start()
@@ -159,8 +158,13 @@ public class PillowAttack : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void OnTrigger2DEnter(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        //TODO: deal damage to enemies
+        EnemyAIController enemy = other.GetComponent<EnemyAIController>();
+
+        if (enemy != null)
+        {
+            enemy.DamageHP(DataManager.Instance.PlayerDataObject.PillowAttackDamage);
+        }
     }
 }
