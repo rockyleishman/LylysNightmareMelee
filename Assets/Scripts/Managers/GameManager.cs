@@ -16,6 +16,7 @@ public class GameManager : Singleton<GameManager>
         //init difficulty multipliers
         DataManager.Instance.LevelDataObject.NewEnemyHPMultiplier = 1.0f;
         DataManager.Instance.LevelDataObject.NewEnemyDamageMultiplier = 1.0f;
+        DataManager.Instance.LevelDataObject.NewEnemyCooldownDivisor = 1.0f;
         DataManager.Instance.LevelDataObject.NewEnemySpeedMultiplier = 1.0f;
         DataManager.Instance.LevelDataObject.NewEnemySpawnFrequencyMultiplier = 1.0f;
         DataManager.Instance.LevelDataObject.MaxEnemyCount = DataManager.Instance.LevelDataObject.InitialMaxEnemyCount;
@@ -25,7 +26,19 @@ public class GameManager : Singleton<GameManager>
         DataManager.Instance.PlayerDataObject.HPMultiplier = 1.0f;
         DataManager.Instance.PlayerDataObject.MovementSpeedMultiplier = 1.0f;
         DataManager.Instance.PlayerDataObject.DamageMultiplier = 1.0f;
-        DataManager.Instance.PlayerDataObject.KnockbackMultiplier = 1.0f;        
+        DataManager.Instance.PlayerDataObject.KnockbackMultiplier = 1.0f;
+
+        //spawn initial mirror
+        StartCoroutine(SpawnInitialMirror());
+    }
+
+    private IEnumerator SpawnInitialMirror()
+    {
+        yield return null;
+        
+        Vector2 point = Random.insideUnitCircle.normalized * Random.Range(DataManager.Instance.LevelDataObject.MinMirrorSpawnDistance, DataManager.Instance.LevelDataObject.MaxMirrorSpawnDistance);
+        MirrorAIController mirror = (MirrorAIController)PoolManager.Instance.Spawn(DataManager.Instance.LevelDataObject.InitialMirror.name, Player.transform.position + new Vector3(point.x, point.y, 0.0f), Quaternion.identity);
+        mirror.Init();
     }
 
     public void IncreaseThreat()
@@ -52,6 +65,14 @@ public class GameManager : Singleton<GameManager>
             if (DataManager.Instance.LevelDataObject.UseMaxDamageMultiplier && DataManager.Instance.LevelDataObject.NewEnemyDamageMultiplier > DataManager.Instance.LevelDataObject.MaxDamageMultiplier)
             {
                 DataManager.Instance.LevelDataObject.NewEnemyDamageMultiplier = DataManager.Instance.LevelDataObject.MaxDamageMultiplier;
+            }
+
+            //increase new enemy cooldown divisor
+            DataManager.Instance.LevelDataObject.NewEnemyCooldownDivisor += (DataManager.Instance.LevelDataObject.FinalCooldownDivisor - 1.0f) / DataManager.Instance.LevelDataObject.FinalCalculatedThreatLevel;
+            //clamp new enemy cooldown divisor
+            if (DataManager.Instance.LevelDataObject.UseMaxCooldownDivisor && DataManager.Instance.LevelDataObject.NewEnemyCooldownDivisor > DataManager.Instance.LevelDataObject.MaxCooldownDivisor)
+            {
+                DataManager.Instance.LevelDataObject.NewEnemyCooldownDivisor = DataManager.Instance.LevelDataObject.MaxCooldownDivisor;
             }
 
             //increase new enemy speed multiplier

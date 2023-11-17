@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c2d933b3dccd24cb29869a7530da5d, type: 3}
   m_Name: LevelData
   m_EditorClassIdentifier: 
+  InitialMirror: {fileID: 2045083803306708946, guid: 75bafd5c864aa5944bc3acf6208b8dac, type: 3}
   Enemy0: {fileID: 6575186996657049984, guid: 5fe16c4e33b51b542a6a8a7c7e15f243, type: 3}
   Enemy1: {fileID: 0}
   Enemy2: {fileID: 0}
@@ -28,10 +29,13 @@ MonoBehaviour:
   Boss1: {fileID: 0}
   Boss2: {fileID: 0}
   Boss3: {fileID: 0}
+  EnemyCullDistance: 200
+  MinMirrorSpawnDistance: 50
+  MaxMirrorSpawnDistance: 100
   UseWanderingEnemySpawning: 1
   BaseMinSpawnTime: 0
-  BaseMaxSpawnTime: 10
-  SpawnDistance: 50
+  BaseMaxSpawnTime: 5
+  SpawnDistance: 25
   FinalCalculatedThreatLevel: 10
   FinalHPMultiplier: 1
   UseMaxHPMultiplier: 0
@@ -39,9 +43,9 @@ MonoBehaviour:
   FinalDamageMultiplier: 1
   UseMaxDamageMultiplier: 0
   MaxDamageMultiplier: 1
-  FinalCooldownMultiplier: 1
-  UseMaxCooldownMultiplier: 1
-  MaxCooldownMultiplier: 1
+  FinalCooldownDivisor: 1
+  UseMaxCooldownDivisor: 1
+  MaxCooldownDivisor: 1
   FinalSpeedMultiplier: 1
   UseMaxSpeedMultiplier: 1
   MaxSpeedMultiplier: 1

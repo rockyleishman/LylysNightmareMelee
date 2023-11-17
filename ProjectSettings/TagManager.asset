@@ -50,6 +50,9 @@ TagManager:
   - name: Collectables
     uniqueID: 357657815
     locked: 0
+  - name: Mirrors
+    uniqueID: 1975910867
+    locked: 0
   - name: Enemies
     uniqueID: 766860807
     locked: 0

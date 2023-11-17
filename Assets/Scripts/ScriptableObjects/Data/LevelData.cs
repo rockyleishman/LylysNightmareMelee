@@ -32,6 +32,9 @@ public enum EnemyType
 [CreateAssetMenu(fileName = "LevelDataObject", menuName = "Data/LevelDataObject", order = 0)]
 public class LevelData : ScriptableObject
 {
+    [Header("Initial Mirror Prefab")]
+    [SerializeField] public MirrorAIController InitialMirror;
+
     [Header("Enemy Prefabs")]
     [SerializeField] public EnemyAIController Enemy0;
     [SerializeField] public EnemyAIController Enemy1;
@@ -51,41 +54,49 @@ public class LevelData : ScriptableObject
     [SerializeField] public EnemyAIController Boss3;
 
     [Space(30)]
-    [Header("Wandering Enemy Spawning")]
-    [SerializeField] public bool UseWanderingEnemySpawning = true;
-    [SerializeField] [Range(0.001f, 60.0f)] public float FirstSpawnTime = 0.001f;
-    [SerializeField] [Range(0.001f, 60.0f)] public float BaseMinSpawnTime = 0.0f;
-    [SerializeField] [Range(0.001f, 300.0f)] public float BaseMaxSpawnTime = 10.0f;
-    [SerializeField] [Range(10.0f, 100.0f)] public float SpawnDistance = 50.0f;
+    [Header("Enemy Culling")]
+    [SerializeField] [Range(100.0f, 1000.0f)] public float EnemyCullDistance = 200.0f;
 
     [Space(30)]
-    [Header("Difficulty Settings")]
+    [Header("Mirror Spawning")]
+    [SerializeField] [Range(10.0f, 500.0f)] public float MinMirrorSpawnDistance = 50.0f;
+    [SerializeField] [Range(10.0f, 500.0f)] public float MaxMirrorSpawnDistance = 100.0f;
+
+    [Space(30)]
+    [Header("Wandering Enemy Spawning")]
+    [SerializeField] public bool UseWanderingEnemySpawning = true;
+    [SerializeField] [Range(0.001f, 60.0f)] public float BaseMinSpawnTime = 0.0f;
+    [SerializeField] [Range(0.001f, 300.0f)] public float BaseMaxSpawnTime = 10.0f;
+    [SerializeField] [Range(10.0f, 100.0f)] public float SpawnDistance = 25.0f;
+
+    [Space(30)]
+    [Header("Threat Difficulty Settings")]
     [SerializeField] [Range(0, 256)] public int FinalCalculatedThreatLevel = 10;
     [Space]
     [SerializeField] [Range(1.0f, 1000.0f)] public float FinalHPMultiplier = 1.0f;
     [SerializeField] public bool UseMaxHPMultiplier = false;
     [SerializeField] [Range(1.0f, 1000.0f)] public float MaxHPMultiplier = 1.0f;
-    internal float NewEnemyHPMultiplier = 1.0f;
+    internal float NewEnemyHPMultiplier;
     [Space]
     [SerializeField] [Range(1.0f, 1000.0f)] public float FinalDamageMultiplier = 1.0f;
     [SerializeField] public bool UseMaxDamageMultiplier = false;
     [SerializeField] [Range(1.0f, 1000.0f)] public float MaxDamageMultiplier = 1.0f;
-    internal float NewEnemyDamageMultiplier = 1.0f;
+    internal float NewEnemyDamageMultiplier;
     [Space]
-    [SerializeField] [Range(0.0f, 1.0f)] public float FinalCooldownMultiplier = 1.0f;
-    [SerializeField] public bool UseMinCooldownMultiplier = true;
-    [SerializeField] [Range(0.0f, 1.0f)] public float MinCooldownMultiplier = 1.0f;
-    internal float NewEnemyCooldownMultiplier = 1.0f;
+    [SerializeField] [Range(1.0f, 100.0f)] public float FinalCooldownDivisor = 1.0f;
+    [SerializeField] public bool UseMaxCooldownDivisor = true;
+    [SerializeField] [Range(1.0f, 100.0f)] public float MaxCooldownDivisor = 1.0f;
+    internal float NewEnemyCooldownDivisor;
     [Space]
     [SerializeField] [Range(1.0f, 10.0f)] public float FinalSpeedMultiplier = 1.0f;
     [SerializeField] public bool UseMaxSpeedMultiplier = true;
     [SerializeField] [Range(1.0f, 10.0f)] public float MaxSpeedMultiplier = 1.0f;
-    internal float NewEnemySpeedMultiplier = 1.0f;
+    internal float NewEnemySpeedMultiplier;
     [Space]
     [SerializeField] [Range(1.0f, 100.0f)] public float FinalSpawnFrequencyMultiplier = 1.0f;
     [SerializeField] public bool UseMaxSpawnFrequencyMultiplier = false;
     [SerializeField] [Range(1.0f, 100.0f)] public float MaxSpawnFrequencyMultiplier = 1.0f;
-    internal float NewEnemySpawnFrequencyMultiplier = 1.0f;
+    internal float NewEnemySpawnFrequencyMultiplier;
     [Space]
     [SerializeField] public int InitialMaxEnemyCount = 25;
     [SerializeField] public int FinalMaxEnemyCount = 275;
@@ -93,9 +104,7 @@ public class LevelData : ScriptableObject
     internal float MaxEnemyCountUnrounded;
     internal int MaxEnemyCount;
     internal int CurrentEnemyCount;
-
-    [Space(30)]
-    [Header("Threat Level Settings")]
+    [Space]
     [SerializeField] public bool IncreaseThreatAfterMirrorDestruction = true;
     [SerializeField] public bool IncreaseThreatAfterTime = true;
     [SerializeField] [Range(1.0f, 1800.0f)] public float ThreatIncreaseTime = 60.0f;
