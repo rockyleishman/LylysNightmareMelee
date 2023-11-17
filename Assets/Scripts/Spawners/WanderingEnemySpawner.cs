@@ -10,12 +10,12 @@ public class WanderingEnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnTimer()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(DataManager.Instance.LevelDataObject.FirstSpawnTime);
         while (true)
         {
             SpawnRandomEnemy();
             
-            yield return new WaitForSeconds(Random.Range(DataManager.Instance.LevelDataObject.BaseMinSpawnTime, DataManager.Instance.LevelDataObject.BaseMaxSpawnTime) * DataManager.Instance.LevelDataObject.NewEnemySpawnFrequencyMultiplier);
+            yield return new WaitForSeconds(Random.Range(DataManager.Instance.LevelDataObject.BaseMinSpawnTime, DataManager.Instance.LevelDataObject.BaseMaxSpawnTime) / DataManager.Instance.LevelDataObject.NewEnemySpawnFrequencyMultiplier);
         }
     }
 
@@ -25,6 +25,6 @@ public class WanderingEnemySpawner : MonoBehaviour
         int index = Random.Range(0, DataManager.Instance.LevelDataObject.WanderingEnemiesWithinThreatLevels[DataManager.Instance.LevelDataObject.CurrentThreatLevel].List.Count);
         EnemyType enemyType = DataManager.Instance.LevelDataObject.WanderingEnemiesWithinThreatLevels[DataManager.Instance.LevelDataObject.CurrentThreatLevel].List[index];
 
-        EnemyManager.Instance.SpawnEnemy(enemyType, new Vector3(point.x, point.y, 0.0f) + transform.position);
+        EnemyManager.Instance.SpawnEnemy(enemyType, transform.position + new Vector3(point.x, point.y, 0.0f));
     }
 }
