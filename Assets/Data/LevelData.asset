@@ -12,13 +12,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c2d933b3dccd24cb29869a7530da5d, type: 3}
   m_Name: LevelData
   m_EditorClassIdentifier: 
-  FinalDifficultyLevel: 10
-  MaxEnemyDamageMultiplierAtFinalDifficultyLevel: 1
-  UseAbsoluteMaxEnemyDamageMultiplier: 0
-  AbsoluteMaxEnemyDamageMultiplier: 1
-  MaxEnemyHPMultiplierAtFinalDifficultyLevel: 1
-  UseAbsoluteMaxEnemyHPMultiplier: 0
-  AbsoluteMaxEnemyHPMultiplier: 1
-  MaxEnemySpeedMultiplierAtFinalDifficultyLevel: 1
-  UseAbsoluteMaxEnemySpeedMultiplier: 1
-  AbsoluteMaxEnemySpeedMultiplier: 1
+  Enemy0: {fileID: 6575186996657049984, guid: 5fe16c4e33b51b542a6a8a7c7e15f243, type: 3}
+  Enemy1: {fileID: 0}
+  Enemy2: {fileID: 0}
+  Enemy3: {fileID: 0}
+  Enemy4: {fileID: 0}
+  Enemy5: {fileID: 0}
+  Enemy6: {fileID: 0}
+  Enemy7: {fileID: 0}
+  Special0: {fileID: 0}
+  Special1: {fileID: 0}
+  Special2: {fileID: 0}
+  Special3: {fileID: 0}
+  Boss0: {fileID: 0}
+  Boss1: {fileID: 0}
+  Boss2: {fileID: 0}
+  Boss3: {fileID: 0}
+  UseWanderingEnemySpawning: 1
+  BaseMinSpawnTime: 0
+  BaseMaxSpawnTime: 10
+  SpawnDistance: 50
+  FinalCalculatedThreatLevel: 10
+  FinalHPMultiplier: 1
+  UseMaxHPMultiplier: 0
+  MaxHPMultiplier: 1
+  FinalDamageMultiplier: 1
+  UseMaxDamageMultiplier: 0
+  MaxDamageMultiplier: 1
+  FinalCooldownMultiplier: 1
+  UseMaxCooldownMultiplier: 1
+  MaxCooldownMultiplier: 1
+  FinalSpeedMultiplier: 1
+  UseMaxSpeedMultiplier: 1
+  MaxSpeedMultiplier: 1
+  FinalSpawnFrequencyMultiplier: 1
+  UseMaxSpawnFrequencyMultiplier: 0
+  MaxSpawnFrequencyMultiplier: 1
+  InitialMaxEnemyCount: 25
+  FinalMaxEnemyCount: 275
+  AbsoluteMaxEnemyCount: 500
+  IncreaseThreatAfterMirrorDestruction: 1
+  IncreaseThreatAfterTime: 1
+  ThreatIncreaseTime: 60
+  WanderingEnemiesWithinThreatLevels:
+  - List: 00000000
