@@ -55,7 +55,14 @@ public class MirrorAIController : PoolObject
 
     private void OnDeath()
     {
-        //TODO: spawn new mirrors
+        //spawn new mirrors
+        for (int i = AmountOfMirrorsToSpawnOnDeath[Random.Range(0, AmountOfMirrorsToSpawnOnDeath.Length)]; i > 0; i--)
+        {
+            string mirrorName = MirrorsToSpawnOnDeath[Random.Range(0, MirrorsToSpawnOnDeath.Length)].name;
+            Vector2 point = Random.insideUnitCircle.normalized * Random.Range(DataManager.Instance.LevelDataObject.MinMirrorSpawnDistance, DataManager.Instance.LevelDataObject.MaxMirrorSpawnDistance);
+            MirrorAIController mirror = (MirrorAIController)PoolManager.Instance.Spawn(mirrorName, DataManager.Instance.PlayerDataObject.Player.transform.position + new Vector3(point.x, point.y, 0.0f), Quaternion.identity);
+            mirror.Init();
+        }
 
         //end coroutines
         StopAllCoroutines();

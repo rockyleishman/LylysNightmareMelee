@@ -10,7 +10,7 @@ public class WanderingEnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnTimer()
     {
-        yield return new WaitForSeconds(DataManager.Instance.LevelDataObject.FirstSpawnTime);
+        yield return null;
         while (true)
         {
             SpawnRandomEnemy();

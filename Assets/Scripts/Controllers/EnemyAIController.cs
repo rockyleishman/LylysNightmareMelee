@@ -39,7 +39,7 @@ public class EnemyAIController : PoolObject, IHitPoints
         _damage = BaseDamage * DataManager.Instance.LevelDataObject.NewEnemyDamageMultiplier;
 
         //init cooldown
-        _cooldown = BaseCooldown * DataManager.Instance.LevelDataObject.NewEnemyCooldownMultiplier;
+        _cooldown = BaseCooldown / DataManager.Instance.LevelDataObject.NewEnemyCooldownDivisor;
         _lastAttackTime = -60.0f; //attacks are ready immediately
 
         //init speed
