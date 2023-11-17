@@ -128,6 +128,7 @@ public class EnemyAIController : PoolObject, IHitPoints
 
     public void OnDeath()
     {
+        //despawn
         OnDespawn();
     }
 

@@ -25,15 +25,21 @@ public class GameManager : Singleton<GameManager>
         DataManager.Instance.PlayerDataObject.HPMultiplier = 1.0f;
         DataManager.Instance.PlayerDataObject.MovementSpeedMultiplier = 1.0f;
         DataManager.Instance.PlayerDataObject.DamageMultiplier = 1.0f;
-        DataManager.Instance.PlayerDataObject.KnockbackMultiplier = 1.0f;
+        DataManager.Instance.PlayerDataObject.KnockbackMultiplier = 1.0f;        
     }
 
-    public void IncreaseDifficulty()
+    public void IncreaseThreat()
     {
-        if (DataManager.Instance.LevelDataObject.FinalDifficultyLevel > 0)
+        if (DataManager.Instance.LevelDataObject.CurrentThreatLevel < DataManager.Instance.LevelDataObject.WanderingEnemiesWithinThreatLevels.Count - 1)
+        {
+            //set threat level (for wandering enemy spawning)
+            DataManager.Instance.LevelDataObject.CurrentThreatLevel++;
+        }
+
+        if (DataManager.Instance.LevelDataObject.FinalCalculatedThreatLevel > 0)
         {
             //increase new enemy HP multiplier
-            DataManager.Instance.LevelDataObject.NewEnemyHPMultiplier += (DataManager.Instance.LevelDataObject.FinalHPMultiplier - 1.0f) / DataManager.Instance.LevelDataObject.FinalDifficultyLevel;
+            DataManager.Instance.LevelDataObject.NewEnemyHPMultiplier += (DataManager.Instance.LevelDataObject.FinalHPMultiplier - 1.0f) / DataManager.Instance.LevelDataObject.FinalCalculatedThreatLevel;
             //clamp new enemy HP multiplier
             if (DataManager.Instance.LevelDataObject.UseMaxHPMultiplier && DataManager.Instance.LevelDataObject.NewEnemyHPMultiplier > DataManager.Instance.LevelDataObject.MaxHPMultiplier)
             {
@@ -41,7 +47,7 @@ public class GameManager : Singleton<GameManager>
             }
 
             //increase new enemy damage multiplier
-            DataManager.Instance.LevelDataObject.NewEnemyDamageMultiplier += (DataManager.Instance.LevelDataObject.FinalDamageMultiplier - 1.0f) / DataManager.Instance.LevelDataObject.FinalDifficultyLevel;
+            DataManager.Instance.LevelDataObject.NewEnemyDamageMultiplier += (DataManager.Instance.LevelDataObject.FinalDamageMultiplier - 1.0f) / DataManager.Instance.LevelDataObject.FinalCalculatedThreatLevel;
             //clamp new enemy damage multiplier
             if (DataManager.Instance.LevelDataObject.UseMaxDamageMultiplier && DataManager.Instance.LevelDataObject.NewEnemyDamageMultiplier > DataManager.Instance.LevelDataObject.MaxDamageMultiplier)
             {
@@ -49,7 +55,7 @@ public class GameManager : Singleton<GameManager>
             }
 
             //increase new enemy speed multiplier
-            DataManager.Instance.LevelDataObject.NewEnemyHPMultiplier += (DataManager.Instance.LevelDataObject.FinalHPMultiplier - 1.0f) / DataManager.Instance.LevelDataObject.FinalDifficultyLevel;
+            DataManager.Instance.LevelDataObject.NewEnemyHPMultiplier += (DataManager.Instance.LevelDataObject.FinalHPMultiplier - 1.0f) / DataManager.Instance.LevelDataObject.FinalCalculatedThreatLevel;
             //clamp new enemy HP multiplier
             if (DataManager.Instance.LevelDataObject.UseMaxHPMultiplier && DataManager.Instance.LevelDataObject.NewEnemyHPMultiplier > DataManager.Instance.LevelDataObject.MaxHPMultiplier)
             {
@@ -57,7 +63,7 @@ public class GameManager : Singleton<GameManager>
             }
 
             //increase new enemy spawn frequency multiplier
-            DataManager.Instance.LevelDataObject.NewEnemySpawnFrequencyMultiplier += (DataManager.Instance.LevelDataObject.FinalSpawnFrequencyMultiplier - 1.0f) / DataManager.Instance.LevelDataObject.FinalDifficultyLevel;
+            DataManager.Instance.LevelDataObject.NewEnemySpawnFrequencyMultiplier += (DataManager.Instance.LevelDataObject.FinalSpawnFrequencyMultiplier - 1.0f) / DataManager.Instance.LevelDataObject.FinalCalculatedThreatLevel;
             //clamp new enemy HP multiplier
             if (DataManager.Instance.LevelDataObject.UseMaxSpawnFrequencyMultiplier && DataManager.Instance.LevelDataObject.NewEnemySpawnFrequencyMultiplier > DataManager.Instance.LevelDataObject.MaxSpawnFrequencyMultiplier)
             {
@@ -65,12 +71,12 @@ public class GameManager : Singleton<GameManager>
             }
 
             //inrease max enemy count
-            DataManager.Instance.LevelDataObject.MaxEnemyCountUnrounded = ((float)DataManager.Instance.LevelDataObject.FinalMaxEnemyCount - (float)DataManager.Instance.LevelDataObject.InitialMaxEnemyCount) / (float)DataManager.Instance.LevelDataObject.FinalDifficultyLevel;
+            DataManager.Instance.LevelDataObject.MaxEnemyCountUnrounded = ((float)DataManager.Instance.LevelDataObject.FinalMaxEnemyCount - (float)DataManager.Instance.LevelDataObject.InitialMaxEnemyCount) / (float)DataManager.Instance.LevelDataObject.FinalCalculatedThreatLevel;
             DataManager.Instance.LevelDataObject.MaxEnemyCount = (int)DataManager.Instance.LevelDataObject.MaxEnemyCountUnrounded;
             //clamp max enemy count
-            if (DataManager.Instance.LevelDataObject.MaxEnemyCount > LevelData.AbsoluteMaxEnemyCount)
+            if (DataManager.Instance.LevelDataObject.MaxEnemyCount > DataManager.Instance.LevelDataObject.AbsoluteMaxEnemyCount)
             {
-                DataManager.Instance.LevelDataObject.MaxEnemyCount = LevelData.AbsoluteMaxEnemyCount;
+                DataManager.Instance.LevelDataObject.MaxEnemyCount = DataManager.Instance.LevelDataObject.AbsoluteMaxEnemyCount;
             }
         }
     }

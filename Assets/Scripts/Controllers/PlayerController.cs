@@ -7,6 +7,11 @@ public class PlayerController : MonoBehaviour, IHitPoints
 
     public GameObject PlayerDirectionObject;
 
+    private void Start()
+    {
+        InitHP();
+    }
+
     private void Update()
     {
         Movement();
@@ -90,7 +95,7 @@ public class PlayerController : MonoBehaviour, IHitPoints
     public void DamageHP(float hp)
     {
         float currentHP = DataManager.Instance.PlayerDataObject.CurrentHP - hp;
-
+        
         if (currentHP < 0.0f)
         {
             DataManager.Instance.PlayerDataObject.CurrentHP = 0.0f;
@@ -100,7 +105,7 @@ public class PlayerController : MonoBehaviour, IHitPoints
         {
             DataManager.Instance.PlayerDataObject.CurrentHP = currentHP;
         }
-
+        
         //trigger effects
         EventManager.Instance.ScreenShakeTriggered.TriggerEvent(transform.position);
         //TODO: trigger particle effect
