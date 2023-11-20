@@ -44,6 +44,12 @@ TagManager:
   - name: Ground
     uniqueID: 1166479571
     locked: 0
+  - name: Building_01
+    uniqueID: 733345
+    locked: 0
+  - name: Building_02
+    uniqueID: 3418227387
+    locked: 0
   - name: Obstacles
     uniqueID: 941374649
     locked: 0
