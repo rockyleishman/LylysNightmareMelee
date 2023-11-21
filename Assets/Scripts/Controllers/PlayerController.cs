@@ -4,17 +4,29 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour, IHitPoints
 {
     private Vector2 _moveInput;
+    private GameObject CursorObject;
+    private bool _isUsingMouse;
 
     public GameObject PlayerDirectionObject;
 
     private void Start()
     {
         InitHP();
+
+        //get cursor reference
+        CursorObject = DataManager.Instance.PlayerDataObject.CursorObject;
+
+        //init is using mouse
+        _isUsingMouse = false;
     }
 
     private void Update()
     {
         Movement();
+        if (_isUsingMouse)
+        {
+            LookAtCursor();
+        }       
     }
 
     private void Movement()
@@ -26,13 +38,17 @@ public class PlayerController : MonoBehaviour, IHitPoints
         }
 
         //apply movement
-        transform.Translate(_moveInput * DataManager.Instance.PlayerDataObject.MovementSpeed * DataManager.Instance.PlayerDataObject.MovementSpeedMultiplier * Time.deltaTime);
+        transform.Translate(_moveInput * DataManager.Instance.PlayerDataObject.MovementSpeed * DataManager.Instance.PlayerDataObject.MovementSpeedMultiplier * Time.deltaTime);        
+    }
 
-        //rotate direction object
-        if (_moveInput.magnitude > 0.0f)
-        {
-            PlayerDirectionObject.transform.rotation = Quaternion.LookRotation(Vector3.forward, new Vector3(-_moveInput.x, -_moveInput.y));
-        }
+    private void LookAtCursor()
+    {
+        //set cursor object to mouse cursor position
+        Vector3 mouseCursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        CursorObject.transform.position = new Vector3(mouseCursorPosition.x, mouseCursorPosition.y, 0.0f);
+
+        //set player direction
+        PlayerDirectionObject.transform.eulerAngles = new Vector3(PlayerDirectionObject.transform.eulerAngles.x, PlayerDirectionObject.transform.eulerAngles.y, Mathf.Atan2(CursorObject.transform.position.y - transform.position.y, CursorObject.transform.position.x - transform.position.x) * 180.0f / Mathf.PI + 90.0f);
     }
 
     #region InputMethods
@@ -44,12 +60,25 @@ public class PlayerController : MonoBehaviour, IHitPoints
 
     private void OnAimWithJoystick(InputValue value)
     {
-        //TODO: aim cursor
+        _isUsingMouse = false;
+
+        Vector2 inputValue = value.Get<Vector2>();
+
+        //rotate direction object
+        if (inputValue.magnitude > 0.0f)
+        {
+            PlayerDirectionObject.transform.eulerAngles = new Vector3(PlayerDirectionObject.transform.eulerAngles.x, PlayerDirectionObject.transform.eulerAngles.y, Mathf.Atan2(inputValue.y, inputValue.x) * 180.0f / Mathf.PI + 90.0f);
+        }        
+
+        //set cursor based on player direction
+        CursorObject.transform.position = transform.position - PlayerDirectionObject.transform.up * DataManager.Instance.PlayerDataObject.DefaultCursorDistance;
     }
 
     private void OnAimWithMouse(InputValue value)
     {
-        //TODO: aim cursor
+        _isUsingMouse = true;
+
+        //position handled in update to account for camera movement
     }
 
     private void OnAttack()

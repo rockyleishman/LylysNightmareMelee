@@ -5,13 +5,13 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField] PlayerController Player;
-    [SerializeField] GameObject Cursor;
+    [SerializeField] GameObject CursorObject;
 
     private void Awake()
     {
         //set references
         DataManager.Instance.PlayerDataObject.Player = Player;
-        DataManager.Instance.PlayerDataObject.Cursor = Cursor;
+        DataManager.Instance.PlayerDataObject.CursorObject = CursorObject;
 
         //init difficulty multipliers
         DataManager.Instance.LevelDataObject.NewEnemyHPMultiplier = 1.0f;
@@ -30,6 +30,10 @@ public class GameManager : Singleton<GameManager>
 
         //spawn initial mirror
         StartCoroutine(SpawnInitialMirror());
+
+        //hide and constain cursor
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     private IEnumerator SpawnInitialMirror()
