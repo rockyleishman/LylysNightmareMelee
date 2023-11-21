@@ -209,7 +209,7 @@
                     "id": "820c39b7-7cb9-4431-99b6-955d1cfc7ae6",
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "StickDeadzone",
                     "groups": "",
                     "action": "AimWithJoystick",
                     "isComposite": false,

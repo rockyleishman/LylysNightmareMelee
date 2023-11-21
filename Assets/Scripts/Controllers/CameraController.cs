@@ -28,7 +28,7 @@ public class CameraController : MonoBehaviour
     {
         //get references
         _player = DataManager.Instance.PlayerDataObject.Player;
-        _cursor = DataManager.Instance.PlayerDataObject.Cursor;
+        _cursor = DataManager.Instance.PlayerDataObject.CursorObject;
         _target = null;
         _camera = Camera.main;
 

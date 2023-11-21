@@ -4,7 +4,8 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     [SerializeField] public PlayerController Player;
-    [SerializeField] public GameObject Cursor;
+    [SerializeField] public GameObject CursorObject;
+    [SerializeField] public float DefaultCursorDistance = 5.0f;
 
     [SerializeField] public float MaxHP = 100.0f;
     internal float CurrentHP;
