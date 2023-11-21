@@ -114,9 +114,10 @@ public class EnemyAIController : PoolObject, IHitPoints
 
     public void DamageHP(float hp)
     {
+        Debug.Log("enemy hit");
         float currentHP = _currentHP - hp;
 
-        if (currentHP < 0.0f)
+        if (currentHP <= 0.0f)
         {
             _currentHP = 0.0f;
             OnDeath();

@@ -4,24 +4,9 @@ using UnityEngine;
 
 public class PillowAttack : MonoBehaviour
 {
-    [Header("Pillow Swing Effects")]
-    [SerializeField] public GameObject SAndSSE;
-    [SerializeField] public GameObject SSEAndSE;
-    [SerializeField] public GameObject SEAndESE;
-    [SerializeField] public GameObject ESEAndE;
-    [SerializeField] public GameObject EAndENE;
-    [SerializeField] public GameObject ENEAndNE;
-    [SerializeField] public GameObject NEAndNNE;
-    [SerializeField] public GameObject NNEAndN;
-    [SerializeField] public GameObject NAndNNW;
-    [SerializeField] public GameObject NNWAndNW;
-    [SerializeField] public GameObject NWAndWNW;
-    [SerializeField] public GameObject WNWAndW;
-    [SerializeField] public GameObject WAndWSW;
-    [SerializeField] public GameObject WSWAndSW;
-    [SerializeField] public GameObject SWAndSSW;
-    [SerializeField] public GameObject SSWAndS;
+    [SerializeField] public Animator PillowSwingAnimator;
     private bool IsRightSwing;
+    private List<EnemyAIController> _enemiesHit;
 
     private void Start()
     {
@@ -30,141 +15,168 @@ public class PillowAttack : MonoBehaviour
 
         //start with right swing
         IsRightSwing = true;
+
+        //init enemies hit list
+        _enemiesHit = new List<EnemyAIController>();
     }
 
     public void Attack()
     {
-        //activate
-        gameObject.SetActive(true);
+        //clear enemies hit list
+        _enemiesHit.Clear();
 
-        //activate pillow swing effects & start delayed deactivation
-        float rotationDegrees = DataManager.Instance.PlayerDataObject.Player.PlayerDirectionObject.transform.eulerAngles.z;
+        //activate and deactivate
+        gameObject.SetActive(true);
+        StopCoroutine(TimedDeactivation());
+        StartCoroutine(TimedDeactivation());
+
+        //animate attack
+        AnimateAttack();
+    }
+
+    private void AnimateAttack()
+    {
+        //set animator right/left swing
+        PillowSwingAnimator.SetBool("IsRightSwing", IsRightSwing);
+
+        //set animator values based on rotation
+        int rotationValue = Mathf.RoundToInt(DataManager.Instance.PlayerDataObject.Player.PlayerDirectionObject.transform.eulerAngles.z / 22.5f);
         if (IsRightSwing)
         {
-            if (rotationDegrees >= 11.25 && rotationDegrees < 56.25)
+            switch (rotationValue)
             {
-                //SSE/SE
-                SSEAndSE.SetActive(true);
-                StartCoroutine(DelayedDeactivation(SSEAndSE));
-            }
-            else if (rotationDegrees >= 56.25 && rotationDegrees < 101.25)
-            {
-                //ESE/E
-                ESEAndE.SetActive(true);
-                StartCoroutine(DelayedDeactivation(ESEAndE));
-            }
-            else if (rotationDegrees >= 101.25 && rotationDegrees < 146.25)
-            {
-                //ENE/NE
-                ENEAndNE.SetActive(true);
-                StartCoroutine(DelayedDeactivation(ENEAndNE));
-            }
-            else if (rotationDegrees >= 146.25 && rotationDegrees < 191.25)
-            {
-                //NNE/N
-                NNEAndN.SetActive(true);
-                StartCoroutine(DelayedDeactivation(NNEAndN));
-            }
-            else if (rotationDegrees >= 191.25 && rotationDegrees < 236.25)
-            {
-                //NNW/NW
-                NNWAndNW.SetActive(true);
-                StartCoroutine(DelayedDeactivation(NNWAndNW));
-            }
-            else if (rotationDegrees >= 236.25 && rotationDegrees < 281.25)
-            {
-                //WNW/W
-                WNWAndW.SetActive(true);
-                StartCoroutine(DelayedDeactivation(WNWAndW));
-            }
-            else if (rotationDegrees >= 281.25 && rotationDegrees < 326.25)
-            {
-                //WSW/SW
-                WSWAndSW.SetActive(true);
-                StartCoroutine(DelayedDeactivation(WSWAndSW));
-            }
-            else
-            {
-                //SSW/S
-                SSWAndS.SetActive(true);
-                StartCoroutine(DelayedDeactivation(SSWAndS));
+                case 1:
+                case 2:
+                    PillowSwingAnimator.SetBool("IsDiagonal", true);
+                    PillowSwingAnimator.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
+                    break;
+
+                case 3:
+                case 4:
+                    PillowSwingAnimator.SetBool("IsDiagonal", false);
+                    PillowSwingAnimator.transform.eulerAngles = new Vector3(0.0f, 0.0f, 90.0f);
+                    break;
+
+                case 5:
+                case 6:
+                    PillowSwingAnimator.SetBool("IsDiagonal", true);
+                    PillowSwingAnimator.transform.eulerAngles = new Vector3(0.0f, 0.0f, 90.0f);
+                    break;
+
+                case 7:
+                case 8:
+                    PillowSwingAnimator.SetBool("IsDiagonal", false);
+                    PillowSwingAnimator.transform.eulerAngles = new Vector3(0.0f, 0.0f, 180.0f);
+                    break;
+
+                case 9:
+                case 10:
+                    PillowSwingAnimator.SetBool("IsDiagonal", true);
+                    PillowSwingAnimator.transform.eulerAngles = new Vector3(0.0f, 0.0f, 180.0f);
+                    break;
+
+                case 11:
+                case 12:
+                    PillowSwingAnimator.SetBool("IsDiagonal", false);
+                    PillowSwingAnimator.transform.eulerAngles = new Vector3(0.0f, 0.0f, 270.0f);
+                    break;
+
+                case 13:
+                case 14:
+                    PillowSwingAnimator.SetBool("IsDiagonal", true);
+                    PillowSwingAnimator.transform.eulerAngles = new Vector3(0.0f, 0.0f, 270.0f);
+                    break;
+
+                case 15:
+                case 16:
+                case 0:
+                default:
+                    PillowSwingAnimator.SetBool("IsDiagonal", false);
+                    PillowSwingAnimator.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
+                    break;
             }
         }
         else
         {
-            if (rotationDegrees >= 33.75 && rotationDegrees < 78.75)
+            switch (rotationValue)
             {
-                //SE/ESE
-                SEAndESE.SetActive(true);
-                StartCoroutine(DelayedDeactivation(SEAndESE));
-            }
-            else if (rotationDegrees >= 78.75 && rotationDegrees < 123.75)
-            {
-                //E/ENE
-                EAndENE.SetActive(true);
-                StartCoroutine(DelayedDeactivation(EAndENE));
-            }
-            else if (rotationDegrees >= 123.75 && rotationDegrees < 168.75)
-            {
-                //NE/NNE
-                NEAndNNE.SetActive(true);
-                StartCoroutine(DelayedDeactivation(NEAndNNE));
-            }
-            else if (rotationDegrees >= 168.75 && rotationDegrees < 213.75)
-            {
-                //N/NNW
-                NAndNNW.SetActive(true);
-                StartCoroutine(DelayedDeactivation(NAndNNW));
-            }
-            else if (rotationDegrees >= 213.75 && rotationDegrees < 258.75)
-            {
-                //NW/WNW
-                NWAndWNW.SetActive(true);
-                StartCoroutine(DelayedDeactivation(NWAndWNW));
-            }
-            else if (rotationDegrees >= 258.75 && rotationDegrees < 303.75)
-            {
-                //W/WSW
-                WAndWSW.SetActive(true);
-                StartCoroutine(DelayedDeactivation(WAndWSW));
-            }
-            else if (rotationDegrees >= 303.75 && rotationDegrees < 348.75)
-            {
-                //SW/SSW
-                SWAndSSW.SetActive(true);
-                StartCoroutine(DelayedDeactivation(SWAndSSW));
-            }
-            else
-            {
-                //S/SSE
-                SAndSSE.SetActive(true);
-                StartCoroutine(DelayedDeactivation(SAndSSE));
+                case 2:
+                case 3:
+                    PillowSwingAnimator.SetBool("IsDiagonal", true);
+                    PillowSwingAnimator.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
+                    break;
+
+                case 4:
+                case 5:
+                    PillowSwingAnimator.SetBool("IsDiagonal", false);
+                    PillowSwingAnimator.transform.eulerAngles = new Vector3(0.0f, 0.0f, 90.0f);
+                    break;
+
+                case 6:
+                case 7:
+                    PillowSwingAnimator.SetBool("IsDiagonal", true);
+                    PillowSwingAnimator.transform.eulerAngles = new Vector3(0.0f, 0.0f, 90.0f);
+                    break;
+
+                case 8:
+                case 9:
+                    PillowSwingAnimator.SetBool("IsDiagonal", false);
+                    PillowSwingAnimator.transform.eulerAngles = new Vector3(0.0f, 0.0f, 180.0f);
+                    break;
+
+                case 10:
+                case 11:
+                    PillowSwingAnimator.SetBool("IsDiagonal", true);
+                    PillowSwingAnimator.transform.eulerAngles = new Vector3(0.0f, 0.0f, 180.0f);
+                    break;
+
+                case 12:
+                case 13:
+                    PillowSwingAnimator.SetBool("IsDiagonal", false);
+                    PillowSwingAnimator.transform.eulerAngles = new Vector3(0.0f, 0.0f, 270.0f);
+                    break;
+
+                case 14:
+                case 15:
+                    PillowSwingAnimator.SetBool("IsDiagonal", true);
+                    PillowSwingAnimator.transform.eulerAngles = new Vector3(0.0f, 0.0f, 270.0f);
+                    break;
+
+                case 16:
+                case 0:
+                case 1:
+                default:
+                    PillowSwingAnimator.SetBool("IsDiagonal", false);
+                    PillowSwingAnimator.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
+                    break;
             }
         }
 
         //swap swing direction
-        IsRightSwing = !IsRightSwing;        
+        IsRightSwing = !IsRightSwing;
+
+        //trigger animation
+        PillowSwingAnimator.SetTrigger("OnSwing");
     }
 
-    private IEnumerator DelayedDeactivation(GameObject swingEffect)
+    private IEnumerator TimedDeactivation()
     {
         //delay
-        yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.PillowAttackActiveTime);
-
-        //deactivate pillow swing effect
-        swingEffect.SetActive(false);
+        yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.PillowAttackDuration);
 
         //deactivate
         gameObject.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         EnemyAIController enemy = other.GetComponent<EnemyAIController>();
 
-        if (enemy != null)
+        if (enemy != null && !_enemiesHit.Contains(enemy))
         {
             enemy.DamageHP(DataManager.Instance.PlayerDataObject.PillowAttackDamage * DataManager.Instance.PlayerDataObject.DamageMultiplier);
+
+            _enemiesHit.Add(enemy);
         }
     }
 }
