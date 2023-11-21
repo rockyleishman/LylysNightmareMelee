@@ -116,6 +116,5 @@ public class EnemyManager : Singleton<EnemyManager>
 
         //set enemy count
         DataManager.Instance.LevelDataObject.CurrentEnemyCount = GetComponentsInChildren<EnemyAIController>().Length;
-        Debug.Log(DataManager.Instance.LevelDataObject.CurrentEnemyCount + "/" + DataManager.Instance.LevelDataObject.MaxEnemyCount);
     }
 }

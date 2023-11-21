@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,18 +7,21 @@ public class PlayerController : MonoBehaviour, IHitPoints
     private Vector2 _moveInput;
     private GameObject CursorObject;
     private bool _isUsingMouse;
+    private bool _isAttackReady;
 
     public GameObject PlayerDirectionObject;
 
     private void Start()
     {
+        //init HP
         InitHP();
 
         //get cursor reference
         CursorObject = DataManager.Instance.PlayerDataObject.CursorObject;
 
-        //init is using mouse
+        //init private booleans
         _isUsingMouse = false;
+        _isAttackReady = true;
     }
 
     private void Update()
@@ -49,6 +53,15 @@ public class PlayerController : MonoBehaviour, IHitPoints
 
         //set player direction
         PlayerDirectionObject.transform.eulerAngles = new Vector3(PlayerDirectionObject.transform.eulerAngles.x, PlayerDirectionObject.transform.eulerAngles.y, Mathf.Atan2(CursorObject.transform.position.y - transform.position.y, CursorObject.transform.position.x - transform.position.x) * 180.0f / Mathf.PI + 90.0f);
+    }
+
+    private IEnumerator AttackCooldown()
+    {
+        _isAttackReady = false;
+
+        yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.PillowAttackCooldown);
+
+        _isAttackReady = true;
     }
 
     #region InputMethods
@@ -83,7 +96,11 @@ public class PlayerController : MonoBehaviour, IHitPoints
 
     private void OnAttack()
     {
-        EventManager.Instance.PillowAttackTriggered.TriggerEvent(this, null);
+        if (_isAttackReady)
+        {
+            EventManager.Instance.PillowAttackTriggered.TriggerEvent(this, null);
+            StartCoroutine(AttackCooldown());
+        }
     }
 
     private void OnSpecialAttack()

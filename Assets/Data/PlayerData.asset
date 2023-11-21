@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fea1a725d1a4d3d4ba3d59839636779e, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  CursorObject: {fileID: 0}
-  DefaultCursorDistance: 2
+  DefaultCursorDistance: 5
   MaxHP: 100
   MovementSpeed: 5
   PillowAttackDamage: 10
   PillowAttackKnockback: 5
-  PillowAttackActiveTime: 0.1
+  PillowAttackDuration: 0.25
+  PillowAttackCooldown: 0.1
