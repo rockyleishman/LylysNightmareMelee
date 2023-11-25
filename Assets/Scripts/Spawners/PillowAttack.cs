@@ -176,7 +176,11 @@ public class PillowAttack : MonoBehaviour
         {
             enemy.DamageHP(DataManager.Instance.PlayerDataObject.PillowAttackDamage * DataManager.Instance.PlayerDataObject.DamageMultiplier);
 
-            _enemiesHit.Add(enemy);
+            if (enemy.isActiveAndEnabled)
+            {
+                enemy.Knockback(DataManager.Instance.PlayerDataObject.PillowAttackKnockback * DataManager.Instance.PlayerDataObject.KnockbackMultiplier);
+                _enemiesHit.Add(enemy);
+            }            
         }
     }
 }
