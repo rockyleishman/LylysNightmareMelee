@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EnemyAIController : PoolObject, IHitPoints
 {
+    private SpriteRenderer _spriteRenderer;
+    private Color _defaultColour;
+    private Color _flashColour;
+
     [Header("Death Settings")]
     [SerializeField] public int Points = 10;
 
@@ -18,14 +22,21 @@ public class EnemyAIController : PoolObject, IHitPoints
     private double _lastAttackTime;
     [SerializeField] [Range(0.0f, 20.0f)] public float BaseSpeed = 3.0f;
     private float _speed;
+    [SerializeField] [Range(0.0f, 20.0f)] public float BaseWeight = 1.0f;
+    private float _weight;
 
     [Header("Optimization")]
     [SerializeField] [Range(0.001f, 1.0f)] public float TargetAcquisitionTime = 0.1f;
     private Vector3 _target;
 
-    private void Start()
+    private void Awake()
     {
-        //init everything else
+        //get renderer & colour
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _defaultColour = _spriteRenderer.color;
+        _flashColour = Color.Lerp(_defaultColour, Color.white, DataManager.Instance.LevelDataObject.FlashWhiteness);
+
+        //init
         Init();        
     }
 
@@ -45,8 +56,14 @@ public class EnemyAIController : PoolObject, IHitPoints
         //init speed
         _speed = BaseSpeed * DataManager.Instance.LevelDataObject.NewEnemySpeedMultiplier;
 
+        //init weight
+        _weight = BaseWeight * DataManager.Instance.LevelDataObject.NewEnemyWeightMultiplier;
+
         //find target
         StartCoroutine(FindTarget());
+
+        //reset colour
+        _spriteRenderer.color = _defaultColour;
     }
 
     private void Update()
@@ -73,6 +90,36 @@ public class EnemyAIController : PoolObject, IHitPoints
 
             yield return new WaitForSeconds(TargetAcquisitionTime);
         }
+    }
+
+    public void Knockback(float knockback)
+    {
+        StartCoroutine(ApplyKnockback(knockback));
+    }
+
+    private IEnumerator ApplyKnockback(float knockback)
+    {
+        float remainingKnockback = knockback;
+
+        while (remainingKnockback > 0.0f)
+        {
+            float deltaKnockback = knockback * Time.deltaTime / DataManager.Instance.LevelDataObject.KnockbackTime;
+            remainingKnockback -= deltaKnockback;
+
+            //apply knockback movement
+            transform.Translate((_target - transform.position).normalized * -deltaKnockback);
+
+            yield return null;
+        }
+    }
+
+    private IEnumerator Flash()
+    {
+        _spriteRenderer.color = _flashColour;
+
+        yield return new WaitForSeconds(DataManager.Instance.LevelDataObject.FlashTime);
+
+        _spriteRenderer.color = _defaultColour;
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -114,7 +161,6 @@ public class EnemyAIController : PoolObject, IHitPoints
 
     public void DamageHP(float hp)
     {
-        Debug.Log("enemy hit");
         float currentHP = _currentHP - hp;
 
         if (currentHP <= 0.0f)
@@ -125,6 +171,7 @@ public class EnemyAIController : PoolObject, IHitPoints
         else
         {
             _currentHP = currentHP;
+            StartCoroutine(Flash());
         }
 
         //TODO: trigger effect
