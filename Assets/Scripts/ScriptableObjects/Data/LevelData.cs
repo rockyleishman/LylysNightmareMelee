@@ -110,6 +110,11 @@ public class LevelData : ScriptableObject
     [SerializeField] public bool UseMaxSpawnFrequencyMultiplier = false;
     [SerializeField] [Range(1.0f, 100.0f)] public float MaxSpawnFrequencyMultiplier = 1.0f;
     internal float NewEnemySpawnFrequencyMultiplier;
+    [Header("        Enemy Special Charge")]
+    [SerializeField] [Range(1.0f, 100.0f)] public float FinalSpecialChargeDivisor = 1.0f;
+    [SerializeField] public bool UseMaxSpecialChargeDivisor = false;
+    [SerializeField] [Range(1.0f, 100.0f)] public float MaxSpecialChargeDivisor = 1.0f;
+    internal float NewEnemySpecialChargeDivisor;
     [Header("        Max Enemy Count")]
     [SerializeField] public int InitialMaxEnemyCount = 25;
     [SerializeField] public int FinalMaxEnemyCount = 275;

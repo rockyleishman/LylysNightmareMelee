@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c2d933b3dccd24cb29869a7530da5d, type: 3}
   m_Name: LevelData
   m_EditorClassIdentifier: 
+  FlashTime: 0.1
+  FlashWhiteness: 0.75
   InitialMirror: {fileID: 2045083803306708946, guid: 75bafd5c864aa5944bc3acf6208b8dac, type: 3}
   Enemy0: {fileID: 6575186996657049984, guid: 5fe16c4e33b51b542a6a8a7c7e15f243, type: 3}
   Enemy1: {fileID: 0}
@@ -29,31 +31,37 @@ MonoBehaviour:
   Boss1: {fileID: 0}
   Boss2: {fileID: 0}
   Boss3: {fileID: 0}
-  EnemyCullDistance: 200
   MinMirrorSpawnDistance: 50
   MaxMirrorSpawnDistance: 100
   UseWanderingEnemySpawning: 1
   BaseMinSpawnTime: 0
   BaseMaxSpawnTime: 5
   SpawnDistance: 25
-  FinalCalculatedThreatLevel: 10
-  FinalHPMultiplier: 1
+  FinalCalculatedThreatLevel: 15
+  FinalHPMultiplier: 3
   UseMaxHPMultiplier: 0
-  MaxHPMultiplier: 1
-  FinalDamageMultiplier: 1
+  MaxHPMultiplier: 1000
+  FinalDamageMultiplier: 3
   UseMaxDamageMultiplier: 0
-  MaxDamageMultiplier: 1
-  FinalCooldownDivisor: 1
+  MaxDamageMultiplier: 1000
+  FinalCooldownDivisor: 2
   UseMaxCooldownDivisor: 1
-  MaxCooldownDivisor: 1
-  FinalSpeedMultiplier: 1
+  MaxCooldownDivisor: 2
+  FinalSpeedMultiplier: 1.1
   UseMaxSpeedMultiplier: 1
-  MaxSpeedMultiplier: 1
-  FinalSpawnFrequencyMultiplier: 1
+  MaxSpeedMultiplier: 2
+  FinalWeightMultiplier: 1.1
+  UseMaxWeightMultiplier: 1
+  MaxWeightMultiplier: 2
+  KnockbackTime: 0.1
+  FinalSpawnFrequencyMultiplier: 1.5
   UseMaxSpawnFrequencyMultiplier: 0
-  MaxSpawnFrequencyMultiplier: 1
+  MaxSpawnFrequencyMultiplier: 100
+  FinalSpecialChargeDivisor: 5
+  UseMaxSpecialChargeDivisor: 0
+  MaxSpecialChargeDivisor: 100
   InitialMaxEnemyCount: 25
-  FinalMaxEnemyCount: 275
+  FinalMaxEnemyCount: 400
   AbsoluteMaxEnemyCount: 500
   IncreaseThreatAfterMirrorDestruction: 1
   IncreaseThreatAfterTime: 1
