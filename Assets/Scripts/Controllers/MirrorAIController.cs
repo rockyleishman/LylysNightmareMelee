@@ -53,7 +53,7 @@ public class MirrorAIController : PoolObject
         EnemyManager.Instance.SpawnEnemy(enemyType, transform.position + new Vector3(point.x, point.y, 0.0f));
     }
 
-    private void OnDeath()
+    public void Death()
     {
         //spawn new mirrors
         for (int i = AmountOfMirrorsToSpawnOnDeath[Random.Range(0, AmountOfMirrorsToSpawnOnDeath.Length)]; i > 0; i--)
@@ -66,6 +66,8 @@ public class MirrorAIController : PoolObject
 
         //end coroutines
         StopAllCoroutines();
+
+        //TODO: effects
 
         //despawn
         OnDespawn();

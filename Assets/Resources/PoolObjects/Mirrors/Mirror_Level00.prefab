@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 2045083803306708944}
   - component: {fileID: 2045083803306708947}
   - component: {fileID: 2045083803306708946}
-  m_Layer: 0
+  - component: {fileID: 3105849887686562801}
+  - component: {fileID: 7416344274966769442}
+  m_Layer: 7
   m_Name: Mirror_Level00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,10 +100,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Points: 1000
-  MirrorsToSpawnOnDeath: []
-  AmountOfMirrorsToSpawnOnDeath: 
+  MirrorsToSpawnOnDeath:
+  - {fileID: 2045083803306708946}
+  AmountOfMirrorsToSpawnOnDeath: 02000000
   Enemies: 00000000
   MinEnemiesPerWave: 3
   MaxEnemiesPerWave: 5
   MinWaveSpawnTime: 10
   MaxWaveSpawnTime: 15
+--- !u!58 &3105849887686562801
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045083803306708949}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!50 &7416344274966769442
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045083803306708949}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
