@@ -28,6 +28,9 @@ public class GameManager : Singleton<GameManager>
         DataManager.Instance.PlayerDataObject.DamageMultiplier = 1.0f;
         DataManager.Instance.PlayerDataObject.KnockbackMultiplier = 1.0f;
 
+        //set initial special charge
+        DataManager.Instance.PlayerDataObject.SpecialCharge = 1.0f;
+
         //spawn initial mirror
         StartCoroutine(SpawnInitialMirror());
 

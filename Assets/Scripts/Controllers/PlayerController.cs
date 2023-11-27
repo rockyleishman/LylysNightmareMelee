@@ -105,7 +105,11 @@ public class PlayerController : MonoBehaviour, IHitPoints
 
     private void OnSpecialAttack()
     {
-        //TODO: special attack
+        if (DataManager.Instance.PlayerDataObject.SpecialCharge >= 1.0f)
+        {
+            EventManager.Instance.SpecialAttackTriggered.TriggerEvent(this, null);
+            DataManager.Instance.PlayerDataObject.SpecialCharge = 0.0f;
+        }
     }
 
     private void OnPause()
