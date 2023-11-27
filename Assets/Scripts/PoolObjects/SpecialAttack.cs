@@ -52,7 +52,6 @@ public class SpecialAttack : PoolObject
         }
         else if (mirror != null)
         {
-            Debug.Log("hit mirror");
             mirror.Death();
         }
     }

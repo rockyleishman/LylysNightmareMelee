@@ -64,6 +64,9 @@ public class MirrorAIController : PoolObject
             mirror.Init();
         }
 
+        //increase threat
+        EventManager.Instance.IncreaseThreat.TriggerEvent(transform.position);
+
         //end coroutines
         StopAllCoroutines();
 

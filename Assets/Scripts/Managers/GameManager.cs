@@ -34,6 +34,9 @@ public class GameManager : Singleton<GameManager>
         //spawn initial mirror
         StartCoroutine(SpawnInitialMirror());
 
+        //start timed threat increase
+        StartCoroutine(TimedThreatIncrease());
+
         //hide and constain cursor
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
@@ -46,6 +49,16 @@ public class GameManager : Singleton<GameManager>
         Vector2 point = Random.insideUnitCircle.normalized * Random.Range(DataManager.Instance.LevelDataObject.MinMirrorSpawnDistance, DataManager.Instance.LevelDataObject.MaxMirrorSpawnDistance);
         MirrorAIController mirror = (MirrorAIController)PoolManager.Instance.Spawn(DataManager.Instance.LevelDataObject.InitialMirror.name, Player.transform.position + new Vector3(point.x, point.y, 0.0f), Quaternion.identity);
         mirror.Init();
+    }
+
+    private IEnumerator TimedThreatIncrease()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(DataManager.Instance.LevelDataObject.ThreatIncreaseTime);
+
+            IncreaseThreat();
+        }
     }
 
     public void IncreaseThreat()
@@ -90,6 +103,14 @@ public class GameManager : Singleton<GameManager>
                 DataManager.Instance.LevelDataObject.NewEnemyHPMultiplier = DataManager.Instance.LevelDataObject.MaxHPMultiplier;
             }
 
+            //increase new enemy speed multiplier
+            DataManager.Instance.LevelDataObject.NewEnemyWeightMultiplier += (DataManager.Instance.LevelDataObject.FinalWeightMultiplier - 1.0f) / DataManager.Instance.LevelDataObject.FinalCalculatedThreatLevel;
+            //clamp new enemy HP multiplier
+            if (DataManager.Instance.LevelDataObject.UseMaxWeightMultiplier && DataManager.Instance.LevelDataObject.NewEnemyWeightMultiplier > DataManager.Instance.LevelDataObject.MaxWeightMultiplier)
+            {
+                DataManager.Instance.LevelDataObject.NewEnemyWeightMultiplier = DataManager.Instance.LevelDataObject.MaxWeightMultiplier;
+            }
+
             //increase new enemy spawn frequency multiplier
             DataManager.Instance.LevelDataObject.NewEnemySpawnFrequencyMultiplier += (DataManager.Instance.LevelDataObject.FinalSpawnFrequencyMultiplier - 1.0f) / DataManager.Instance.LevelDataObject.FinalCalculatedThreatLevel;
             //clamp new enemy HP multiplier
@@ -98,8 +119,16 @@ public class GameManager : Singleton<GameManager>
                 DataManager.Instance.LevelDataObject.NewEnemySpawnFrequencyMultiplier = DataManager.Instance.LevelDataObject.MaxSpawnFrequencyMultiplier;
             }
 
+            //increase new enemy speed multiplier
+            DataManager.Instance.LevelDataObject.NewEnemySpecialChargeDivisor += (DataManager.Instance.LevelDataObject.FinalSpecialChargeDivisor - 1.0f) / DataManager.Instance.LevelDataObject.FinalCalculatedThreatLevel;
+            //clamp new enemy HP multiplier
+            if (DataManager.Instance.LevelDataObject.UseMaxSpecialChargeDivisor && DataManager.Instance.LevelDataObject.NewEnemySpecialChargeDivisor > DataManager.Instance.LevelDataObject.MaxSpecialChargeDivisor)
+            {
+                DataManager.Instance.LevelDataObject.NewEnemySpecialChargeDivisor = DataManager.Instance.LevelDataObject.MaxSpecialChargeDivisor;
+            }
+
             //inrease max enemy count
-            DataManager.Instance.LevelDataObject.MaxEnemyCountUnrounded = ((float)DataManager.Instance.LevelDataObject.FinalMaxEnemyCount - (float)DataManager.Instance.LevelDataObject.InitialMaxEnemyCount) / (float)DataManager.Instance.LevelDataObject.FinalCalculatedThreatLevel;
+            DataManager.Instance.LevelDataObject.MaxEnemyCountUnrounded += ((float)DataManager.Instance.LevelDataObject.FinalMaxEnemyCount - (float)DataManager.Instance.LevelDataObject.InitialMaxEnemyCount) / (float)DataManager.Instance.LevelDataObject.FinalCalculatedThreatLevel;
             DataManager.Instance.LevelDataObject.MaxEnemyCount = (int)DataManager.Instance.LevelDataObject.MaxEnemyCountUnrounded;
             //clamp max enemy count
             if (DataManager.Instance.LevelDataObject.MaxEnemyCount > DataManager.Instance.LevelDataObject.AbsoluteMaxEnemyCount)

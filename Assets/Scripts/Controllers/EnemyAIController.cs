@@ -10,6 +10,7 @@ public class EnemyAIController : PoolObject, IHitPoints
 
     [Header("Death Settings")]
     [SerializeField] public int Points = 10;
+    [SerializeField] [Range(0.0f, 1.0f)] public float SpecialCharge = 0.02f;
 
     [Header("Stats")]
     [SerializeField] [Range(1.0f, 1000.0f)] public float BaseHP = 10.0f;
@@ -179,6 +180,20 @@ public class EnemyAIController : PoolObject, IHitPoints
 
     public void OnDeath()
     {
+        //charge special
+        DataManager.Instance.PlayerDataObject.SpecialCharge += SpecialCharge;
+
+        //TEMP
+        if (DataManager.Instance.PlayerDataObject.SpecialCharge > 1.0f)
+        {
+            Debug.Log("Special: 100%");
+        }
+        else
+        {
+            Debug.Log("Special: " + Mathf.FloorToInt(DataManager.Instance.PlayerDataObject.SpecialCharge * 100) + "%");
+        }
+        //END TEMP
+
         //despawn
         OnDespawn();
     }
