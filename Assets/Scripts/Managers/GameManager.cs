@@ -222,9 +222,17 @@ public class GameManager : Singleton<GameManager>
     private IEnumerator SpawnInitialMirror()
     {
         yield return null;
-        
-        Vector2 point = Random.insideUnitCircle.normalized * Random.Range(DataManager.Instance.LevelDataObject.MinMirrorSpawnDistance, DataManager.Instance.LevelDataObject.MaxMirrorSpawnDistance);
-        MirrorAIController mirror = (MirrorAIController)PoolManager.Instance.Spawn(DataManager.Instance.LevelDataObject.InitialMirror.name, Player.transform.position + new Vector3(point.x, point.y, 0.0f), Quaternion.identity);
+
+        //find point to spawn mirror at
+        Vector3 point;
+        do
+        {
+            point = new Vector3(Random.Range(-DataManager.Instance.LevelDataObject.MirrorSpawningBounds.x / 2.0f, DataManager.Instance.LevelDataObject.MirrorSpawningBounds.x / 2.0f), Random.Range(-DataManager.Instance.LevelDataObject.MirrorSpawningBounds.y / 2.0f, DataManager.Instance.LevelDataObject.MirrorSpawningBounds.y / 2.0f), 0.0f);
+        }
+        while (Vector3.Distance(point, DataManager.Instance.PlayerDataObject.Player.transform.position) < DataManager.Instance.LevelDataObject.MinMirrorSpawnDistance);
+
+        //spawn mirror
+        MirrorAIController mirror = (MirrorAIController)PoolManager.Instance.Spawn(DataManager.Instance.LevelDataObject.InitialMirror.name, point, Quaternion.identity);
         mirror.Init();
     }
 
