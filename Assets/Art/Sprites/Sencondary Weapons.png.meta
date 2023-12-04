@@ -1,0 +1,4217 @@
+fileFormatVersion: 2
+guid: 69fbaf5b3741d2e49bfc2ea88239f4c7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sencondary Weapons_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 908
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f6e769b0d32f04a9a1c038889a4189
+      internalID: -514467573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 944
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71901882c4a7a534d8d30aa0d763c31c
+      internalID: 1352885571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_2
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 952
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ffdb5728591ef40b15f51e505f2d83
+      internalID: 1772440861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_3
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 940
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dd84231d352eb449b1442035c3ea547
+      internalID: -431081227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_4
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 936
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8058b3f1e3cfc3418a6e9d517c3d87a
+      internalID: -35011905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 904
+        width: 180
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e64509569460cf49aedeb7aaa54dae4
+      internalID: -1283410883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_6
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 940
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6687d3744b2b7e4dbb26d8f6876c6a7
+      internalID: 1390772263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_7
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 908
+        width: 132
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d77fb2d5456e8d4fbbf2426b9d1cbff
+      internalID: 2057559797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_8
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 940
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 536695b33f4117b42abed364871bb16f
+      internalID: 1288530016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_9
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 932
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0506b66e8cc66ce4cb898c6ccc8dc2fa
+      internalID: -1603760200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_10
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 920
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3ef6c6b19b58c94c8da67d7f024a22d
+      internalID: -1755889999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_11
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 924
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6902549963b394e4eba338189e0adecb
+      internalID: 539271255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_12
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 920
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c4a9c7a8f2f154c9a13525ee0bf091
+      internalID: -331601674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_13
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 920
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21a7b8296e6581f469457ba65a80b37a
+      internalID: 120256551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_14
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 904
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c29b21207a1498f47b9d33b16b1ec858
+      internalID: -1976060546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_15
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 896
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77141877d368d3f4d8512275cd6d0047
+      internalID: -236253365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_16
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 904
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b2d99579c51b5f47ac42d5c17785449
+      internalID: -977138148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_17
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 904
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6e9511b322872e44a3a000d2298afe8
+      internalID: 221468969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_18
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 900
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbd1b5c5c7f1cf5458e244259dc80b8b
+      internalID: 848409495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_19
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 840
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d5853982d8a236418bf6b739936bb2f
+      internalID: 793654775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_20
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 848
+        width: 180
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee1298598d2c10a4784ff0608ff8c061
+      internalID: -1385887931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_21
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 840
+        width: 132
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a44995c13c59ba4e8f173b32a654b08
+      internalID: -319638382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_22
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 756
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3d2a4f2ed244b649ac5ad6689e144aa
+      internalID: 1226626450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_23
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 756
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d15f0430d3b31459fbbdbeb5b33666
+      internalID: 1384768527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_24
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 748
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d58ab61124963141b7e8b976db9f612
+      internalID: -1665120890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_25
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 752
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb2dfa8ed1f7e7439ddf584f310bbad
+      internalID: 1044418557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_26
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 752
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc1bca90a54dbc499cc21609f89b95d
+      internalID: -552342702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_27
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 752
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e1ee03eab99c74785a78ef2a714b29
+      internalID: 121925281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_28
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 748
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b21436ab3db4104795446c0ba2e3571
+      internalID: -1396380549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_29
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 748
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 391f3c6407cc6b34891fde66604fe3d9
+      internalID: 1030245985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_30
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 744
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ffd6dfdf78c2784c8b13e70456aab2e
+      internalID: 557489625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_31
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 740
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94528e8e532213f45836bfa3740cccc3
+      internalID: 1482179846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_32
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 744
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a84483d0de03c4b87a2fc5c3bda51c
+      internalID: 1911678773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_33
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 720
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7346b315a94cfa44e8d6626ead12cd44
+      internalID: -171417043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_34
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 712
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 386616d79334c324b9896494cee03d15
+      internalID: 183699989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_35
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 712
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b4d083bbfdb474d96bc133e4aa4635
+      internalID: 1152890944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_36
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 732
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6016c6d43b7bf14f878630e54221cc9
+      internalID: -753960386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_37
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 724
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b3dea3fac8dc6458ff9fd8c721db47
+      internalID: 213364341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_38
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 724
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f15b90576663dde47acb023ea0ced5e5
+      internalID: 1116003284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_39
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 724
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4c3fd3f328dc0c44a76d64c8865f489
+      internalID: 1394356336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_40
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 712
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fce14fa95315bcd4da93e48d547b763c
+      internalID: 2112614962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_41
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 628
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: debe021f085e846479bccaf3b62d60a8
+      internalID: -1734844271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_42
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 628
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2fd93015ef688049b4d7b498a3a49de
+      internalID: -1607871746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_43
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 704
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c175cc781d826448b3ac9f4a03ad753
+      internalID: -471626206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_44
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 704
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d505d14020a38e5469d3842aca888dba
+      internalID: 945992185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_45
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 704
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da92b2221e3cf434c97c1956ac36f488
+      internalID: -1113397298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_46
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 700
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 963145085bd2e0c49b557a6ce33440d2
+      internalID: -384839621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_47
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 692
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1fe0d5df9622a748b0e347a57495e86
+      internalID: -420432863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_48
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 688
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d493ddf85ca328b479f737243a494c8c
+      internalID: -1026340596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_49
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 688
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ee27e34573a8724ab7aed290e41ffb1
+      internalID: -1436027898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_50
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 688
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9883d66267d37ac41949ad2c4830f163
+      internalID: 779994938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_51
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 684
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5483d2cba75d54849b3c9f0d7233d360
+      internalID: -529485975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_52
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 676
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75772bfd379dd9040ba4932bd16bb370
+      internalID: -465197195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_53
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 672
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b67870e5dbf0dc749ad4b72ed7cd6f87
+      internalID: 286020186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_54
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 668
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced3b6dd2bc746b4fbe1c1a48808671b
+      internalID: 1722881469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_55
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 672
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c4110516361de40b47c0c2b2bb0326
+      internalID: -1271752681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_56
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 668
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6be9cc26f92cc684d97c2fce9efd5629
+      internalID: -2084064871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_57
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 668
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae3cdc807e376c4d9f8d2812ab9c1fb
+      internalID: 218429417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_58
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 660
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 048363a549895d842a27e0c175e088fa
+      internalID: -767919751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_59
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 640
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b9336f3b18ace649b6eb5d812a4caa9
+      internalID: -971078146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_60
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 656
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3a4f24e7226d5f4fb54818d4239d07e
+      internalID: -1939533138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_61
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 644
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5299fdd3f5c85ea4eb2bbd529bd04392
+      internalID: -537317887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_62
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 644
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bbc7a1810e63ea4eb6ac5c5f062baec
+      internalID: -306204371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_63
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 612
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d793560bfc651e346843889a66f52ce0
+      internalID: -1252276514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_64
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 616
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ef4941b995f9e4387b70a5bfe65b9d
+      internalID: 1414169326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_65
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 624
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2e34cf1367e0844bb82670c921622bc
+      internalID: -685018153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_66
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 624
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c60b76adf4e5a5749bdd06cb66ed7626
+      internalID: 736644272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_67
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 624
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f0154c50da1d534090075aa88e0885a
+      internalID: -882394223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_68
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 616
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8cdcd61a8ce15e48ba9124d8d6ee8e4
+      internalID: 1988273265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_69
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 608
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e4606ea25929348b2f3efc3205199c
+      internalID: -707310186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_70
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 612
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb6b3e0183a81a343b77a2416b0f3154
+      internalID: -2015189702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_71
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 604
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd837d1759f3c154a8b600342f645c13
+      internalID: -1161731430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_72
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 584
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c8e9b0c3a47704d8957c18c76ed664
+      internalID: 1150923478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_73
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 600
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ef096a7e7a8eb45948fca951951aec
+      internalID: -126254653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_74
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 596
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cbfae4573006c9409ade749115ec8b5
+      internalID: -1498547055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_75
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 596
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4e803dab603e84793ec32c023b0097
+      internalID: 379280403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_76
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 596
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c39366b3a2ee163438e239d1c9fdbc58
+      internalID: -296812907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_77
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 592
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 552b2008cec7fdb4298d2c1e4d6b591d
+      internalID: 75419355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_78
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 592
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f0b53c32a67c34bb5f592dca02aa0c
+      internalID: 832714567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_79
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 588
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93ada6787ff516c49b16a5a65590e686
+      internalID: 251009122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_80
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 588
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d54a4f37ec77246a33b0d4978effca
+      internalID: 122019656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_81
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 584
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a99f4a11ed44b4983305c36d41f26b
+      internalID: -458382353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_82
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 584
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1610f993cd3b37c49a0dc6772198fab7
+      internalID: 1629543382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_83
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 580
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56b08676885d9e45b9a1a2990612ef6
+      internalID: -13306508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_84
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 516
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa2a982be4092b469f473c9e28aafb9
+      internalID: -592545580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_85
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 512
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f60ae4accdf6c0b44a4b964390a13f67
+      internalID: 1815208290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_86
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 452
+        width: 116
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67ecbfa4eb8c01148935cb4b539aa990
+      internalID: 2085424077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_87
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 504
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f4f25b1775ea94a80345dc89ffe454
+      internalID: -1342562902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_88
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 448
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18bf4db296e0a3f42ae9103a1a86a0e8
+      internalID: 1581496479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_89
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 448
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb3e43d5a5e17b743836619281f3f351
+      internalID: 1753060129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_90
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 500
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acd2207a2a03182498a6343ef46d480a
+      internalID: 82639386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_91
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 500
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5892409fc271e6541a8d478a2f1beeea
+      internalID: -224369542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_92
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 492
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f4a56496ab4a1b41ba022b999860cb9
+      internalID: 1239877750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_93
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 484
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6349eab13526c94194f349517fad099
+      internalID: 114469070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_94
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 484
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34a057f5673e4b44e94ee12e2212634a
+      internalID: -633072443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_95
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 484
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc75437486e30584d921b9c506d05dc1
+      internalID: -1828307451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_96
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 484
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a1800cf08cdedc4da949ca4701ffad9
+      internalID: -61102638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_97
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 472
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a09a3f12760793a48a87f9e183552054
+      internalID: 1363210829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_98
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 452
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f090c0aa30af81846abf47208fc13bdc
+      internalID: 1303620182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_99
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 472
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 533e6b8d8986db443aecbe394cfc46df
+      internalID: 760663290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_100
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 452
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ec49c275e83b64397bfa16b7710222
+      internalID: 683194363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_101
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 464
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e8a7248edbfde14f948cc51eb52d079
+      internalID: 296332679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_102
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 464
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a3f8a0db5d012948af73ed245702184
+      internalID: 2051245962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_103
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 456
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d52c3cb27404a4f9c5982112cedb23
+      internalID: 880702379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_104
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 436
+        width: 36
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04b01524bb84c474082a0895411c9e4f
+      internalID: 1693825063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_105
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 456
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54c0cf89530646248981ad106b51ec9f
+      internalID: 2010169786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_106
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 452
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c3eb1a4dc209c4cac81bf2ac592f7c
+      internalID: -383940927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_107
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 432
+        width: 44
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14a65ebf77e0df74b8a74665eb819f86
+      internalID: -507046757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_108
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 448
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92ae701a1824cc54f872907d7d580b63
+      internalID: 1652711768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_109
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 388
+        width: 116
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9710f05acf68f8c499f8c9c18c1d5a69
+      internalID: 532768036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_110
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 440
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe29f2dfd345ba34aaea918e05844a20
+      internalID: -1701828116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_111
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 436
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f74f23a70a43a4dbf39fa53a999026
+      internalID: -364979482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_112
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 432
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 723fda400838f444894d938d46eb8fcc
+      internalID: 1208627615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_113
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 428
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 528d7250c7c963e4ba4dc4c82a7dc715
+      internalID: 1946352520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_114
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 416
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 582bad3f427e23546bdf445cefd47396
+      internalID: -101097387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_115
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 420
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7724e216058c8748930b104c7d524c1
+      internalID: 1902270308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_116
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 412
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448d3249604757e4ea6f0dfe3e664eb0
+      internalID: 743440631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_117
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 416
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bd181d1633c26742b4085b0edc2d0b8
+      internalID: -1660207713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_118
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 412
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80a1ad9552c949f4489b91b5324b7bb6
+      internalID: -32734294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_119
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 416
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef02dff773d2a154e8e325ee4b63f152
+      internalID: -93894845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_120
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 416
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b585c8d38a584a947b0c84db4e8477dd
+      internalID: -359753816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_121
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 388
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec960a4291f820a4c815e3b01d003e45
+      internalID: -113598030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_122
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 412
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0588defb9ffb1b8438f347cb05c46cc8
+      internalID: 37673614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_123
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 376
+        width: 44
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff0b06773e683545b7652c599d31870
+      internalID: 299321446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_124
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 404
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3315bac86d86544498a9d3de0dc1e34
+      internalID: -825236864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_125
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 400
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0479c102c8abf4341b0896e99eb0ab18
+      internalID: 674448480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_126
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 400
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8791804a9bca694795819bb223ae83e
+      internalID: -1167934868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_127
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 400
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ad1fe8444f72045867d375aa5898ac
+      internalID: -467955489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_128
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 392
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49ce707a101666e4995774bdb7d633bb
+      internalID: -338255741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_129
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 340
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a14190d39fcf26c498e401646df7c511
+      internalID: -88665160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_130
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 336
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0417ec03f66d64e4cb04034595a38b83
+      internalID: -519578870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_131
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 388
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4f3e3200e0a9e54687d8b6e0a58ff1b
+      internalID: -225141736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_132
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 388
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cddaa7027a1c07a499e5d225755c62d0
+      internalID: 780190537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_133
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 360
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3f89cbcc70a7b4f9e5395cc8c5dd89
+      internalID: -956172550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_134
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 352
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33c50f84cd95c9641858d567f487bc07
+      internalID: -1708241479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_135
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 384
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f875b4bf7a7a5fa4b9908440748a91b0
+      internalID: 2097283204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_136
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 368
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f53ccd7a7d7f249bfbdc94342ac919
+      internalID: 1786075147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_137
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 360
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64038ff72060c4d4baba89ff9f483bad
+      internalID: -1981292750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_138
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 360
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97811a1151e4e314e9631d6fa33c7853
+      internalID: 1082162860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_139
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 356
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55578e1857520ba42a3b9fbf192c9e5e
+      internalID: -1499936785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_140
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 344
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cfb2f1d64433cd4d95a778f3112f627
+      internalID: 1398451108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_141
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 336
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c9b87c2c5845ee499e23681c0c2eca8
+      internalID: -1914039065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_142
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 336
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d99248576df29764e832ee925c8c4f03
+      internalID: -807613364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_143
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 328
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d97d7785afb18764386109ccf91a6278
+      internalID: -1910656565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_144
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 324
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c92f475bb87074e8e654d545e83f46
+      internalID: 799548334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_145
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 324
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 432d1c72cbe50f9479be035307b03c9b
+      internalID: 801665555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_146
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 320
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a5a54d38bbb2b547b153677f2cedbf0
+      internalID: -1511069600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_147
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 312
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03096716acc9ae647a59060d8bc528cb
+      internalID: 1513477609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_148
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 304
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2282a7d8c1bd9c45b09a996eaf96204
+      internalID: 2074178072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_149
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 204
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 907821944e33e324c8150fca022efb47
+      internalID: -1049137603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_150
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 276
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b50c4486619e519459d748b4d058015a
+      internalID: 523339245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_151
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 272
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94ca1e29f37cc6c43ad30d9c0ee88ea0
+      internalID: -410385971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_152
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 268
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7efe525133de2324cb4de34c229b1ed8
+      internalID: -1106340378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_153
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 252
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99610e9abc13dd048b21a60afd141dd9
+      internalID: 868829673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_154
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 232
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7302f309e1868544788501b42956852e
+      internalID: -1854292788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_155
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 240
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4007e63f78f73a45ad366bd4a78a7c4
+      internalID: -1456224162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_156
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 236
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88bd1a70786210342a91800db36e2b9d
+      internalID: -231925706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_157
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 236
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d16a430d614bfe54f9d69ce8436f1269
+      internalID: -230242248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_158
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 228
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d50144810cd34d24db593daa0f07142f
+      internalID: 403190088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_159
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 148
+        width: 184
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5718441006cf095429ad00eac53897d2
+      internalID: 103125087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_160
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 180
+        width: 92
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5033eadc1f9cbf24983a7ab732a201a8
+      internalID: 131566086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_161
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 200
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 354a367702b410f4199273291766b012
+      internalID: 711197187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_162
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 196
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3967e123d81750b43ac404775024e0ca
+      internalID: -218894376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_163
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 196
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fbfce7785964b143b9f65572f40e58a
+      internalID: 353039558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_164
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 192
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a53a940ae6d492c4596c9112e410ee43
+      internalID: -1620648885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_165
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 176
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 934eb77d5951ec04c8c05e1b1ae66670
+      internalID: 1448237613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_166
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 172
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b43a4fc51e2fed841a16cf78b8f02079
+      internalID: 757755904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_167
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 168
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dafca60bd8731a74d8ea15ebd81c0ea1
+      internalID: 374214952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_168
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 160
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0536ecaa81bddc34ca3ab5d1a9f5e845
+      internalID: -315263634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_169
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 152
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96c5737e2c8bce4f966f3f695631401
+      internalID: 742696686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_170
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 152
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e825d7e2756caa3449d4ff7038593775
+      internalID: -949816154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_171
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 144
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d1879c3e9df7649955e13671b017a1
+      internalID: 270007973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_172
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 136
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce8fdbfa9a9edf240b9bd8eb6f450f37
+      internalID: -664735589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_173
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 44
+        width: 200
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4305034bb6525242b33739e12ab71e5
+      internalID: 1061352515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_174
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 140
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1e7ac3aea56d1f408b137ecb263d8b2
+      internalID: -15389511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_175
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 124
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f41eaf4475121e428fd1ea9d01f79ed
+      internalID: -1417337493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_176
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 116
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f94e51ca0bd279e41b86476664c9fb83
+      internalID: -1280500168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_177
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 112
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 433949956d4f0d9488f8df3be3160850
+      internalID: 1370353508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_178
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 108
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 345db41715964b846a102743a46b1b18
+      internalID: 672210930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_179
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 92
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba6311dbb427a345ac556428646f97e
+      internalID: -447032045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_180
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 76
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec61383e3dbb004fba585977ae04d44
+      internalID: 1936485801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_181
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 68
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64743f25cbd302442817d14f7bd9c4f2
+      internalID: -1121509409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_182
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 40
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 560833ae33d15f148bb644bdecfe8051
+      internalID: 99653220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_183
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 36
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf1f7555c7cbb8649b56ca112b83f9c0
+      internalID: -128899193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sencondary Weapons_184
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 32
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4b6b53add025c041bf2bfe2c551198f
+      internalID: -515329946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Sencondary Weapons_0: -514467573
+      Sencondary Weapons_1: 1352885571
+      Sencondary Weapons_10: -1755889999
+      Sencondary Weapons_100: 683194363
+      Sencondary Weapons_101: 296332679
+      Sencondary Weapons_102: 2051245962
+      Sencondary Weapons_103: 880702379
+      Sencondary Weapons_104: 1693825063
+      Sencondary Weapons_105: 2010169786
+      Sencondary Weapons_106: -383940927
+      Sencondary Weapons_107: -507046757
+      Sencondary Weapons_108: 1652711768
+      Sencondary Weapons_109: 532768036
+      Sencondary Weapons_11: 539271255
+      Sencondary Weapons_110: -1701828116
+      Sencondary Weapons_111: -364979482
+      Sencondary Weapons_112: 1208627615
+      Sencondary Weapons_113: 1946352520
+      Sencondary Weapons_114: -101097387
+      Sencondary Weapons_115: 1902270308
+      Sencondary Weapons_116: 743440631
+      Sencondary Weapons_117: -1660207713
+      Sencondary Weapons_118: -32734294
+      Sencondary Weapons_119: -93894845
+      Sencondary Weapons_12: -331601674
+      Sencondary Weapons_120: -359753816
+      Sencondary Weapons_121: -113598030
+      Sencondary Weapons_122: 37673614
+      Sencondary Weapons_123: 299321446
+      Sencondary Weapons_124: -825236864
+      Sencondary Weapons_125: 674448480
+      Sencondary Weapons_126: -1167934868
+      Sencondary Weapons_127: -467955489
+      Sencondary Weapons_128: -338255741
+      Sencondary Weapons_129: -88665160
+      Sencondary Weapons_13: 120256551
+      Sencondary Weapons_130: -519578870
+      Sencondary Weapons_131: -225141736
+      Sencondary Weapons_132: 780190537
+      Sencondary Weapons_133: -956172550
+      Sencondary Weapons_134: -1708241479
+      Sencondary Weapons_135: 2097283204
+      Sencondary Weapons_136: 1786075147
+      Sencondary Weapons_137: -1981292750
+      Sencondary Weapons_138: 1082162860
+      Sencondary Weapons_139: -1499936785
+      Sencondary Weapons_14: -1976060546
+      Sencondary Weapons_140: 1398451108
+      Sencondary Weapons_141: -1914039065
+      Sencondary Weapons_142: -807613364
+      Sencondary Weapons_143: -1910656565
+      Sencondary Weapons_144: 799548334
+      Sencondary Weapons_145: 801665555
+      Sencondary Weapons_146: -1511069600
+      Sencondary Weapons_147: 1513477609
+      Sencondary Weapons_148: 2074178072
+      Sencondary Weapons_149: -1049137603
+      Sencondary Weapons_15: -236253365
+      Sencondary Weapons_150: 523339245
+      Sencondary Weapons_151: -410385971
+      Sencondary Weapons_152: -1106340378
+      Sencondary Weapons_153: 868829673
+      Sencondary Weapons_154: -1854292788
+      Sencondary Weapons_155: -1456224162
+      Sencondary Weapons_156: -231925706
+      Sencondary Weapons_157: -230242248
+      Sencondary Weapons_158: 403190088
+      Sencondary Weapons_159: 103125087
+      Sencondary Weapons_16: -977138148
+      Sencondary Weapons_160: 131566086
+      Sencondary Weapons_161: 711197187
+      Sencondary Weapons_162: -218894376
+      Sencondary Weapons_163: 353039558
+      Sencondary Weapons_164: -1620648885
+      Sencondary Weapons_165: 1448237613
+      Sencondary Weapons_166: 757755904
+      Sencondary Weapons_167: 374214952
+      Sencondary Weapons_168: -315263634
+      Sencondary Weapons_169: 742696686
+      Sencondary Weapons_17: 221468969
+      Sencondary Weapons_170: -949816154
+      Sencondary Weapons_171: 270007973
+      Sencondary Weapons_172: -664735589
+      Sencondary Weapons_173: 1061352515
+      Sencondary Weapons_174: -15389511
+      Sencondary Weapons_175: -1417337493
+      Sencondary Weapons_176: -1280500168
+      Sencondary Weapons_177: 1370353508
+      Sencondary Weapons_178: 672210930
+      Sencondary Weapons_179: -447032045
+      Sencondary Weapons_18: 848409495
+      Sencondary Weapons_180: 1936485801
+      Sencondary Weapons_181: -1121509409
+      Sencondary Weapons_182: 99653220
+      Sencondary Weapons_183: -128899193
+      Sencondary Weapons_184: -515329946
+      Sencondary Weapons_19: 793654775
+      Sencondary Weapons_2: 1772440861
+      Sencondary Weapons_20: -1385887931
+      Sencondary Weapons_21: -319638382
+      Sencondary Weapons_22: 1226626450
+      Sencondary Weapons_23: 1384768527
+      Sencondary Weapons_24: -1665120890
+      Sencondary Weapons_25: 1044418557
+      Sencondary Weapons_26: -552342702
+      Sencondary Weapons_27: 121925281
+      Sencondary Weapons_28: -1396380549
+      Sencondary Weapons_29: 1030245985
+      Sencondary Weapons_3: -431081227
+      Sencondary Weapons_30: 557489625
+      Sencondary Weapons_31: 1482179846
+      Sencondary Weapons_32: 1911678773
+      Sencondary Weapons_33: -171417043
+      Sencondary Weapons_34: 183699989
+      Sencondary Weapons_35: 1152890944
+      Sencondary Weapons_36: -753960386
+      Sencondary Weapons_37: 213364341
+      Sencondary Weapons_38: 1116003284
+      Sencondary Weapons_39: 1394356336
+      Sencondary Weapons_4: -35011905
+      Sencondary Weapons_40: 2112614962
+      Sencondary Weapons_41: -1734844271
+      Sencondary Weapons_42: -1607871746
+      Sencondary Weapons_43: -471626206
+      Sencondary Weapons_44: 945992185
+      Sencondary Weapons_45: -1113397298
+      Sencondary Weapons_46: -384839621
+      Sencondary Weapons_47: -420432863
+      Sencondary Weapons_48: -1026340596
+      Sencondary Weapons_49: -1436027898
+      Sencondary Weapons_5: -1283410883
+      Sencondary Weapons_50: 779994938
+      Sencondary Weapons_51: -529485975
+      Sencondary Weapons_52: -465197195
+      Sencondary Weapons_53: 286020186
+      Sencondary Weapons_54: 1722881469
+      Sencondary Weapons_55: -1271752681
+      Sencondary Weapons_56: -2084064871
+      Sencondary Weapons_57: 218429417
+      Sencondary Weapons_58: -767919751
+      Sencondary Weapons_59: -971078146
+      Sencondary Weapons_6: 1390772263
+      Sencondary Weapons_60: -1939533138
+      Sencondary Weapons_61: -537317887
+      Sencondary Weapons_62: -306204371
+      Sencondary Weapons_63: -1252276514
+      Sencondary Weapons_64: 1414169326
+      Sencondary Weapons_65: -685018153
+      Sencondary Weapons_66: 736644272
+      Sencondary Weapons_67: -882394223
+      Sencondary Weapons_68: 1988273265
+      Sencondary Weapons_69: -707310186
+      Sencondary Weapons_7: 2057559797
+      Sencondary Weapons_70: -2015189702
+      Sencondary Weapons_71: -1161731430
+      Sencondary Weapons_72: 1150923478
+      Sencondary Weapons_73: -126254653
+      Sencondary Weapons_74: -1498547055
+      Sencondary Weapons_75: 379280403
+      Sencondary Weapons_76: -296812907
+      Sencondary Weapons_77: 75419355
+      Sencondary Weapons_78: 832714567
+      Sencondary Weapons_79: 251009122
+      Sencondary Weapons_8: 1288530016
+      Sencondary Weapons_80: 122019656
+      Sencondary Weapons_81: -458382353
+      Sencondary Weapons_82: 1629543382
+      Sencondary Weapons_83: -13306508
+      Sencondary Weapons_84: -592545580
+      Sencondary Weapons_85: 1815208290
+      Sencondary Weapons_86: 2085424077
+      Sencondary Weapons_87: -1342562902
+      Sencondary Weapons_88: 1581496479
+      Sencondary Weapons_89: 1753060129
+      Sencondary Weapons_9: -1603760200
+      Sencondary Weapons_90: 82639386
+      Sencondary Weapons_91: -224369542
+      Sencondary Weapons_92: 1239877750
+      Sencondary Weapons_93: 114469070
+      Sencondary Weapons_94: -633072443
+      Sencondary Weapons_95: -1828307451
+      Sencondary Weapons_96: -61102638
+      Sencondary Weapons_97: 1363210829
+      Sencondary Weapons_98: 1303620182
+      Sencondary Weapons_99: 760663290
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
