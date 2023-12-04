@@ -64,9 +64,8 @@ public class LevelData : ScriptableObject
 
     [Space(30)]
     [Header("Mirror Spawning")]
-    [SerializeField] [Range(10.0f, 500.0f)] public float MinMirrorSpawnDistance = 50.0f;
-    //if using boundless levels
-    [SerializeField] [Range(10.0f, 500.0f)] public float MaxMirrorSpawnDistance = 100.0f;
+    [SerializeField] public Vector2 MirrorSpawningBounds;
+    [SerializeField] [Range(10.0f, 25.0f)] public float MinMirrorSpawnDistance = 20.0f;
 
     [Space(30)]
     [Header("Wandering Enemy Spawning")]
