@@ -42,7 +42,11 @@ public class PlayerController : MonoBehaviour, IHitPoints
         }
 
         //apply movement
-        transform.Translate(_moveInput * DataManager.Instance.PlayerDataObject.MovementSpeed * DataManager.Instance.PlayerDataObject.MovementSpeedMultiplier * Time.deltaTime);        
+        Vector3 movement = _moveInput * DataManager.Instance.PlayerDataObject.MovementSpeed * DataManager.Instance.PlayerDataObject.MovementSpeedMultiplier * Time.deltaTime;
+        transform.Translate(movement);
+
+        //try trail of assurance
+        EventManager.Instance.TrailOfAssuranceTriggered.TriggerEvent(movement);
     }
 
     private void LookAtCursor()
@@ -59,7 +63,7 @@ public class PlayerController : MonoBehaviour, IHitPoints
     {
         _isAttackReady = false;
 
-        yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.PillowAttackCooldown);
+        yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.PillowAttackCooldown / DataManager.Instance.PlayerDataObject.CooldownDivisor);
 
         _isAttackReady = true;
     }
@@ -98,7 +102,7 @@ public class PlayerController : MonoBehaviour, IHitPoints
     {
         if (_isAttackReady)
         {
-            EventManager.Instance.PillowAttackTriggered.TriggerEvent(this, null);
+            EventManager.Instance.PillowAttackTriggered.TriggerEvent(transform.position);
             StartCoroutine(AttackCooldown());
         }
     }
@@ -107,7 +111,7 @@ public class PlayerController : MonoBehaviour, IHitPoints
     {
         if (DataManager.Instance.PlayerDataObject.SpecialCharge >= 1.0f)
         {
-            EventManager.Instance.SpecialAttackTriggered.TriggerEvent(this, null);
+            EventManager.Instance.SpecialAttackTriggered.TriggerEvent(transform.position);
             DataManager.Instance.PlayerDataObject.SpecialCharge = 0.0f;
         }
     }
@@ -157,7 +161,7 @@ public class PlayerController : MonoBehaviour, IHitPoints
         }
         
         //trigger effects
-        EventManager.Instance.ScreenShakeTriggered.TriggerEvent(transform.position);
+        EventManager.Instance.PlayerDamaged.TriggerEvent(transform.position);
         //TODO: trigger particle effect
     }
 

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4824175478654191290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4824175478654191288}
+  - component: {fileID: 4824175478654191291}
+  m_Layer: 0
+  m_Name: AttackManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4824175478654191288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824175478654191290}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4824175478654191291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824175478654191290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d2310f27faccb94fa08a222e90c62bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpecialAttackPrefab: {fileID: 5287804760286964879, guid: fcff320e4fb202d43a9bcbc2242592e8, type: 3}
+  TrailOfAssurancePrefab: {fileID: 7972306027579498285, guid: b1b40c9779313714390ac50e23eaf7a0, type: 3}
+  RadiantOrbPrefab: {fileID: 0}
+  FlickerOfHopePrefab: {fileID: 4569976889831228405, guid: 78ddb689302bde5438c6d02d6c153bdb, type: 3}
+  SparkOfJoyPrefab: {fileID: 3548867018522440983, guid: d32e89f0f0d8c8941a92aa709bb449bd, type: 3}
+  MoonBurstPrefab: {fileID: 6595658958662511130, guid: e51bf5337b103554cbc778beaa255c69, type: 3}
+  FloodOfHopePrefab: {fileID: 4569976889831228405, guid: 78ddb689302bde5438c6d02d6c153bdb, type: 3}
+  SurgeOfJoyPrefab: {fileID: 3548867018522440983, guid: d32e89f0f0d8c8941a92aa709bb449bd, type: 3}
+  SunBurstPrefab: {fileID: 6531879547042610020, guid: ee733d912470635449701a5af4b972b6, type: 3}
+  WaveOfReliefPrefab: {fileID: 5962781149813115066, guid: f70aa98c9297eea4090ba64d609db55e, type: 3}

@@ -175,7 +175,8 @@ public class EnemyAIController : PoolObject, IHitPoints
             StartCoroutine(Flash());
         }
 
-        //TODO: trigger effect
+        //trigger effects
+        EventManager.Instance.EnemyDamaged.TriggerEvent(transform.position);
     }
 
     public void OnDeath()
@@ -193,6 +194,9 @@ public class EnemyAIController : PoolObject, IHitPoints
             Debug.Log("Special: " + Mathf.FloorToInt(DataManager.Instance.PlayerDataObject.SpecialCharge * 100) + "%");
         }
         //END TEMP
+
+        //trigger effects
+        EventManager.Instance.EnemyKilled.TriggerEvent(transform.position);
 
         //despawn
         OnDespawn();
