@@ -27,6 +27,25 @@ public class GameManager : Singleton<GameManager>
         DataManager.Instance.PlayerDataObject.MovementSpeedMultiplier = 1.0f;
         DataManager.Instance.PlayerDataObject.DamageMultiplier = 1.0f;
         DataManager.Instance.PlayerDataObject.KnockbackMultiplier = 1.0f;
+        DataManager.Instance.PlayerDataObject.RangeMultiplier = 1.0f;
+        DataManager.Instance.PlayerDataObject.CooldownDivisor = 1.0f;
+        DataManager.Instance.PlayerDataObject.CountIncreaser = 0;
+        DataManager.Instance.PlayerDataObject.PierceIncreaser = 0;
+
+        //set secondary attack levels to 0
+        DataManager.Instance.PlayerDataObject.SecondaryAttacksAquired = new List<SecondaryAttack>();
+        DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel = 0; //TODO
+        DataManager.Instance.PlayerDataObject.ShieldOfLightLevel = 0; //TODO
+        DataManager.Instance.PlayerDataObject.WishingWellLevel = 0; //TODO
+        DataManager.Instance.PlayerDataObject.RadiantOrbLevel = 0; //TODO
+        DataManager.Instance.PlayerDataObject.FlickerOfHopeLevel = 0;
+        DataManager.Instance.PlayerDataObject.SparkOfJoyLevel = 0;
+        DataManager.Instance.PlayerDataObject.MoonBurstLevel = 0;
+        DataManager.Instance.PlayerDataObject.FloodOfHopeLevel = 0;
+        DataManager.Instance.PlayerDataObject.SurgeOfJoyLevel = 0;
+        DataManager.Instance.PlayerDataObject.SunBurstLevel = 0;
+        DataManager.Instance.PlayerDataObject.WaveOfReliefLevel = 0;
+        DataManager.Instance.PlayerDataObject.PendantOfLifeLevel = 0; //?
 
         //set initial special charge
         DataManager.Instance.PlayerDataObject.SpecialCharge = 1.0f;
@@ -40,6 +59,164 @@ public class GameManager : Singleton<GameManager>
         //hide and constain cursor
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    public void UpgradeAttack(SecondaryAttack secondaryAttack)
+    {
+        //do not upgrade unaquired attack if maximum number of attacks are aquired
+        if (!(DataManager.Instance.PlayerDataObject.SecondaryAttacksAquired.Count >= DataManager.Instance.PlayerDataObject.MaximumNumberOfSecondaryAttacks && DataManager.Instance.PlayerDataObject.SecondaryAttacksAquired.Contains(secondaryAttack)))
+        {
+            switch (secondaryAttack)
+            {
+                case SecondaryAttack.trailOfAssurace:
+                    //do not upgrade attack if fully upgraded
+                    if (DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel < DataManager.Instance.PlayerDataObject.TOAAttackDamage.Length - 1)
+                    {
+                        if (DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel == 0)
+                        {
+                            DataManager.Instance.PlayerDataObject.SecondaryAttacksAquired.Add(secondaryAttack);
+                        }
+                        DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel++;
+                    }
+                    break;
+
+                case SecondaryAttack.shieldOfLight:
+                    //do not upgrade attack if fully upgraded
+                    if (DataManager.Instance.PlayerDataObject.ShieldOfLightLevel < DataManager.Instance.PlayerDataObject.SOLAttackDamage.Length - 1)
+                    {
+                        if (DataManager.Instance.PlayerDataObject.ShieldOfLightLevel == 0)
+                        {
+                            DataManager.Instance.PlayerDataObject.SecondaryAttacksAquired.Add(secondaryAttack);
+                        }
+                        DataManager.Instance.PlayerDataObject.ShieldOfLightLevel++;
+                    }
+                    break;
+
+                case SecondaryAttack.wishingWell:
+                    //do not upgrade attack if fully upgraded
+                    if (DataManager.Instance.PlayerDataObject.WishingWellLevel < DataManager.Instance.PlayerDataObject.WWAttackDamage.Length - 1)
+                    {
+                        if (DataManager.Instance.PlayerDataObject.WishingWellLevel == 0)
+                        {
+                            DataManager.Instance.PlayerDataObject.SecondaryAttacksAquired.Add(secondaryAttack);
+                        }
+                        DataManager.Instance.PlayerDataObject.WishingWellLevel++;
+                    }
+                    break;
+
+                case SecondaryAttack.radiantOrb:
+                    //do not upgrade attack if fully upgraded
+                    if (DataManager.Instance.PlayerDataObject.RadiantOrbLevel < DataManager.Instance.PlayerDataObject.ROAttackDamage.Length - 1)
+                    {
+                        if (DataManager.Instance.PlayerDataObject.RadiantOrbLevel == 0)
+                        {
+                            DataManager.Instance.PlayerDataObject.SecondaryAttacksAquired.Add(secondaryAttack);
+                        }
+                        DataManager.Instance.PlayerDataObject.RadiantOrbLevel++;
+                    }
+                    break;
+
+                case SecondaryAttack.flickerOfHope:
+                    //do not upgrade attack if fully upgraded
+                    if (DataManager.Instance.PlayerDataObject.FlickerOfHopeLevel < DataManager.Instance.PlayerDataObject.FlickAttackDamage.Length - 1)
+                    {
+                        if (DataManager.Instance.PlayerDataObject.FlickerOfHopeLevel == 0)
+                        {
+                            DataManager.Instance.PlayerDataObject.SecondaryAttacksAquired.Add(secondaryAttack);
+                        }
+                        DataManager.Instance.PlayerDataObject.FlickerOfHopeLevel++;
+                    }
+                    break;
+
+                case SecondaryAttack.sparkOfJoy:
+                    //do not upgrade attack if fully upgraded
+                    if (DataManager.Instance.PlayerDataObject.SparkOfJoyLevel < DataManager.Instance.PlayerDataObject.SparkAttackDamage.Length - 1)
+                    {
+                        if (DataManager.Instance.PlayerDataObject.SparkOfJoyLevel == 0)
+                        {
+                            DataManager.Instance.PlayerDataObject.SecondaryAttacksAquired.Add(secondaryAttack);
+                        }
+                        DataManager.Instance.PlayerDataObject.SparkOfJoyLevel++;
+                    }
+                    break;
+
+                case SecondaryAttack.moonBurst:
+                    //do not upgrade attack if fully upgraded
+                    if (DataManager.Instance.PlayerDataObject.MoonBurstLevel < DataManager.Instance.PlayerDataObject.MBAttackDamage.Length - 1)
+                    {
+                        if (DataManager.Instance.PlayerDataObject.MoonBurstLevel == 0)
+                        {
+                            DataManager.Instance.PlayerDataObject.SecondaryAttacksAquired.Add(secondaryAttack);
+                        }
+                        DataManager.Instance.PlayerDataObject.MoonBurstLevel++;
+                    }
+                    break;
+
+                case SecondaryAttack.floodOfHope:
+                    //do not upgrade attack if fully upgraded
+                    if (DataManager.Instance.PlayerDataObject.FloodOfHopeLevel < DataManager.Instance.PlayerDataObject.FloodAttackDamage.Length - 1)
+                    {
+                        if (DataManager.Instance.PlayerDataObject.FloodOfHopeLevel == 0)
+                        {
+                            DataManager.Instance.PlayerDataObject.SecondaryAttacksAquired.Add(secondaryAttack);
+                        }
+                        DataManager.Instance.PlayerDataObject.FloodOfHopeLevel++;
+                    }
+                    break;
+
+                case SecondaryAttack.surgeOfJoy:
+                    //do not upgrade attack if fully upgraded
+                    if (DataManager.Instance.PlayerDataObject.SurgeOfJoyLevel < DataManager.Instance.PlayerDataObject.SurgeAttackDamage.Length - 1)
+                    {
+                        if (DataManager.Instance.PlayerDataObject.SurgeOfJoyLevel == 0)
+                        {
+                            DataManager.Instance.PlayerDataObject.SecondaryAttacksAquired.Add(secondaryAttack);
+                        }
+                        DataManager.Instance.PlayerDataObject.SurgeOfJoyLevel++;
+                    }
+                    break;
+
+                case SecondaryAttack.sunBurst:
+                    //do not upgrade attack if fully upgraded
+                    if (DataManager.Instance.PlayerDataObject.SunBurstLevel < DataManager.Instance.PlayerDataObject.SBAttackDamage.Length - 1)
+                    {
+                        if (DataManager.Instance.PlayerDataObject.SunBurstLevel == 0)
+                        {
+                            DataManager.Instance.PlayerDataObject.SecondaryAttacksAquired.Add(secondaryAttack);
+                        }
+                        DataManager.Instance.PlayerDataObject.SunBurstLevel++;
+                    }
+                    break;
+
+                case SecondaryAttack.waveOfRelief:
+                    //do not upgrade attack if fully upgraded
+                    if (DataManager.Instance.PlayerDataObject.WaveOfReliefLevel < DataManager.Instance.PlayerDataObject.WORAttackDamage.Length - 1)
+                    {
+                        if (DataManager.Instance.PlayerDataObject.WaveOfReliefLevel == 0)
+                        {
+                            DataManager.Instance.PlayerDataObject.SecondaryAttacksAquired.Add(secondaryAttack);
+                        }
+                        DataManager.Instance.PlayerDataObject.WaveOfReliefLevel++;
+                    }
+                    break;
+
+                case SecondaryAttack.pendantOfLife:
+                    //do not upgrade attack if fully upgraded
+                    if (DataManager.Instance.PlayerDataObject.PendantOfLifeLevel < DataManager.Instance.PlayerDataObject.POLHealingSpeed.Length - 1)
+                    {
+                        if (DataManager.Instance.PlayerDataObject.PendantOfLifeLevel == 0)
+                        {
+                            DataManager.Instance.PlayerDataObject.SecondaryAttacksAquired.Add(secondaryAttack);
+                        }
+                        DataManager.Instance.PlayerDataObject.PendantOfLifeLevel++;
+                    }
+                    break;
+
+                default:
+                    //do nothing
+                    break;
+            }
+        }
     }
 
     private IEnumerator SpawnInitialMirror()

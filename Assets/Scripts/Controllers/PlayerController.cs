@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour, IHitPoints
     {
         _isAttackReady = false;
 
-        yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.PillowAttackCooldown);
+        yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.PillowAttackCooldown / DataManager.Instance.PlayerDataObject.CooldownDivisor);
 
         _isAttackReady = true;
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpecialAttack : PoolObject
+public class SpecialAttack : LimitedTimeObject
 {
     private Animator _animator;
     private List<EnemyAIController> _enemiesHit;
@@ -16,7 +16,7 @@ public class SpecialAttack : PoolObject
         _enemiesHit = new List<EnemyAIController>();
     }
 
-    public void OnEnable()
+    private void OnEnable()
     {
         //trigger animation
         _animator.SetTrigger("OnAttack");
@@ -25,14 +25,7 @@ public class SpecialAttack : PoolObject
         _enemiesHit.Clear();
 
         //limit duration
-        StartCoroutine(LifeTimer());
-    }
-
-    private IEnumerator LifeTimer()
-    {
-        yield return new WaitForSecondsRealtime(DataManager.Instance.PlayerDataObject.SpecialAttackDuration);
-
-        OnDespawn();
+        StartCoroutine(LifeTimer(DataManager.Instance.PlayerDataObject.SpecialAttackDuration));
     }
 
     private void OnTriggerStay2D(Collider2D other)
