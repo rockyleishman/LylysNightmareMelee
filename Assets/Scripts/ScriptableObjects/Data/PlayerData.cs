@@ -45,21 +45,19 @@ public class PlayerData : ScriptableObject
     internal float SpecialCharge;
 
     [Header("Secondary Attack: \"Trail of Assurance\"")]
+    [SerializeField] public float SparkleTime = 0.25f;
+    [SerializeField] public float TOASpawnRadiusPerProjectile = 0.25f;
     [SerializeField] public float[] TOAAttackDamage = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
-    [SerializeField] public float[] TOAAttackKnockback = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
-    [SerializeField] public float[] TOAAttackRange = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
-    [SerializeField] public float[] TOAAttackCooldown = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
+    [SerializeField] public float[] TOAAttackRange = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f }; //inverse distance traveled to trigger
+    [SerializeField] public float[] TOAAttackCooldown = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f }; //inverse time to despawn
     [SerializeField] public int[] TOAAttackCount = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
     [SerializeField] public int[] TOAAttackPierce = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
     internal int TrailOfAssuranceLevel;
 
     [Header("Secondary Attack: \"Shield of Light\"")]
     [SerializeField] public float[] SOLAttackDamage = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
-    [SerializeField] public float[] SOLAttackKnockback = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] SOLAttackRange = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] SOLAttackCooldown = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
-    [SerializeField] public int[] SOLAttackCount = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
-    [SerializeField] public int[] SOLAttackPierce = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
     internal int ShieldOfLightLevel;
 
     [Header("Secondary Attack: \"Wishing Well\"")]
@@ -68,7 +66,6 @@ public class PlayerData : ScriptableObject
     [SerializeField] public float[] WWAttackRange = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] WWAttackCooldown = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public int[] WWAttackCount = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
-    [SerializeField] public int[] WWAttackPierce = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
     internal int WishingWellLevel;
 
     [Header("Secondary Attack: \"Radiant Orb\"")]
@@ -77,8 +74,6 @@ public class PlayerData : ScriptableObject
     [SerializeField] public float[] ROAttackKnockback = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] ROAttackRange = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] ROAttackCooldown = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
-    [SerializeField] public int[] ROAttackCount = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
-    [SerializeField] public int[] ROAttackPierce = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
     internal int RadiantOrbLevel;
 
     [Header("Secondary Attack: \"Flicker of Hope\"")]
@@ -87,7 +82,6 @@ public class PlayerData : ScriptableObject
     [SerializeField] public float[] FlickAttackKnockback = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] FlickAttackRange = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] FlickAttackCooldown = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
-    [SerializeField] public int[] FlickAttackCount = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
     [SerializeField] public int[] FlickAttackPierce = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
     internal int FlickerOfHopeLevel;
 
@@ -97,7 +91,6 @@ public class PlayerData : ScriptableObject
     [SerializeField] public float[] SparkAttackKnockback = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] SparkAttackRange = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] SparkAttackCooldown = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
-    [SerializeField] public int[] SparkAttackCount = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
     [SerializeField] public int[] SparkAttackPierce = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
     internal int SparkOfJoyLevel;
 

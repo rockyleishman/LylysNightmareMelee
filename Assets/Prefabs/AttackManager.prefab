@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpecialAttackPrefab: {fileID: 5287804760286964879, guid: fcff320e4fb202d43a9bcbc2242592e8, type: 3}
-  TrailOfAssurancePrefab: {fileID: 0}
+  TrailOfAssurancePrefab: {fileID: 7972306027579498285, guid: b1b40c9779313714390ac50e23eaf7a0, type: 3}
   RadiantOrbPrefab: {fileID: 0}
   FlickerOfHopePrefab: {fileID: 4569976889831228405, guid: 78ddb689302bde5438c6d02d6c153bdb, type: 3}
   SparkOfJoyPrefab: {fileID: 3548867018522440983, guid: d32e89f0f0d8c8941a92aa709bb449bd, type: 3}

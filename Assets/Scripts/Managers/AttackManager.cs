@@ -7,7 +7,7 @@ public class AttackManager : Singleton<AttackManager>
     //note: "Pillow Attack", "Shield of Light", & "Wishing Well" are attached to the Player object
 
     [SerializeField] public SpecialAttack SpecialAttackPrefab;
-    [SerializeField] public LimitedTimeObject TrailOfAssurancePrefab; //TODO
+    [SerializeField] public TrailOfAssurance TrailOfAssurancePrefab;
     [SerializeField] public LimitedTimeObject RadiantOrbPrefab; //TODO
     [SerializeField] public ProjectileAttack FlickerOfHopePrefab;
     [SerializeField] public ProjectileAttack SparkOfJoyPrefab;
@@ -22,6 +22,8 @@ public class AttackManager : Singleton<AttackManager>
     private bool _isSunBurstReady;
     private bool _isWaveOfReliefReady;
 
+    private Vector3 _accumulatedMovement;
+
     private void Start()
     {
         //ready triggerable secondary attacks
@@ -31,7 +33,6 @@ public class AttackManager : Singleton<AttackManager>
         _isWaveOfReliefReady = true;
 
         //start automatic secondary attack coroutines
-        StartCoroutine(TrailOfAssurance());
         StartCoroutine(RadiantOrb());
         StartCoroutine(FlickerOfHope());
         StartCoroutine(SparkOfJoy());
@@ -41,12 +42,30 @@ public class AttackManager : Singleton<AttackManager>
 
     #region public attack events
 
-    public void OnSpecialAttack(MonoBehaviour attacker, MonoBehaviour attackTarget)
+    public void OnSpecialAttack(Vector3 position)
     {
-        PoolManager.Instance.Spawn(SpecialAttackPrefab.name, attacker.transform.position, Quaternion.identity);
+        PoolManager.Instance.Spawn(SpecialAttackPrefab.name, position, Quaternion.identity);
     }
 
-    public void OnFloodOfHope(MonoBehaviour attacker, MonoBehaviour attackTarget)
+    public void OnTrailOfAssurance(Vector3 movement)
+    {
+        if (DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel > 0)
+        {
+            _accumulatedMovement += movement;
+
+            if (_accumulatedMovement.magnitude >= 1.0f / DataManager.Instance.PlayerDataObject.TOAAttackRange[DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel])
+            {
+                for (int i = DataManager.Instance.PlayerDataObject.TOAAttackCount[DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel]; i > 0; i--)
+                {
+                    SpawnTrailOfAssuraceProjectile();
+                }
+
+                _accumulatedMovement = Vector3.zero;
+            }
+        }
+    }
+
+    public void OnFloodOfHope(Vector3 position)
     {
         if (_isFloodOfHopeReady && DataManager.Instance.PlayerDataObject.FloodOfHopeLevel > 0)
         {
@@ -58,7 +77,7 @@ public class AttackManager : Singleton<AttackManager>
         }
     }
 
-    public void OnSurgeOfJoy(MonoBehaviour attacker, MonoBehaviour attackTarget)
+    public void OnSurgeOfJoy(Vector3 position)
     {
         if (_isSurgeOfJoyReady && DataManager.Instance.PlayerDataObject.SurgeOfJoyLevel > 0)
         {
@@ -70,7 +89,7 @@ public class AttackManager : Singleton<AttackManager>
         }
     }
 
-    public void OnSunBurst(MonoBehaviour attacker, MonoBehaviour attackTarget)
+    public void OnSunBurst(Vector3 position)
     {
         if (_isSunBurstReady && DataManager.Instance.PlayerDataObject.SunBurstLevel > 0)
         {
@@ -82,11 +101,11 @@ public class AttackManager : Singleton<AttackManager>
         }
     }
 
-    public void OnWaveOfRelief(MonoBehaviour attacker, MonoBehaviour attackTarget)
+    public void OnWaveOfRelief(Vector3 position)
     {
         if (_isWaveOfReliefReady && DataManager.Instance.PlayerDataObject.WaveOfReliefLevel > 0)
         {
-            PoolManager.Instance.Spawn(WaveOfReliefPrefab.name, attacker.transform.position, Quaternion.identity);
+            PoolManager.Instance.Spawn(WaveOfReliefPrefab.name, position, Quaternion.identity);
             StartCoroutine(WaveOfReliefCooldown());
         }
     }
@@ -94,19 +113,6 @@ public class AttackManager : Singleton<AttackManager>
     #endregion
 
     #region automatic attack coroutines
-
-    private IEnumerator TrailOfAssurance()
-    {
-        while (true)
-        {
-            if(DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel > 0)
-            {
-                SpawnTrailOfAssuraceProjectile();
-            }
-
-            yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.TOAAttackCooldown[DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel]);
-        }
-    }
 
     private IEnumerator RadiantOrb()
     {
@@ -127,10 +133,7 @@ public class AttackManager : Singleton<AttackManager>
         {
             if (DataManager.Instance.PlayerDataObject.FlickerOfHopeLevel > 0)
             {
-                for (int i = DataManager.Instance.PlayerDataObject.FlickAttackCount[DataManager.Instance.PlayerDataObject.FlickerOfHopeLevel]; i > 0; i--)
-                {
-                    SpawnFlickerOfHopeProjectile();
-                }
+                SpawnFlickerOfHopeProjectile();
             }
 
             yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.FlickAttackCooldown[DataManager.Instance.PlayerDataObject.FlickerOfHopeLevel]);
@@ -143,10 +146,7 @@ public class AttackManager : Singleton<AttackManager>
         {
             if (DataManager.Instance.PlayerDataObject.SparkOfJoyLevel > 0)
             {
-                for (int i = DataManager.Instance.PlayerDataObject.SparkAttackCount[DataManager.Instance.PlayerDataObject.SparkOfJoyLevel]; i > 0; i--)
-                {
-                    SpawnSparkOfJoyProjectile();
-                }
+                SpawnSparkOfJoyProjectile();
             }
 
             yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.SparkAttackCooldown[DataManager.Instance.PlayerDataObject.SparkOfJoyLevel]);
@@ -228,7 +228,14 @@ public class AttackManager : Singleton<AttackManager>
 
     private void SpawnTrailOfAssuraceProjectile()
     {
-        
+        //get spawn position deviation
+        Vector2 positionDeviation = Random.insideUnitCircle * Mathf.Sqrt(DataManager.Instance.PlayerDataObject.TOAAttackCount[DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel]) * DataManager.Instance.PlayerDataObject.TOASpawnRadiusPerProjectile;
+
+        //fire projectile
+        TrailOfAssurance projectile = (TrailOfAssurance)PoolManager.Instance.Spawn(TrailOfAssurancePrefab.name, DataManager.Instance.PlayerDataObject.Player.transform.position + new Vector3(positionDeviation.x, positionDeviation.y, 0.0f), Quaternion.identity);
+        projectile.InitProjectile(DataManager.Instance.PlayerDataObject.TOAAttackDamage[DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel],
+            DataManager.Instance.PlayerDataObject.TOAAttackCooldown[DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel],
+            DataManager.Instance.PlayerDataObject.TOAAttackPierce[DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel]);
     }
 
     private void SpawnRadiantOrbProjectile()
