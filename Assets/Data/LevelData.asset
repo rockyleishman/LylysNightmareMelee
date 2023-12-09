@@ -60,9 +60,9 @@ MonoBehaviour:
   FinalSpecialChargeDivisor: 5
   UseMaxSpecialChargeDivisor: 0
   MaxSpecialChargeDivisor: 100
-  InitialMaxEnemyCount: 25
-  FinalMaxEnemyCount: 400
-  AbsoluteMaxEnemyCount: 500
+  InitialMaxEnemyCount: 250
+  FinalMaxEnemyCount: 250
+  AbsoluteMaxEnemyCount: 250
   IncreaseThreatAfterMirrorDestruction: 1
   IncreaseThreatAfterTime: 1
   ThreatIncreaseTime: 60
