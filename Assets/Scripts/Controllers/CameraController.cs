@@ -23,6 +23,11 @@ public class CameraController : MonoBehaviour
     private float _moveTimer;
     private Vector3 _currentVelocityMoveCamera;
     private Camera _camera;
+    [SerializeField] [Range(0.0f, 10.0f)] public float TimeBeforeLookingAtMirror = 5.0f;
+    [SerializeField] [Range(0.0f, 10.0f)] public float TimeToMirror = 2.5f;
+    [SerializeField] [Range(0.0f, 10.0f)] public float TimeLookingAtMirror = 5.0f;
+    [SerializeField] [Range(0.0f, 10.0f)] public float TimeFromMirror = 2.5f;
+    [SerializeField] [Range(0.0f, 10.0f)] public float TimeAfterLookingAtMirror = 5.0f;
 
     private void Start()
     {
@@ -100,7 +105,41 @@ public class CameraController : MonoBehaviour
 
             _camera.transform.localPosition = Vector3.SmoothDamp(_camera.transform.localPosition, localPosition, ref _currentVelocityMoveCamera, time);
 
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
+    }
+
+    public void LookAtMirror(Vector3 mirrorPosition)
+    {
+        StartCoroutine(MoveCameraToFromMirror(mirrorPosition - transform.position));
+    }
+
+    private IEnumerator MoveCameraToFromMirror(Vector3 localPosition)
+    {
+        yield return new WaitForSecondsRealtime(TimeBeforeLookingAtMirror);
+
+        _moveTimer = TimeToMirror;
+        while (_moveTimer > 0.0f)
+        {
+            _moveTimer -= Time.unscaledDeltaTime;
+
+            _camera.transform.localPosition = Vector3.SmoothDamp(_camera.transform.localPosition, localPosition, ref _currentVelocityMoveCamera, TimeToMirror, Mathf.Infinity, Time.unscaledDeltaTime);
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        yield return new WaitForSecondsRealtime(TimeLookingAtMirror);
+
+        _moveTimer = TimeFromMirror;
+        while (_moveTimer > 0.0f)
+        {
+            _moveTimer -= Time.unscaledDeltaTime;
+
+            _camera.transform.localPosition = Vector3.SmoothDamp(_camera.transform.localPosition, Vector3.zero, ref _currentVelocityMoveCamera, TimeFromMirror, Mathf.Infinity, Time.unscaledDeltaTime);
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        yield return new WaitForSecondsRealtime(TimeAfterLookingAtMirror);
     }
 }

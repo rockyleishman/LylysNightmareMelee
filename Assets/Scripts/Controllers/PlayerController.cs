@@ -1,6 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 public class PlayerController : MonoBehaviour, IHitPoints
 {
@@ -8,6 +10,9 @@ public class PlayerController : MonoBehaviour, IHitPoints
     private GameObject CursorObject;
     private bool _isUsingMouse;
     private bool _isAttackReady;
+    private bool _isContinualAttackReady;
+
+    private InputAction _attackInputAction;
 
     public GameObject PlayerDirectionObject;
 
@@ -22,6 +27,10 @@ public class PlayerController : MonoBehaviour, IHitPoints
         //init private booleans
         _isUsingMouse = false;
         _isAttackReady = true;
+        _isContinualAttackReady = true;
+
+        //get button actions for held input
+        _attackInputAction = GetComponent<PlayerInput>().actions.FindAction("Attack");
     }
 
     private void Update()
@@ -30,7 +39,9 @@ public class PlayerController : MonoBehaviour, IHitPoints
         if (_isUsingMouse)
         {
             LookAtCursor();
-        }       
+        }
+
+        ContinualAttack();
     }
 
     private void Movement()
@@ -47,6 +58,19 @@ public class PlayerController : MonoBehaviour, IHitPoints
 
         //try trail of assurance
         EventManager.Instance.TrailOfAssuranceTriggered.TriggerEvent(movement);
+    }
+
+    private void ContinualAttack()
+    {
+        foreach (ButtonControl buttonControl in _attackInputAction.controls)
+        {
+            if (buttonControl.isPressed && _isContinualAttackReady && _isAttackReady)
+            {
+                EventManager.Instance.PillowAttackTriggered.TriggerEvent(transform.position);
+                StartCoroutine(AttackCooldown());
+                StartCoroutine(ContinualAttackCooldown());
+            }
+        }
     }
 
     private void LookAtCursor()
@@ -66,6 +90,15 @@ public class PlayerController : MonoBehaviour, IHitPoints
         yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.PillowAttackCooldown / DataManager.Instance.PlayerDataObject.CooldownDivisor);
 
         _isAttackReady = true;
+    }
+
+    private IEnumerator ContinualAttackCooldown()
+    {
+        _isContinualAttackReady = false;
+
+        yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.PillowAttackContinuousCooldown / DataManager.Instance.PlayerDataObject.CooldownDivisor);
+
+        _isContinualAttackReady = true;
     }
 
     #region InputMethods
@@ -105,6 +138,9 @@ public class PlayerController : MonoBehaviour, IHitPoints
             EventManager.Instance.PillowAttackTriggered.TriggerEvent(transform.position);
             StartCoroutine(AttackCooldown());
         }
+
+        //secondary attacks handle their own cooldowns
+        EventManager.Instance.SecondaryAttackTriggered.TriggerEvent(transform.position);
     }
 
     private void OnSpecialAttack()

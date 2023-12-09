@@ -77171,17 +77171,13 @@ PrefabInstance:
       propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1232133207}
-    - target: {fileID: 76713116988701585, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
-      propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnTrailOfAssurance
-      objectReference: {fileID: 0}
     - target: {fileID: 76713116988701678, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
       propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1232133207}
-    - target: {fileID: 76713116988701678, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
-      propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnSpecialAttack
+    - target: {fileID: 76713116988701679, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
+      propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 76713116988701679, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
       propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -77204,20 +77200,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1232133207}
     - target: {fileID: 76713116988701679, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
-      propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Attack
-      objectReference: {fileID: 0}
-    - target: {fileID: 76713116988701679, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
       propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: OnFloodOfHope
-      objectReference: {fileID: 0}
-    - target: {fileID: 76713116988701679, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
-      propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: OnSunBurst
       objectReference: {fileID: 0}
     - target: {fileID: 76713116988701679, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
-      propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: OnSurgeOfJoy
+      objectReference: {fileID: 0}
+    - target: {fileID: 76713116988701679, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
+      propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: OnWaveOfRelief
       objectReference: {fileID: 0}
     - target: {fileID: 76713116988701679, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
       propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
@@ -77231,6 +77223,22 @@ PrefabInstance:
       propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TriggerEnemyHitEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 8045877708092257070, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
+      propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1232133207}
+    - target: {fileID: 8045877708092257070, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
+      propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1232133207}
+    - target: {fileID: 8045877708092257070, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
+      propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1232133207}
+    - target: {fileID: 8045877708092257070, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
+      propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1232133207}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
 --- !u!1 &1988173302

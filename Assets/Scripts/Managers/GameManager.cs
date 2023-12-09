@@ -34,17 +34,17 @@ public class GameManager : Singleton<GameManager>
 
         //set secondary attack levels to 0
         DataManager.Instance.PlayerDataObject.SecondaryAttacksAquired = new List<SecondaryAttack>();
-        DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel = 1;
+        DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel = 0;
         DataManager.Instance.PlayerDataObject.ShieldOfLightLevel = 0; //TODO
         DataManager.Instance.PlayerDataObject.WishingWellLevel = 0; //TODO
         DataManager.Instance.PlayerDataObject.RadiantOrbLevel = 0; //TODO
         DataManager.Instance.PlayerDataObject.FlickerOfHopeLevel = 0;
         DataManager.Instance.PlayerDataObject.SparkOfJoyLevel = 0;
         DataManager.Instance.PlayerDataObject.MoonBurstLevel = 0;
-        DataManager.Instance.PlayerDataObject.FloodOfHopeLevel = 0;
-        DataManager.Instance.PlayerDataObject.SurgeOfJoyLevel = 0;
-        DataManager.Instance.PlayerDataObject.SunBurstLevel = 0;
-        DataManager.Instance.PlayerDataObject.WaveOfReliefLevel = 0;
+        DataManager.Instance.PlayerDataObject.FloodOfHopeLevel = 1;
+        DataManager.Instance.PlayerDataObject.SurgeOfJoyLevel = 1;
+        DataManager.Instance.PlayerDataObject.SunBurstLevel = 1;
+        DataManager.Instance.PlayerDataObject.WaveOfReliefLevel = 1;
         DataManager.Instance.PlayerDataObject.PendantOfLifeLevel = 0; //need to see health to test
 
         //set initial special charge

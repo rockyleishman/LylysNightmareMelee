@@ -4,6 +4,7 @@ public class EventManager : Singleton<EventManager>
 {
     [Header("Attack Events")]
     [SerializeField] public GameEvent PillowAttackTriggered;
+    [SerializeField] public GameEvent SecondaryAttackTriggered;
     [SerializeField] public GameEvent SpecialAttackTriggered;
     [SerializeField] public GameEvent TrailOfAssuranceTriggered;
 
