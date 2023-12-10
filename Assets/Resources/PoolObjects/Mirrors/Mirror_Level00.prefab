@@ -104,10 +104,10 @@ MonoBehaviour:
   - {fileID: 2045083803306708946}
   AmountOfMirrorsToSpawnOnDeath: 02000000
   Enemies: 00000000
-  MinEnemiesPerWave: 3
-  MaxEnemiesPerWave: 5
-  MinWaveSpawnTime: 10
-  MaxWaveSpawnTime: 15
+  MinEnemiesPerWave: 2
+  MaxEnemiesPerWave: 2
+  MinWaveSpawnTime: 4
+  MaxWaveSpawnTime: 5
 --- !u!58 &3105849887686562801
 CircleCollider2D:
   m_ObjectHideFlags: 0

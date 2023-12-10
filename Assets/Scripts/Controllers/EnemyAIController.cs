@@ -8,10 +8,6 @@ public class EnemyAIController : PoolObject, IHitPoints
     private Color _defaultColour;
     private Color _flashColour;
 
-    [Header("Death Settings")]
-    [SerializeField] public int Points = 10;
-    [SerializeField] [Range(0.0f, 1.0f)] public float SpecialCharge = 0.02f;
-
     [Header("Stats")]
     [SerializeField] [Range(1.0f, 1000.0f)] public float BaseHP = 10.0f;
     private float _maxHP;
@@ -26,19 +22,32 @@ public class EnemyAIController : PoolObject, IHitPoints
     [SerializeField] [Range(0.0f, 20.0f)] public float BaseWeight = 1.0f;
     private float _weight;
 
+    [Header("Death Settings")]
+    [SerializeField] public int Points = 10;
+    [SerializeField] [Range(0.0f, 1.0f)] public float SpecialCharge = 0.02f;
+
     [Header("Optimization")]
     [SerializeField] [Range(0.001f, 1.0f)] public float TargetAcquisitionTime = 0.1f;
     private Vector3 _target;
+
+    [Header("Animation")]
+    [SerializeField] public Sprite[] Sprites;
+    [SerializeField] public float KeyframeTime = 0.5f;
+    private int _spriteIndex;
 
     private void Awake()
     {
         //get renderer & colour
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _defaultColour = _spriteRenderer.color;
-        _flashColour = Color.Lerp(_defaultColour, Color.white, DataManager.Instance.LevelDataObject.FlashWhiteness);
+        _defaultColour = _spriteRenderer.material.color;
+        _flashColour = _defaultColour * DataManager.Instance.LevelDataObject.FlashColourMultiplier;
+
+        //DO NOT DELETE
+        StartCoroutine(Animate());
+        //END DO NOT DELETE
 
         //init
-        Init();        
+        Init();
     }
 
     public void Init()
@@ -60,11 +69,16 @@ public class EnemyAIController : PoolObject, IHitPoints
         //init weight
         _weight = BaseWeight * DataManager.Instance.LevelDataObject.NewEnemyWeightMultiplier;
 
-        //find target
-        StartCoroutine(FindTarget());
-
         //reset colour
-        _spriteRenderer.color = _defaultColour;
+        _spriteRenderer.material.color = _defaultColour;
+
+        //animate
+        StopCoroutine(Animate());
+        StartCoroutine(Animate());
+
+        //find target
+        StopCoroutine(FindTarget());
+        StartCoroutine(FindTarget());
     }
 
     private void Update()
@@ -78,16 +92,40 @@ public class EnemyAIController : PoolObject, IHitPoints
         transform.Translate((_target - transform.position).normalized * _speed * Time.deltaTime);
     }
 
-    private void Animate()
+    private IEnumerator Animate()
     {
-        //TODO: animation
+        _spriteIndex = 0;
+        _spriteRenderer.sprite = Sprites[_spriteIndex];
+
+        while (true)
+        {
+            yield return new WaitForSeconds(KeyframeTime);
+
+            _spriteIndex++;
+            if (_spriteIndex >= Sprites.Length)
+            {
+                _spriteIndex = 0;
+            }
+            _spriteRenderer.sprite = Sprites[_spriteIndex];
+        }
     }
 
     private IEnumerator FindTarget()
     {
         while (true)
         {
+            //find target
             _target = DataManager.Instance.PlayerDataObject.Player.transform.position;
+
+            //orient sprite towards target
+            if (_target.x > transform.position.x)
+            {
+                _spriteRenderer.flipX = true;
+            }
+            else
+            {
+                _spriteRenderer.flipX = false;
+            }
 
             yield return new WaitForSeconds(TargetAcquisitionTime);
         }
@@ -100,12 +138,12 @@ public class EnemyAIController : PoolObject, IHitPoints
 
     private IEnumerator ApplyKnockback(float knockback)
     {
-        float remainingKnockback = knockback;
+        float remainingTime = DataManager.Instance.LevelDataObject.KnockbackTime;
 
-        while (remainingKnockback > 0.0f)
+        while (remainingTime > 0.0f)
         {
-            float deltaKnockback = knockback * Time.deltaTime / DataManager.Instance.LevelDataObject.KnockbackTime;
-            remainingKnockback -= deltaKnockback;
+            float deltaKnockback = knockback / _weight * Time.deltaTime / DataManager.Instance.LevelDataObject.KnockbackTime;
+            remainingTime -= Time.deltaTime;
 
             //apply knockback movement
             transform.Translate((_target - transform.position).normalized * -deltaKnockback);
@@ -116,11 +154,11 @@ public class EnemyAIController : PoolObject, IHitPoints
 
     private IEnumerator Flash()
     {
-        _spriteRenderer.color = _flashColour;
+        _spriteRenderer.material.color = _flashColour;
 
         yield return new WaitForSeconds(DataManager.Instance.LevelDataObject.FlashTime);
 
-        _spriteRenderer.color = _defaultColour;
+        _spriteRenderer.material.color = _defaultColour;
     }
 
     private void OnCollisionStay2D(Collision2D collision)

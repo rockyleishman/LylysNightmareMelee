@@ -34,17 +34,17 @@ public class GameManager : Singleton<GameManager>
 
         //set secondary attack levels to 0
         DataManager.Instance.PlayerDataObject.SecondaryAttacksAquired = new List<SecondaryAttack>();
-        DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel = 0;
+        DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel = 1;
         DataManager.Instance.PlayerDataObject.ShieldOfLightLevel = 0; //TODO
         DataManager.Instance.PlayerDataObject.WishingWellLevel = 0; //TODO
         DataManager.Instance.PlayerDataObject.RadiantOrbLevel = 0; //TODO
         DataManager.Instance.PlayerDataObject.FlickerOfHopeLevel = 0;
         DataManager.Instance.PlayerDataObject.SparkOfJoyLevel = 0;
         DataManager.Instance.PlayerDataObject.MoonBurstLevel = 0;
-        DataManager.Instance.PlayerDataObject.FloodOfHopeLevel = 1;
-        DataManager.Instance.PlayerDataObject.SurgeOfJoyLevel = 1;
-        DataManager.Instance.PlayerDataObject.SunBurstLevel = 1;
-        DataManager.Instance.PlayerDataObject.WaveOfReliefLevel = 1;
+        DataManager.Instance.PlayerDataObject.FloodOfHopeLevel = 0;
+        DataManager.Instance.PlayerDataObject.SurgeOfJoyLevel = 0;
+        DataManager.Instance.PlayerDataObject.SunBurstLevel = 0;
+        DataManager.Instance.PlayerDataObject.WaveOfReliefLevel = 0;
         DataManager.Instance.PlayerDataObject.PendantOfLifeLevel = 0; //need to see health to test
 
         //set initial special charge
@@ -59,6 +59,88 @@ public class GameManager : Singleton<GameManager>
         //hide and constain cursor
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    public void UpgradeStat(StatModifier statModifier)
+    {
+        switch (statModifier)
+        {
+            case StatModifier.hitPoints:
+                float proposedHPMultiplier = DataManager.Instance.PlayerDataObject.HPMultiplier += DataManager.Instance.PlayerDataObject.HPMultiplierIncPerLevel;
+                if (DataManager.Instance.PlayerDataObject.MaxHPMultiplier > 0 && proposedHPMultiplier > DataManager.Instance.PlayerDataObject.MaxHPMultiplier)
+                {
+                    proposedHPMultiplier = DataManager.Instance.PlayerDataObject.MaxHPMultiplier;
+                }
+                DataManager.Instance.PlayerDataObject.HPMultiplier = proposedHPMultiplier;
+                break;
+
+            case StatModifier.movementSpeed:
+                float proposedMovementSpeedMultiplier = DataManager.Instance.PlayerDataObject.MovementSpeedMultiplier += DataManager.Instance.PlayerDataObject.MovementSpeedMultiplierIncPerLevel;
+                if (DataManager.Instance.PlayerDataObject.MaxMovementSpeedMultiplier > 0 && proposedMovementSpeedMultiplier > DataManager.Instance.PlayerDataObject.MaxMovementSpeedMultiplier)
+                {
+                    proposedMovementSpeedMultiplier = DataManager.Instance.PlayerDataObject.MaxMovementSpeedMultiplier;
+                }
+                DataManager.Instance.PlayerDataObject.MovementSpeedMultiplier = proposedMovementSpeedMultiplier;
+                break;
+
+            case StatModifier.damage:
+                float proposedDamageMultiplier = DataManager.Instance.PlayerDataObject.DamageMultiplier += DataManager.Instance.PlayerDataObject.DamageMultiplierIncPerLevel;
+                if (DataManager.Instance.PlayerDataObject.MaxDamageMultiplier > 0 && proposedDamageMultiplier > DataManager.Instance.PlayerDataObject.MaxDamageMultiplier)
+                {
+                    proposedDamageMultiplier = DataManager.Instance.PlayerDataObject.MaxDamageMultiplier;
+                }
+                DataManager.Instance.PlayerDataObject.DamageMultiplier = proposedDamageMultiplier;
+                break;
+
+            case StatModifier.knockback:
+                float proposedKnockbackMultiplier = DataManager.Instance.PlayerDataObject.KnockbackMultiplier += DataManager.Instance.PlayerDataObject.KnockbackMultiplierIncPerLevel;
+                if (DataManager.Instance.PlayerDataObject.MaxKnockbackMultiplier > 0 && proposedKnockbackMultiplier > DataManager.Instance.PlayerDataObject.MaxKnockbackMultiplier)
+                {
+                    proposedKnockbackMultiplier = DataManager.Instance.PlayerDataObject.MaxKnockbackMultiplier;
+                }
+                DataManager.Instance.PlayerDataObject.KnockbackMultiplier = proposedKnockbackMultiplier;
+                break;
+
+            case StatModifier.range:
+                float proposedRangeMultiplier = DataManager.Instance.PlayerDataObject.RangeMultiplier += DataManager.Instance.PlayerDataObject.RangeMultiplierIncPerLevel;
+                if (DataManager.Instance.PlayerDataObject.MaxRangeMultiplier > 0 && proposedRangeMultiplier > DataManager.Instance.PlayerDataObject.MaxRangeMultiplier)
+                {
+                    proposedRangeMultiplier = DataManager.Instance.PlayerDataObject.MaxRangeMultiplier;
+                }
+                DataManager.Instance.PlayerDataObject.RangeMultiplier = proposedRangeMultiplier;
+                break;
+
+            case StatModifier.cooldown:
+                float proposedCooldownDivisor = DataManager.Instance.PlayerDataObject.CooldownDivisor += DataManager.Instance.PlayerDataObject.CooldownDivisorIncPerLevel;
+                if (DataManager.Instance.PlayerDataObject.MaxCooldownDivisor > 0 && proposedCooldownDivisor > DataManager.Instance.PlayerDataObject.MaxCooldownDivisor)
+                {
+                    proposedCooldownDivisor = DataManager.Instance.PlayerDataObject.MaxCooldownDivisor;
+                }
+                DataManager.Instance.PlayerDataObject.CooldownDivisor = proposedCooldownDivisor;
+                break;
+
+            case StatModifier.count:
+                int proposedCountIncreaser = DataManager.Instance.PlayerDataObject.CountIncreaser += DataManager.Instance.PlayerDataObject.CountIncreaserIncPerLevel;
+                if (DataManager.Instance.PlayerDataObject.MaxCountIncreaser > 0 && proposedCountIncreaser > DataManager.Instance.PlayerDataObject.MaxCountIncreaser)
+                {
+                    proposedCountIncreaser = DataManager.Instance.PlayerDataObject.MaxCountIncreaser;
+                }
+                DataManager.Instance.PlayerDataObject.CountIncreaser = proposedCountIncreaser;
+                break;
+
+            case StatModifier.pierce:
+                int proposedPierceIncreaser = DataManager.Instance.PlayerDataObject.PierceIncreaser += DataManager.Instance.PlayerDataObject.PierceIncreaserIncPerLevel;
+                if (DataManager.Instance.PlayerDataObject.MaxPierceIncreaser > 0 && proposedPierceIncreaser > DataManager.Instance.PlayerDataObject.MaxPierceIncreaser)
+                {
+                    proposedPierceIncreaser = DataManager.Instance.PlayerDataObject.MaxPierceIncreaser;
+                }
+                DataManager.Instance.PlayerDataObject.PierceIncreaser = proposedPierceIncreaser;
+                break;
+
+            default:
+                //do nothing
+                break;
+        }
     }
 
     public void UpgradeAttack(SecondaryAttack secondaryAttack)

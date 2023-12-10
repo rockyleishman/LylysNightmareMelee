@@ -18,6 +18,19 @@ public enum SecondaryAttack
     pendantOfLife
 }
 
+//stat types
+public enum StatModifier
+{
+    hitPoints,
+    movementSpeed,
+    damage,
+    knockback,
+    range,
+    cooldown,
+    count,
+    pierce
+}
+
 [CreateAssetMenu(fileName = "PlayerDataObject", menuName = "Data/PlayerDataObject", order = 0)]
 public class PlayerData : ScriptableObject
 {
@@ -31,6 +44,32 @@ public class PlayerData : ScriptableObject
     [SerializeField] public float MovementSpeed = 5.0f;
     [SerializeField] public int MaximumNumberOfSecondaryAttacks = 4;
     internal List<SecondaryAttack> SecondaryAttacksAquired;
+
+    [Header("Stat Modifiers (Max 0 is Infinity)")]
+    [SerializeField] public float HPMultiplierIncPerLevel = 0.1f;
+    [SerializeField] public float MaxHPMultiplier = 0.0f;
+    internal float HPMultiplier;
+    [SerializeField] public float MovementSpeedMultiplierIncPerLevel = 0.1f;
+    [SerializeField] public float MaxMovementSpeedMultiplier = 2.0f;
+    internal float MovementSpeedMultiplier;
+    [SerializeField] public float DamageMultiplierIncPerLevel = 0.1f;
+    [SerializeField] public float MaxDamageMultiplier = 0.0f;
+    internal float DamageMultiplier;
+    [SerializeField] public float KnockbackMultiplierIncPerLevel = 0.1f;
+    [SerializeField] public float MaxKnockbackMultiplier = 0.0f;
+    internal float KnockbackMultiplier;
+    [SerializeField] public float RangeMultiplierIncPerLevel = 0.1f;
+    [SerializeField] public float MaxRangeMultiplier = 0.0f;
+    internal float RangeMultiplier;
+    [SerializeField] public float CooldownDivisorIncPerLevel = 0.1f;
+    [SerializeField] public float MaxCooldownDivisor = 0.0f;
+    internal float CooldownDivisor;
+    [SerializeField] public int CountIncreaserIncPerLevel = 1;
+    [SerializeField] public int MaxCountIncreaser = 5;
+    internal int CountIncreaser;
+    [SerializeField] public int PierceIncreaserIncPerLevel = 1;
+    [SerializeField] public int MaxPierceIncreaser = 5;
+    internal int PierceIncreaser;
 
     [Header("Pillow Attack")]
     [SerializeField] public float PillowAttackDamage = 10.0f;
@@ -145,21 +184,10 @@ public class PlayerData : ScriptableObject
     [SerializeField] public float[] WORAttackKnockback = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] WORAttackRange = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] WORAttackCooldown = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
-    [SerializeField] public int[] WORAttackCount = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
     [SerializeField] public int[] WORAttackPierce = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
     internal int WaveOfReliefLevel;
 
     [Header("Secondary Attack: \"Pendant of Life\"")]
     [SerializeField] public float[] POLHealingSpeed = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     internal int PendantOfLifeLevel;
-
-    //multipliers
-    internal float HPMultiplier;
-    internal float MovementSpeedMultiplier;
-    internal float DamageMultiplier;
-    internal float KnockbackMultiplier;
-    internal float RangeMultiplier;
-    internal float CooldownDivisor;
-    internal int CountIncreaser;
-    internal int PierceIncreaser;
 }

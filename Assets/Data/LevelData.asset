@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FlashTime: 0.1
   FlashWhiteness: 0.75
+  FlashColourMultiplier: 2
   InitialMirror: {fileID: 2045083803306708946, guid: 75bafd5c864aa5944bc3acf6208b8dac, type: 3}
   Enemy0: {fileID: 6575186996657049984, guid: 5fe16c4e33b51b542a6a8a7c7e15f243, type: 3}
   Enemy1: {fileID: 0}
@@ -38,7 +39,7 @@ MonoBehaviour:
   BaseMaxSpawnTime: 5
   SpawnDistance: 25
   FinalCalculatedThreatLevel: 15
-  FinalHPMultiplier: 3
+  FinalHPMultiplier: 2
   UseMaxHPMultiplier: 0
   MaxHPMultiplier: 1000
   FinalDamageMultiplier: 3
