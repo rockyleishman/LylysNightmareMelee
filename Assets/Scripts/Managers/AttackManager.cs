@@ -44,7 +44,8 @@ public class AttackManager : Singleton<AttackManager>
 
     public void OnSpecialAttack(Vector3 position)
     {
-        PoolManager.Instance.Spawn(SpecialAttackPrefab.name, position, Quaternion.identity);
+        SpecialAttack projectile = (SpecialAttack)PoolManager.Instance.Spawn(SpecialAttackPrefab.name, position, Quaternion.identity);
+        projectile.transform.SetParent(transform);
     }
 
     public void OnTrailOfAssurance(Vector3 movement)
@@ -105,7 +106,8 @@ public class AttackManager : Singleton<AttackManager>
     {
         if (_isWaveOfReliefReady && DataManager.Instance.PlayerDataObject.WaveOfReliefLevel > 0)
         {
-            PoolManager.Instance.Spawn(WaveOfReliefPrefab.name, position, Quaternion.identity);
+            WaveOfRelief projectile = (WaveOfRelief)PoolManager.Instance.Spawn(WaveOfReliefPrefab.name, position, Quaternion.identity);
+            projectile.transform.SetParent(transform);
             StartCoroutine(WaveOfReliefCooldown());
         }
     }
@@ -236,6 +238,7 @@ public class AttackManager : Singleton<AttackManager>
         projectile.InitProjectile(DataManager.Instance.PlayerDataObject.TOAAttackDamage[DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel],
             DataManager.Instance.PlayerDataObject.TOAAttackCooldown[DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel],
             DataManager.Instance.PlayerDataObject.TOAAttackPierce[DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel]);
+        projectile.transform.SetParent(transform);
     }
 
     private void SpawnRadiantOrbProjectile()
@@ -252,6 +255,7 @@ public class AttackManager : Singleton<AttackManager>
             DataManager.Instance.PlayerDataObject.FlickAttackKnockback[DataManager.Instance.PlayerDataObject.FlickerOfHopeLevel], 
             DataManager.Instance.PlayerDataObject.FlickAttackRange[DataManager.Instance.PlayerDataObject.FlickerOfHopeLevel], 
             DataManager.Instance.PlayerDataObject.FlickAttackPierce[DataManager.Instance.PlayerDataObject.FlickerOfHopeLevel]);
+        projectile.transform.SetParent(transform);
     }
 
     private void SpawnSparkOfJoyProjectile()
@@ -278,6 +282,7 @@ public class AttackManager : Singleton<AttackManager>
             DataManager.Instance.PlayerDataObject.SparkAttackKnockback[DataManager.Instance.PlayerDataObject.SparkOfJoyLevel],
             DataManager.Instance.PlayerDataObject.SparkAttackRange[DataManager.Instance.PlayerDataObject.SparkOfJoyLevel],
             DataManager.Instance.PlayerDataObject.SparkAttackPierce[DataManager.Instance.PlayerDataObject.SparkOfJoyLevel]);
+        projectile.transform.SetParent(transform);
     }
 
     private void SpawnMoonBurstProjectile(Vector3 direction)
@@ -289,6 +294,7 @@ public class AttackManager : Singleton<AttackManager>
             DataManager.Instance.PlayerDataObject.MBAttackKnockback[DataManager.Instance.PlayerDataObject.MoonBurstLevel],
             DataManager.Instance.PlayerDataObject.MBAttackRange[DataManager.Instance.PlayerDataObject.MoonBurstLevel],
             DataManager.Instance.PlayerDataObject.MBAttackPierce[DataManager.Instance.PlayerDataObject.MoonBurstLevel]);
+        projectile.transform.SetParent(transform);
     }
 
     private void SpawnFloodOfHopeProjectile(int projectileIndex)
@@ -300,6 +306,7 @@ public class AttackManager : Singleton<AttackManager>
             DataManager.Instance.PlayerDataObject.FloodAttackKnockback[DataManager.Instance.PlayerDataObject.FloodOfHopeLevel],
             DataManager.Instance.PlayerDataObject.FloodAttackRange[DataManager.Instance.PlayerDataObject.FloodOfHopeLevel],
             DataManager.Instance.PlayerDataObject.FloodAttackPierce[DataManager.Instance.PlayerDataObject.FloodOfHopeLevel]);
+        projectile.transform.SetParent(transform);
     }
 
     private void SpawnSurgeOfJoyProjectile(int projectileIndex)
@@ -326,6 +333,7 @@ public class AttackManager : Singleton<AttackManager>
             DataManager.Instance.PlayerDataObject.SurgeAttackKnockback[DataManager.Instance.PlayerDataObject.SurgeOfJoyLevel],
             DataManager.Instance.PlayerDataObject.SurgeAttackRange[DataManager.Instance.PlayerDataObject.SurgeOfJoyLevel],
             DataManager.Instance.PlayerDataObject.SurgeAttackPierce[DataManager.Instance.PlayerDataObject.SurgeOfJoyLevel]);
+        projectile.transform.SetParent(transform);
     }
 
     private void SpawnSunBurstProjectile(Vector3 direction)
@@ -337,6 +345,7 @@ public class AttackManager : Singleton<AttackManager>
             DataManager.Instance.PlayerDataObject.SBAttackKnockback[DataManager.Instance.PlayerDataObject.SunBurstLevel],
             DataManager.Instance.PlayerDataObject.SBAttackRange[DataManager.Instance.PlayerDataObject.SunBurstLevel],
             DataManager.Instance.PlayerDataObject.SBAttackPierce[DataManager.Instance.PlayerDataObject.SunBurstLevel]);
+        projectile.transform.SetParent(transform);
     }
 
     #endregion

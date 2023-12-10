@@ -34,7 +34,7 @@ public class LevelData : ScriptableObject
 {
     [Header("Feedback")]
     [SerializeField] public float FlashTime = 0.1f;
-    [SerializeField] public float FlashWhiteness = 0.75f;
+    [SerializeField] public float FlashColourMultiplier = 2.0f;
 
     [Header("Initial Mirror Prefab")]
     [SerializeField] public MirrorAIController InitialMirror;

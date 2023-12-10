@@ -76328,10 +76328,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8584223916558988051, guid: 3767bd2a0c9daf64589d0547dec2a9e6, type: 3}
-      propertyPath: m_SortingLayer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 8584223916570095490, guid: 3767bd2a0c9daf64589d0547dec2a9e6, type: 3}
       propertyPath: m_Name
       value: Player
@@ -76339,6 +76335,34 @@ PrefabInstance:
     - target: {fileID: 8584223916570095501, guid: 3767bd2a0c9daf64589d0547dec2a9e6, type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584223916570095501, guid: 3767bd2a0c9daf64589d0547dec2a9e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584223916570095501, guid: 3767bd2a0c9daf64589d0547dec2a9e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584223916570095501, guid: 3767bd2a0c9daf64589d0547dec2a9e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584223916570095501, guid: 3767bd2a0c9daf64589d0547dec2a9e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584223916570095501, guid: 3767bd2a0c9daf64589d0547dec2a9e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584223916570095501, guid: 3767bd2a0c9daf64589d0547dec2a9e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584223916570095501, guid: 3767bd2a0c9daf64589d0547dec2a9e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8584223916570095501, guid: 3767bd2a0c9daf64589d0547dec2a9e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -77180,6 +77204,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 76713116988701679, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
+      propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 76713116988701679, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
       propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 975158436}
@@ -77201,7 +77229,7 @@ PrefabInstance:
       objectReference: {fileID: 1232133207}
     - target: {fileID: 76713116988701679, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
       propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: OnSunBurst
+      value: OnFloodOfHope
       objectReference: {fileID: 0}
     - target: {fileID: 76713116988701679, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
       propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -77214,6 +77242,14 @@ PrefabInstance:
     - target: {fileID: 76713116988701679, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
       propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
       value: OnWaveOfRelief
+      objectReference: {fileID: 0}
+    - target: {fileID: 76713116988701679, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
+      propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AttackManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 76713116988701679, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
+      propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6171917618708584068, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
       propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target

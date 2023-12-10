@@ -20,12 +20,6 @@ public class MirrorAIController : PoolObject
     [SerializeField] public float MinWaveSpawnTime = 10.0f;
     [SerializeField] public float MaxWaveSpawnTime = 15.0f;
 
-    //TODO: remove start when mirror spawning implemented
-    private void Start()
-    {
-        Init();
-    }
-
     public void Init()
     {
         StartCoroutine(WaveTimer());

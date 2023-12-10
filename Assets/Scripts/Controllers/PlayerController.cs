@@ -14,7 +14,10 @@ public class PlayerController : MonoBehaviour, IHitPoints
 
     private InputAction _attackInputAction;
 
-    public GameObject PlayerDirectionObject;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    private Animator _animator;
+
+    [SerializeField] public GameObject PlayerDirectionObject;
 
     private void Start()
     {
@@ -23,6 +26,9 @@ public class PlayerController : MonoBehaviour, IHitPoints
 
         //get cursor reference
         CursorObject = DataManager.Instance.PlayerDataObject.CursorObject;
+
+        //get animator
+        _animator = GetComponent<Animator>();
 
         //init private booleans
         _isUsingMouse = false;
@@ -53,11 +59,42 @@ public class PlayerController : MonoBehaviour, IHitPoints
         }
 
         //apply movement
-        Vector3 movement = _moveInput * DataManager.Instance.PlayerDataObject.MovementSpeed * DataManager.Instance.PlayerDataObject.MovementSpeedMultiplier * Time.deltaTime;
+        Vector3 velocity = _moveInput * DataManager.Instance.PlayerDataObject.MovementSpeed * DataManager.Instance.PlayerDataObject.MovementSpeedMultiplier;
+        Vector3 movement = velocity * Time.deltaTime;
         transform.Translate(movement);
 
         //try trail of assurance
         EventManager.Instance.TrailOfAssuranceTriggered.TriggerEvent(movement);
+
+        //animation
+        _animator.SetFloat("Speed", velocity.magnitude);
+        if (Mathf.Abs(velocity.y) > Mathf.Abs(velocity.x))
+        {
+            if (velocity.y > 0.0f)
+            {
+                //up
+                _animator.SetInteger("Direction", 2);
+            }
+            else
+            {
+                //down
+                _animator.SetInteger("Direction", 0);
+            }
+        }
+        else if (Mathf.Abs(velocity.y) < Mathf.Abs(velocity.x))
+        {
+            _animator.SetInteger("Direction", 1);
+            if (velocity.x > 0.0f)
+            {
+                //right
+                _spriteRenderer.flipX = true;
+            }
+            else
+            {
+                //left
+                _spriteRenderer.flipX = false;
+            }
+        }
     }
 
     private void ContinualAttack()
