@@ -50,7 +50,7 @@ public class MirrorAIController : PoolObject
     public void Death()
     {
         //add score
-        DataManager.Instance.PlayerDataObject.Score += Score;
+        ScoreManager.Instance.AddScore(Score);
 
         //spawn new mirrors
         for (int i = AmountOfMirrorsToSpawnOnDeath[Random.Range(0, AmountOfMirrorsToSpawnOnDeath.Length)]; i > 0; i--)

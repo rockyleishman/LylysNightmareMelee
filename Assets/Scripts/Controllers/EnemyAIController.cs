@@ -233,7 +233,7 @@ public class EnemyAIController : PoolObject, IHitPoints
     private void Death()
     {
         //add score
-        DataManager.Instance.PlayerDataObject.Score += Score;
+        ScoreManager.Instance.AddScore(Score);
 
         //TEMP
         if (DataManager.Instance.PlayerDataObject.SpecialCharge > 1.0f)
