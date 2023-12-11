@@ -35,13 +35,14 @@ public class SpecialAttack : LimitedTimeObject
 
         if (enemy != null && !_enemiesHit.Contains(enemy))
         {
-            enemy.DamageHP(DataManager.Instance.PlayerDataObject.SpecialAttackDamage * DataManager.Instance.PlayerDataObject.DamageMultiplier);
+            enemy.OnDeathNoCharge();
+            /*enemy.DamageHP(DataManager.Instance.PlayerDataObject.SpecialAttackDamage * DataManager.Instance.PlayerDataObject.DamageMultiplier);
 
             if (enemy.isActiveAndEnabled)
             {
                 enemy.Knockback(DataManager.Instance.PlayerDataObject.SpecialAttackKnockback * DataManager.Instance.PlayerDataObject.KnockbackMultiplier);
                 _enemiesHit.Add(enemy);
-            }
+            }*/
         }
         else if (mirror != null)
         {

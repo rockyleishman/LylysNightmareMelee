@@ -23,7 +23,7 @@ public class EnemyAIController : PoolObject, IHitPoints
     private float _weight;
 
     [Header("Death Settings")]
-    [SerializeField] public int Points = 10;
+    [SerializeField] public int Score = 10;
     [SerializeField] [Range(0.0f, 1.0f)] public float SpecialCharge = 0.02f;
 
     [Header("Optimization")]
@@ -219,8 +219,21 @@ public class EnemyAIController : PoolObject, IHitPoints
 
     public void OnDeath()
     {
-        //charge special
+        //add special charge
         DataManager.Instance.PlayerDataObject.SpecialCharge += SpecialCharge;
+
+        Death();
+    }
+
+    public void OnDeathNoCharge()
+    {
+        Death();
+    }
+
+    private void Death()
+    {
+        //add score
+        DataManager.Instance.PlayerDataObject.Score += Score;
 
         //TEMP
         if (DataManager.Instance.PlayerDataObject.SpecialCharge > 1.0f)
