@@ -44,6 +44,7 @@ public class PlayerData : ScriptableObject
     [SerializeField] public float MovementSpeed = 5.0f;
     [SerializeField] public int MaximumNumberOfSecondaryAttacks = 4;
     internal List<SecondaryAttack> SecondaryAttacksAquired;
+    internal int Score;
 
     [Header("Stat Modifiers (Max 0 is Infinity)")]
     [SerializeField] public float HPMultiplierIncPerLevel = 0.1f;

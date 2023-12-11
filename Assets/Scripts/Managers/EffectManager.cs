@@ -12,7 +12,8 @@ public class EffectManager : Singleton<EffectManager>
     public void TriggerPlayerHitEffect(Vector3 position)
     {
         //spawn effect
-        PoolManager.Instance.Spawn(PlayerHitEffect.name, position, Quaternion.identity);
+        Effect effect = (Effect)PoolManager.Instance.Spawn(PlayerHitEffect.name, position, Quaternion.identity);
+        effect.transform.SetParent(transform);
 
         //TODO: play audio
 
@@ -20,7 +21,8 @@ public class EffectManager : Singleton<EffectManager>
     public void TriggerPlayerDeathEffect(Vector3 position)
     {
         //spawn effect
-        PoolManager.Instance.Spawn(PlayerDeathEffect.name, position, Quaternion.identity);
+        Effect effect = (Effect)PoolManager.Instance.Spawn(PlayerDeathEffect.name, position, Quaternion.identity);
+        effect.transform.SetParent(transform);
 
         //TODO: play audio
 
@@ -38,7 +40,8 @@ public class EffectManager : Singleton<EffectManager>
     public void TriggerEnemyDeathEffect(Vector3 position)
     {
         //spawn effect
-        PoolManager.Instance.Spawn(EnemyDeathEffect.name, position, Quaternion.FromToRotation(Vector3.down, position - DataManager.Instance.PlayerDataObject.Player.transform.position));
+        Effect effect = (Effect)PoolManager.Instance.Spawn(EnemyDeathEffect.name, position, Quaternion.FromToRotation(Vector3.down, position - DataManager.Instance.PlayerDataObject.Player.transform.position));
+        effect.transform.SetParent(transform);
 
         //TODO: play audio
 

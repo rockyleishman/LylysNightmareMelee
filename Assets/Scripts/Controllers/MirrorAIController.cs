@@ -5,7 +5,7 @@ using UnityEngine;
 public class MirrorAIController : PoolObject
 {
     [Header("Death Settings")]
-    [SerializeField] public int Points = 1000;
+    [SerializeField] public int Score = 1000;
     [Space]
     [SerializeField] public MirrorAIController[] MirrorsToSpawnOnDeath;
     [SerializeField] [Range(1, 10)] public int[] AmountOfMirrorsToSpawnOnDeath;
@@ -49,6 +49,9 @@ public class MirrorAIController : PoolObject
 
     public void Death()
     {
+        //add score
+        DataManager.Instance.PlayerDataObject.Score += Score;
+
         //spawn new mirrors
         for (int i = AmountOfMirrorsToSpawnOnDeath[Random.Range(0, AmountOfMirrorsToSpawnOnDeath.Length)]; i > 0; i--)
         {

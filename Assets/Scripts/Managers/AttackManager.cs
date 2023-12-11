@@ -120,12 +120,12 @@ public class AttackManager : Singleton<AttackManager>
     {
         while (true)
         {
+            yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.ROAttackCooldown[DataManager.Instance.PlayerDataObject.RadiantOrbLevel]);
+
             if (DataManager.Instance.PlayerDataObject.RadiantOrbLevel > 0)
             {
                 SpawnRadiantOrbProjectile();
             }
-
-            yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.ROAttackCooldown[DataManager.Instance.PlayerDataObject.RadiantOrbLevel]);
         }
     }
 
@@ -133,12 +133,12 @@ public class AttackManager : Singleton<AttackManager>
     {
         while (true)
         {
+            yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.FlickAttackCooldown[DataManager.Instance.PlayerDataObject.FlickerOfHopeLevel]);
+
             if (DataManager.Instance.PlayerDataObject.FlickerOfHopeLevel > 0)
             {
                 SpawnFlickerOfHopeProjectile();
             }
-
-            yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.FlickAttackCooldown[DataManager.Instance.PlayerDataObject.FlickerOfHopeLevel]);
         }
     }
 
@@ -146,12 +146,12 @@ public class AttackManager : Singleton<AttackManager>
     {
         while (true)
         {
+            yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.SparkAttackCooldown[DataManager.Instance.PlayerDataObject.SparkOfJoyLevel]);
+
             if (DataManager.Instance.PlayerDataObject.SparkOfJoyLevel > 0)
             {
                 SpawnSparkOfJoyProjectile();
             }
-
-            yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.SparkAttackCooldown[DataManager.Instance.PlayerDataObject.SparkOfJoyLevel]);
         }
     }
 
@@ -159,6 +159,8 @@ public class AttackManager : Singleton<AttackManager>
     {
         while (true)
         {
+            yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.MBAttackCooldown[DataManager.Instance.PlayerDataObject.MoonBurstLevel]);
+
             if (DataManager.Instance.PlayerDataObject.MoonBurstLevel > 0)
             {
                 for (int i = DataManager.Instance.PlayerDataObject.MBAttackCount[DataManager.Instance.PlayerDataObject.MoonBurstLevel]; i > 0; i--)
@@ -166,8 +168,6 @@ public class AttackManager : Singleton<AttackManager>
                     SpawnMoonBurstProjectile(Quaternion.Euler(0.0f, 0.0f, 360.0f * i / DataManager.Instance.PlayerDataObject.MBAttackCount[DataManager.Instance.PlayerDataObject.MoonBurstLevel]) * -DataManager.Instance.PlayerDataObject.Player.PlayerDirectionObject.transform.up);
                 }
             }
-
-            yield return new WaitForSeconds(DataManager.Instance.PlayerDataObject.MBAttackCooldown[DataManager.Instance.PlayerDataObject.MoonBurstLevel]);
         }
     }
 
