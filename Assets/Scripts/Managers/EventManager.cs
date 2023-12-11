@@ -9,6 +9,8 @@ public class EventManager : Singleton<EventManager>
     [SerializeField] public GameEvent TrailOfAssuranceTriggered;
 
     [Header("Game Events")]
+    [SerializeField] public GameEvent PauseGame;
+    [SerializeField] public GameEvent ResumeGame;
     [SerializeField] public GameEvent IncreaseThreat;
 
     [Header("Player Events")]

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
@@ -12,6 +11,7 @@ public class PlayerController : MonoBehaviour, IHitPoints
     private bool _isAttackReady;
     private bool _isContinualAttackReady;
 
+    private PlayerInput _playerInput;
     private InputAction _attackInputAction;
 
     [SerializeField] private SpriteRenderer _spriteRenderer;
@@ -35,8 +35,11 @@ public class PlayerController : MonoBehaviour, IHitPoints
         _isAttackReady = true;
         _isContinualAttackReady = true;
 
+        //get player input
+        _playerInput = GetComponent<PlayerInput>();
+
         //get button actions for held input
-        _attackInputAction = GetComponent<PlayerInput>().actions.FindAction("Attack");
+        _attackInputAction = _playerInput.actions.FindAction("Attack");
     }
 
     private void Update()
@@ -191,7 +194,12 @@ public class PlayerController : MonoBehaviour, IHitPoints
 
     private void OnPause()
     {
-        //TODO: pause game
+        EventManager.Instance.PauseGame.TriggerEvent(transform.position);
+    }
+
+    private void OnResume()
+    {
+        EventManager.Instance.ResumeGame.TriggerEvent(transform.position);
     }
 
     #endregion
