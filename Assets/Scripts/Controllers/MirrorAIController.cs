@@ -69,6 +69,9 @@ public class MirrorAIController : PoolObject
             //spawn mirror
             MirrorAIController mirror = (MirrorAIController)PoolManager.Instance.Spawn(mirrorName, point, Quaternion.identity);
             mirror.Init();
+
+            //Look at new Mirror
+            EventManager.Instance.LookAtMirrorTriggered.TriggerEvent(mirror.transform.position);
         }
 
         //increase threat

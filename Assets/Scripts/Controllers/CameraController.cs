@@ -111,35 +111,37 @@ public class CameraController : MonoBehaviour
 
     public void LookAtMirror(Vector3 mirrorPosition)
     {
-        StartCoroutine(MoveCameraToFromMirror(mirrorPosition - transform.position));
+        Debug.Log("look at mirror");
+        StartCoroutine(MoveCameraToFromMirror(new Vector3(mirrorPosition.x - transform.position.x, mirrorPosition.y - transform.position.y, _camera.transform.localPosition.z)));
     }
 
     private IEnumerator MoveCameraToFromMirror(Vector3 localPosition)
     {
+        Vector3 initialCameraPosition = _camera.transform.localPosition;
+
         yield return new WaitForSecondsRealtime(TimeBeforeLookingAtMirror);
 
-        _moveTimer = TimeToMirror;
-        while (_moveTimer > 0.0f)
+        Time.timeScale = 0.001f;
+
+        while (Vector3.Distance(_camera.transform.localPosition, localPosition) > 0.1)
         {
-            _moveTimer -= Time.unscaledDeltaTime;
+            _camera.transform.localPosition = Vector3.SmoothDamp(_camera.transform.localPosition, localPosition, ref _currentVelocityMoveCamera, TimeToMirror / 3, Mathf.Infinity, Time.unscaledDeltaTime);
 
-            _camera.transform.localPosition = Vector3.SmoothDamp(_camera.transform.localPosition, localPosition, ref _currentVelocityMoveCamera, TimeToMirror, Mathf.Infinity, Time.unscaledDeltaTime);
-
-            yield return new WaitForFixedUpdate();
+            yield return null;
         }
 
         yield return new WaitForSecondsRealtime(TimeLookingAtMirror);
 
         _moveTimer = TimeFromMirror;
-        while (_moveTimer > 0.0f)
+        while (Vector3.Distance(_camera.transform.localPosition, initialCameraPosition) > 0.1)
         {
-            _moveTimer -= Time.unscaledDeltaTime;
+            _camera.transform.localPosition = Vector3.SmoothDamp(_camera.transform.localPosition, initialCameraPosition, ref _currentVelocityMoveCamera, TimeFromMirror / 3, Mathf.Infinity, Time.unscaledDeltaTime);
 
-            _camera.transform.localPosition = Vector3.SmoothDamp(_camera.transform.localPosition, Vector3.zero, ref _currentVelocityMoveCamera, TimeFromMirror, Mathf.Infinity, Time.unscaledDeltaTime);
-
-            yield return new WaitForFixedUpdate();
+            yield return null;
         }
 
         yield return new WaitForSecondsRealtime(TimeAfterLookingAtMirror);
+
+        Time.timeScale = 1.0f;
     }
 }

@@ -41,7 +41,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
-        Debug.Log("Game Paused");
     }
 
     public void LoadMenu()

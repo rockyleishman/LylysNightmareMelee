@@ -53,6 +53,11 @@ MonoBehaviour:
   ScreenShakeTime: 0.25
   ScreenShakeRevolutions: 16
   ScreenShakeIntensity: 8
+  TimeBeforeLookingAtMirror: 1
+  TimeToMirror: 2
+  TimeLookingAtMirror: 1
+  TimeFromMirror: 2
+  TimeAfterLookingAtMirror: 1
 --- !u!1 &9190993841258254144
 GameObject:
   m_ObjectHideFlags: 0
