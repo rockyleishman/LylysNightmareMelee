@@ -77390,7 +77390,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1221260886
 GameObject:
@@ -78079,7 +78079,7 @@ RectTransform:
   - {fileID: 511553813}
   - {fileID: 732528271}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -78424,6 +78424,10 @@ PrefabInstance:
       propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 732528272}
+    - target: {fileID: 3977384347823398370, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
+      propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 37885255}
     - target: {fileID: 6171917618708584068, guid: 7f175294cc102c149b1ac3f2ee2aa646, type: 3}
       propertyPath: OnEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -79053,7 +79057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8812783395065985888, guid: 90d0bdf7367769a44a9043021aa03569, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8812783395065985888, guid: 90d0bdf7367769a44a9043021aa03569, type: 3}
       propertyPath: m_LocalPosition.x

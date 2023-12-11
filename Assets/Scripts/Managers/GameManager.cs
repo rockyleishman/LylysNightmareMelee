@@ -319,6 +319,9 @@ public class GameManager : Singleton<GameManager>
         //spawn mirror
         MirrorAIController mirror = (MirrorAIController)PoolManager.Instance.Spawn(DataManager.Instance.LevelDataObject.InitialMirror.name, point, Quaternion.identity);
         mirror.Init();
+
+        //Look at new Mirror
+        EventManager.Instance.LookAtMirrorTriggered.TriggerEvent(mirror.transform.position);
     }
 
     private IEnumerator TimedThreatIncrease()

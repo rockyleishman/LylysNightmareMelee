@@ -23,4 +23,5 @@ public class EventManager : Singleton<EventManager>
 
     [Header("Camera Events")]
     [SerializeField] public GameEvent ScreenShakeTriggered;
+    [SerializeField] public GameEvent LookAtMirrorTriggered;
 }
