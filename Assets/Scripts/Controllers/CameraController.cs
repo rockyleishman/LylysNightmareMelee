@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
     private float _moveTimer;
     private Vector3 _currentVelocityMoveCamera;
     private Camera _camera;
-    [SerializeField] [Range(0.0f, 10.0f)] public float TimeBeforeLookingAtMirror = 5.0f;
+    [SerializeField] [Range(0.0f, 10.0f)] public float TimeBeforeLookingAtMirror = 10.0f;
     [SerializeField] [Range(0.0f, 10.0f)] public float TimeToMirror = 2.5f;
     [SerializeField] [Range(0.0f, 10.0f)] public float TimeLookingAtMirror = 5.0f;
     [SerializeField] [Range(0.0f, 10.0f)] public float TimeFromMirror = 2.5f;
@@ -111,7 +111,7 @@ public class CameraController : MonoBehaviour
 
     public void LookAtMirror(Vector3 mirrorPosition)
     {
-        Debug.Log("look at mirror");
+        StopAllCoroutines();
         StartCoroutine(MoveCameraToFromMirror(new Vector3(mirrorPosition.x - transform.position.x, mirrorPosition.y - transform.position.y, _camera.transform.localPosition.z)));
     }
 
@@ -119,7 +119,7 @@ public class CameraController : MonoBehaviour
     {
         Vector3 initialCameraPosition = _camera.transform.localPosition;
 
-        yield return new WaitForSecondsRealtime(TimeBeforeLookingAtMirror);
+        yield return new WaitForSeconds(TimeBeforeLookingAtMirror);
 
         Time.timeScale = 0.001f;
 

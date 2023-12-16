@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 1975910867
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6e2006981e07d3c44ad4ab870ce9a3b7, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c64369d61fa4480478261ac2b495445b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,12 +99,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caa2ff92109392498124a6b23e5dd25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: 1000
+  Score: 667
   MirrorsToSpawnOnDeath:
-  - {fileID: 2045083803306708946}
-  AmountOfMirrorsToSpawnOnDeath: 01000000
+  - {fileID: 2045083803306708946, guid: d0e139cb5b334c846b05cba13242e2c4, type: 3}
+  - {fileID: 2045083803306708946, guid: 66b8833ca41c4854d9a131a328b070aa, type: 3}
+  AmountOfMirrorsToSpawnOnDeath: 02000000
   Enemies: 00000000
-  MinEnemiesPerWave: 3
+  MinEnemiesPerWave: 4
   MaxEnemiesPerWave: 5
   MinWaveSpawnTime: 5
   MaxWaveSpawnTime: 10

@@ -53,7 +53,7 @@ MonoBehaviour:
   ScreenShakeTime: 0.25
   ScreenShakeRevolutions: 16
   ScreenShakeIntensity: 8
-  TimeBeforeLookingAtMirror: 1
+  TimeBeforeLookingAtMirror: 2
   TimeToMirror: 2
   TimeLookingAtMirror: 1
   TimeFromMirror: 2

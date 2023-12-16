@@ -288,6 +288,12 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "UpgradeMenu",
+            "id": "577ba9de-b305-4066-98ff-ac6cc7884487",
+            "actions": [],
+            "bindings": []
         }
     ],
     "controlSchemes": []

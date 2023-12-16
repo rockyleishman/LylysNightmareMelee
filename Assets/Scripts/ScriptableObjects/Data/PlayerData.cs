@@ -1,6 +1,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum UpgradeType
+{
+    hitPoints,
+    movementSpeed,
+    damage,
+    knockback,
+    range,
+    cooldown,
+    count,
+    pierce,
+    trailOfAssurace,
+    shieldOfLight,
+    wishingWell,
+    radiantOrb,
+    flickerOfHope,
+    sparkOfJoy,
+    moonBurst,
+    floodOfHope,
+    surgeOfJoy,
+    sunBurst,
+    waveOfRelief,
+    pendantOfLife
+}
+
 //secondary attack types
 public enum SecondaryAttack
 {
@@ -45,6 +69,7 @@ public class PlayerData : ScriptableObject
     [SerializeField] public int MaximumNumberOfSecondaryAttacks = 4;
     internal List<SecondaryAttack> SecondaryAttacksAquired;
     internal int Score;
+    internal int MirrorsDestroyed;
 
     [Header("Stat Modifiers (Max 0 is Infinity)")]
     [SerializeField] public float HPMultiplierIncPerLevel = 0.1f;
@@ -86,6 +111,7 @@ public class PlayerData : ScriptableObject
     internal float SpecialCharge;
 
     [Header("Secondary Attack: \"Trail of Assurance\"")]
+    [SerializeField] [TextArea] public string[] TrailOfAssuranceUpgradeInfo = new string[10];
     [SerializeField] public float SparkleTime = 0.25f;
     [SerializeField] public float TOASpawnRadiusPerProjectile = 0.25f;
     [SerializeField] public float[] TOAAttackDamage = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
@@ -96,12 +122,14 @@ public class PlayerData : ScriptableObject
     internal int TrailOfAssuranceLevel;
 
     [Header("Secondary Attack: \"Shield of Light\"")]
+    [SerializeField] [TextArea] public string[] ShieldOfLightUpgradeInfo = new string[10];
     [SerializeField] public float[] SOLAttackDamage = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] SOLAttackRange = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] SOLAttackCooldown = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     internal int ShieldOfLightLevel;
 
     [Header("Secondary Attack: \"Wishing Well\"")]
+    [SerializeField] [TextArea] public string[] WishingWellUpgradeInfo = new string[10];
     [SerializeField] public float[] WWAttackDamage = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] WWAttackKnockback = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] WWAttackRange = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
@@ -110,6 +138,7 @@ public class PlayerData : ScriptableObject
     internal int WishingWellLevel;
 
     [Header("Secondary Attack: \"Radiant Orb\"")]
+    [SerializeField] [TextArea] public string[] RadiantOrbUpgradeInfo = new string[10];
     [SerializeField] public float ROProjectileSpeed = 10.0f;
     [SerializeField] public float[] ROAttackDamage = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] ROAttackKnockback = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
@@ -118,6 +147,7 @@ public class PlayerData : ScriptableObject
     internal int RadiantOrbLevel;
 
     [Header("Secondary Attack: \"Flicker of Hope\"")]
+    [SerializeField] [TextArea] public string[] FlickerOfHopeUpgradeInfo = new string[10];
     [SerializeField] public float FlickProjectileSpeed = 10.0f;
     [SerializeField] public float[] FlickAttackDamage = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] FlickAttackKnockback = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
@@ -127,6 +157,7 @@ public class PlayerData : ScriptableObject
     internal int FlickerOfHopeLevel;
 
     [Header("Secondary Attack: \"Spark of Joy\"")]
+    [SerializeField] [TextArea] public string[] SparkOfJoyUpgradeInfo = new string[10];
     [SerializeField] public float SparkProjectileSpeed = 10.0f;
     [SerializeField] public float[] SparkAttackDamage = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] SparkAttackKnockback = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
@@ -136,6 +167,7 @@ public class PlayerData : ScriptableObject
     internal int SparkOfJoyLevel;
 
     [Header("Secondary Attack: \"Moon-Burst\"")]
+    [SerializeField] [TextArea] public string[] MoonBurstUpgradeInfo = new string[10];
     [SerializeField] public float MBProjectileSpeed = 10.0f;
     [SerializeField] public float[] MBAttackDamage = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] MBAttackKnockback = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
@@ -146,6 +178,7 @@ public class PlayerData : ScriptableObject
     internal int MoonBurstLevel;
 
     [Header("Secondary Attack: \"Flood of Hope\"")]
+    [SerializeField] [TextArea] public string[] FloodOfHopeUpgradeInfo = new string[10];
     [SerializeField] public float FloodProjectileSpeed = 10.0f;
     [SerializeField] public float FloodAngleDeviationPerProjectile = 1.0f;
     [SerializeField] public float FloodSpeedDeviationPerProjectile = 0.1f;
@@ -158,6 +191,7 @@ public class PlayerData : ScriptableObject
     internal int FloodOfHopeLevel;
 
     [Header("Secondary Attack: \"Surge of Joy\"")]
+    [SerializeField] [TextArea] public string[] SurgeOfJoyUpgradeInfo = new string[10];
     [SerializeField] public float SurgeProjectileSpeed = 10.0f;
     [SerializeField] public float SurgeAngleDeviationPerProjectile = 1.0f;
     [SerializeField] public float SurgeSpeedDeviationPerProjectile = 0.1f;
@@ -170,6 +204,7 @@ public class PlayerData : ScriptableObject
     internal int SurgeOfJoyLevel;
 
     [Header("Secondary Attack: \"Sun-Burst\"")]
+    [SerializeField] [TextArea] public string[] SunBurstUpgradeInfo = new string[10];
     [SerializeField] public float SBProjectileSpeed = 10.0f;
     [SerializeField] public float[] SBAttackDamage = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] SBAttackKnockback = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
@@ -180,6 +215,7 @@ public class PlayerData : ScriptableObject
     internal int SunBurstLevel;
 
     [Header("Secondary Attack: \"Wave of Relief\"")]
+    [SerializeField] [TextArea] public string[] WaveOfReliefUpgradeInfo = new string[10];
     [SerializeField] public float WORProjectileSpeed = 10.0f;
     [SerializeField] public float[] WORAttackDamage = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     [SerializeField] public float[] WORAttackKnockback = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
@@ -189,6 +225,7 @@ public class PlayerData : ScriptableObject
     internal int WaveOfReliefLevel;
 
     [Header("Secondary Attack: \"Pendant of Life\"")]
+    [SerializeField] [TextArea] public string[] PendantOfLifeUpgradeInfo = new string[10];
     [SerializeField] public float[] POLHealingSpeed = new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
     internal int PendantOfLifeLevel;
 }

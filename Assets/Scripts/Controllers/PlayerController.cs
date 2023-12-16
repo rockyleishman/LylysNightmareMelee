@@ -224,7 +224,16 @@ public class PlayerController : MonoBehaviour, IHitPoints
             DataManager.Instance.PlayerDataObject.CurrentHP = currentHP;
         }
 
-        //TODO: trigger effect
+        //TEMP
+        if (DataManager.Instance.PlayerDataObject.SpecialCharge > 1.0f)
+        {
+            Debug.Log("Special: 100%    HP: " + Mathf.FloorToInt(DataManager.Instance.PlayerDataObject.CurrentHP));
+        }
+        else
+        {
+            Debug.Log("Special: " + Mathf.FloorToInt(DataManager.Instance.PlayerDataObject.SpecialCharge * 100) + "%    HP: " + Mathf.FloorToInt(DataManager.Instance.PlayerDataObject.CurrentHP));
+        }
+        //END TEMP
     }
 
     public void DamageHP(float hp)
@@ -243,12 +252,22 @@ public class PlayerController : MonoBehaviour, IHitPoints
         
         //trigger effects
         EventManager.Instance.PlayerDamaged.TriggerEvent(transform.position);
-        //TODO: trigger particle effect
+
+        //TEMP
+        if (DataManager.Instance.PlayerDataObject.SpecialCharge > 1.0f)
+        {
+            Debug.Log("Special: 100%    HP: " + Mathf.FloorToInt(DataManager.Instance.PlayerDataObject.CurrentHP));
+        }
+        else
+        {
+            Debug.Log("Special: " + Mathf.FloorToInt(DataManager.Instance.PlayerDataObject.SpecialCharge * 100) + "%    HP: " + Mathf.FloorToInt(DataManager.Instance.PlayerDataObject.CurrentHP));
+        }
+        //END TEMP
     }
 
     public void OnDeath()
     {
-        //TODO: trigger game over
+        EventManager.Instance.GameOverTriggered.TriggerEvent(transform.position);
     }
 
     #endregion

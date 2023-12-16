@@ -52,6 +52,16 @@ public class MirrorAIController : PoolObject
         //add score
         ScoreManager.Instance.AddScore(Score);
 
+        //check for victory
+        DataManager.Instance.PlayerDataObject.MirrorsDestroyed++;
+        if (DataManager.Instance.PlayerDataObject.MirrorsDestroyed >= DataManager.Instance.LevelDataObject.MirrorsToDestroy)
+        {
+            EventManager.Instance.VictoryTriggered.TriggerEvent(transform.position);
+        }
+
+        //upgrade
+        EventManager.Instance.TriggerUpgrade.TriggerEvent(transform.position);
+
         //spawn new mirrors
         for (int i = AmountOfMirrorsToSpawnOnDeath[Random.Range(0, AmountOfMirrorsToSpawnOnDeath.Length)]; i > 0; i--)
         {
