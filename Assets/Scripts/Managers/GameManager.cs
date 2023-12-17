@@ -29,6 +29,7 @@ public class GameManager : Singleton<GameManager>
         DataManager.Instance.LevelDataObject.NewEnemyCooldownDivisor = 1.0f;
         DataManager.Instance.LevelDataObject.NewEnemySpeedMultiplier = 1.0f;
         DataManager.Instance.LevelDataObject.NewEnemySpawnFrequencyMultiplier = 1.0f;
+        DataManager.Instance.LevelDataObject.NewEnemySpecialChargeDivisor = 1.0f;
         DataManager.Instance.LevelDataObject.MaxEnemyCount = DataManager.Instance.LevelDataObject.InitialMaxEnemyCount;
         DataManager.Instance.LevelDataObject.MaxEnemyCountUnrounded = DataManager.Instance.LevelDataObject.InitialMaxEnemyCount;
 
@@ -58,7 +59,7 @@ public class GameManager : Singleton<GameManager>
         DataManager.Instance.PlayerDataObject.PendantOfLifeLevel = 0;
 
         //set initial special charge
-        DataManager.Instance.PlayerDataObject.SpecialCharge = 1.0f;
+        DataManager.Instance.PlayerDataObject.SpecialCharge = 0.0f;
 
         //set initial score (0)
         DataManager.Instance.PlayerDataObject.Score = 0;

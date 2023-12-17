@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class MirrorAIController : PoolObject
 {
+    [Header("UI Settings")]
+    [SerializeField] [Range(0.0f, 1.0f)] public float IconDistanceFromEdge = 0.1f;
+    private MirrorIcon _mirrorIcon;
+
     [Header("Death Settings")]
     [SerializeField] public int Score = 1000;
     [Space]
@@ -19,6 +23,27 @@ public class MirrorAIController : PoolObject
     [Space]
     [SerializeField] public float MinWaveSpawnTime = 10.0f;
     [SerializeField] public float MaxWaveSpawnTime = 15.0f;
+
+    private void Start()
+    {
+        _mirrorIcon = GetComponentInChildren<MirrorIcon>();
+    }
+
+    private void Update()
+    {
+        //adjust mirror icon
+        Vector3 mirrorScreenPosition = Camera.main.WorldToViewportPoint(transform.position);
+        if (mirrorScreenPosition.x > 0.0f && mirrorScreenPosition.x < 1.0f && mirrorScreenPosition.y > 0.0f && mirrorScreenPosition.y < 1.0f)
+        {
+            _mirrorIcon.gameObject.SetActive(false);
+        }
+        else
+        {
+            _mirrorIcon.gameObject.SetActive(true);
+            Vector3 mirrorIconScreenPosition = new Vector3(Mathf.Lerp(Mathf.Clamp01(mirrorScreenPosition.x), 0.5f, IconDistanceFromEdge), Mathf.Lerp(Mathf.Clamp01(mirrorScreenPosition.y), 0.5f, IconDistanceFromEdge), mirrorScreenPosition.z);
+            _mirrorIcon.transform.position = Camera.main.ViewportToWorldPoint(mirrorIconScreenPosition);
+        }        
+    }
 
     public void Init()
     {

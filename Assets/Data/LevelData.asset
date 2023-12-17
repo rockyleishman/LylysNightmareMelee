@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LevelData
   m_EditorClassIdentifier: 
   FlashTime: 0.1
-  FlashWhiteness: 0.75
   FlashColourMultiplier: 2
+  MirrorsToDestroy: 10
   InitialMirror: {fileID: 2045083803306708946, guid: 75bafd5c864aa5944bc3acf6208b8dac, type: 3}
   Enemy0: {fileID: 6575186996657049984, guid: 5fe16c4e33b51b542a6a8a7c7e15f243, type: 3}
   Enemy1: {fileID: 0}
@@ -58,7 +58,7 @@ MonoBehaviour:
   FinalSpawnFrequencyMultiplier: 1.5
   UseMaxSpawnFrequencyMultiplier: 0
   MaxSpawnFrequencyMultiplier: 100
-  FinalSpecialChargeDivisor: 5
+  FinalSpecialChargeDivisor: 10
   UseMaxSpecialChargeDivisor: 0
   MaxSpecialChargeDivisor: 100
   InitialMaxEnemyCount: 250

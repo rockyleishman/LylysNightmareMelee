@@ -143,7 +143,7 @@ public class EnemyAIController : PoolObject, IHitPoints
 
         while (remainingTime > 0.0f)
         {
-            float deltaKnockback = knockback / _weight * Time.deltaTime;
+            float deltaKnockback = knockback / _weight * Time.deltaTime / DataManager.Instance.LevelDataObject.KnockbackTime;
             remainingTime -= Time.deltaTime;
 
             //apply knockback movement
@@ -222,7 +222,7 @@ public class EnemyAIController : PoolObject, IHitPoints
     public void OnDeath()
     {
         //add special charge
-        DataManager.Instance.PlayerDataObject.SpecialCharge += SpecialCharge;
+        DataManager.Instance.PlayerDataObject.SpecialCharge += SpecialCharge / DataManager.Instance.LevelDataObject.NewEnemySpecialChargeDivisor;
 
         Death();
     }
