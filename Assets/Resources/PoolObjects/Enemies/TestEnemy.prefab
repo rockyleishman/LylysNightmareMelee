@@ -99,17 +99,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b90173165bd1044acc7aeea5519cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Points: 10
-  SpecialCharge: 0.02
-  BaseHP: 20
-  BaseDamage: 10
+  BaseHP: 5
+  BaseDamage: 5
   BaseCooldown: 1
   BaseSpeed: 3
   BaseWeight: 1
+  Score: 10
+  SpecialCharge: 0.1
   TargetAcquisitionTime: 0.1
   Sprites:
   - {fileID: 21300000, guid: e09ecf9bd72fd9f428705b6fffbf20a5, type: 3}
   - {fileID: 21300000, guid: a5aa9797608c7ae49b6f5d2f66147c4f, type: 3}
+  HitSprite: {fileID: 21300000, guid: 4b7d48e2b4fda1347a708f61b4b29fd3, type: 3}
   KeyframeTime: 0.5
 --- !u!58 &7312593027290617588
 CircleCollider2D:

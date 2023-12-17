@@ -7,11 +7,21 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] PlayerController Player;
     [SerializeField] GameObject CursorObject;
 
+    [SerializeField] GameObject GameOverUI;
+    [SerializeField] GameObject VictoryUI;
+
+    private bool _isGameFinished;
+
     private void Awake()
     {
         //set references
         DataManager.Instance.PlayerDataObject.Player = Player;
         DataManager.Instance.PlayerDataObject.CursorObject = CursorObject;
+
+        //game is not finished
+        _isGameFinished = false;
+        GameOverUI.SetActive(false);
+        VictoryUI.SetActive(false);
 
         //init difficulty multipliers
         DataManager.Instance.LevelDataObject.NewEnemyHPMultiplier = 1.0f;
@@ -19,6 +29,7 @@ public class GameManager : Singleton<GameManager>
         DataManager.Instance.LevelDataObject.NewEnemyCooldownDivisor = 1.0f;
         DataManager.Instance.LevelDataObject.NewEnemySpeedMultiplier = 1.0f;
         DataManager.Instance.LevelDataObject.NewEnemySpawnFrequencyMultiplier = 1.0f;
+        DataManager.Instance.LevelDataObject.NewEnemySpecialChargeDivisor = 1.0f;
         DataManager.Instance.LevelDataObject.MaxEnemyCount = DataManager.Instance.LevelDataObject.InitialMaxEnemyCount;
         DataManager.Instance.LevelDataObject.MaxEnemyCountUnrounded = DataManager.Instance.LevelDataObject.InitialMaxEnemyCount;
 
@@ -34,24 +45,25 @@ public class GameManager : Singleton<GameManager>
 
         //set secondary attack levels to 0
         DataManager.Instance.PlayerDataObject.SecondaryAttacksAquired = new List<SecondaryAttack>();
-        DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel = 5;
+        DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel = 0;
         DataManager.Instance.PlayerDataObject.ShieldOfLightLevel = 0; //TODO
         DataManager.Instance.PlayerDataObject.WishingWellLevel = 0; //TODO
         DataManager.Instance.PlayerDataObject.RadiantOrbLevel = 0; //TODO
         DataManager.Instance.PlayerDataObject.FlickerOfHopeLevel = 0;
-        DataManager.Instance.PlayerDataObject.SparkOfJoyLevel = 5;
+        DataManager.Instance.PlayerDataObject.SparkOfJoyLevel = 0;
         DataManager.Instance.PlayerDataObject.MoonBurstLevel = 0;
         DataManager.Instance.PlayerDataObject.FloodOfHopeLevel = 0;
         DataManager.Instance.PlayerDataObject.SurgeOfJoyLevel = 0;
-        DataManager.Instance.PlayerDataObject.SunBurstLevel = 5;
-        DataManager.Instance.PlayerDataObject.WaveOfReliefLevel = 5;
-        DataManager.Instance.PlayerDataObject.PendantOfLifeLevel = 0; //need to see health to test
+        DataManager.Instance.PlayerDataObject.SunBurstLevel = 0;
+        DataManager.Instance.PlayerDataObject.WaveOfReliefLevel = 0;
+        DataManager.Instance.PlayerDataObject.PendantOfLifeLevel = 0;
 
         //set initial special charge
-        DataManager.Instance.PlayerDataObject.SpecialCharge = 1.0f;
+        DataManager.Instance.PlayerDataObject.SpecialCharge = 0.0f;
 
         //set initial score (0)
         DataManager.Instance.PlayerDataObject.Score = 0;
+        DataManager.Instance.PlayerDataObject.MirrorsDestroyed = 0;
 
         //spawn initial mirror
         StartCoroutine(SpawnInitialMirror());
@@ -64,13 +76,34 @@ public class GameManager : Singleton<GameManager>
         Cursor.lockState = CursorLockMode.Confined;
     }
 
+    private void Update()
+    {
+        //prevent play if game is finished
+        if (_isGameFinished)
+        {
+            Time.timeScale = 0.0f;
+        }
+    }
+
+    public void OnGameOver()
+    {
+        _isGameFinished = true;
+        GameOverUI.SetActive(true);
+    }
+
+    public void OnVictory()
+    {
+        _isGameFinished = true;
+        VictoryUI.SetActive(true);
+    }
+
     public void UpgradeStat(StatModifier statModifier)
     {
         switch (statModifier)
         {
             case StatModifier.hitPoints:
                 float proposedHPMultiplier = DataManager.Instance.PlayerDataObject.HPMultiplier += DataManager.Instance.PlayerDataObject.HPMultiplierIncPerLevel;
-                if (DataManager.Instance.PlayerDataObject.MaxHPMultiplier > 0 && proposedHPMultiplier > DataManager.Instance.PlayerDataObject.MaxHPMultiplier)
+                if (DataManager.Instance.PlayerDataObject.MaxHPMultiplier > 0.0f && proposedHPMultiplier > DataManager.Instance.PlayerDataObject.MaxHPMultiplier)
                 {
                     proposedHPMultiplier = DataManager.Instance.PlayerDataObject.MaxHPMultiplier;
                 }
@@ -79,7 +112,7 @@ public class GameManager : Singleton<GameManager>
 
             case StatModifier.movementSpeed:
                 float proposedMovementSpeedMultiplier = DataManager.Instance.PlayerDataObject.MovementSpeedMultiplier += DataManager.Instance.PlayerDataObject.MovementSpeedMultiplierIncPerLevel;
-                if (DataManager.Instance.PlayerDataObject.MaxMovementSpeedMultiplier > 0 && proposedMovementSpeedMultiplier > DataManager.Instance.PlayerDataObject.MaxMovementSpeedMultiplier)
+                if (DataManager.Instance.PlayerDataObject.MaxMovementSpeedMultiplier > 0.0f && proposedMovementSpeedMultiplier > DataManager.Instance.PlayerDataObject.MaxMovementSpeedMultiplier)
                 {
                     proposedMovementSpeedMultiplier = DataManager.Instance.PlayerDataObject.MaxMovementSpeedMultiplier;
                 }
@@ -88,7 +121,7 @@ public class GameManager : Singleton<GameManager>
 
             case StatModifier.damage:
                 float proposedDamageMultiplier = DataManager.Instance.PlayerDataObject.DamageMultiplier += DataManager.Instance.PlayerDataObject.DamageMultiplierIncPerLevel;
-                if (DataManager.Instance.PlayerDataObject.MaxDamageMultiplier > 0 && proposedDamageMultiplier > DataManager.Instance.PlayerDataObject.MaxDamageMultiplier)
+                if (DataManager.Instance.PlayerDataObject.MaxDamageMultiplier > 0.0f && proposedDamageMultiplier > DataManager.Instance.PlayerDataObject.MaxDamageMultiplier)
                 {
                     proposedDamageMultiplier = DataManager.Instance.PlayerDataObject.MaxDamageMultiplier;
                 }
@@ -97,7 +130,7 @@ public class GameManager : Singleton<GameManager>
 
             case StatModifier.knockback:
                 float proposedKnockbackMultiplier = DataManager.Instance.PlayerDataObject.KnockbackMultiplier += DataManager.Instance.PlayerDataObject.KnockbackMultiplierIncPerLevel;
-                if (DataManager.Instance.PlayerDataObject.MaxKnockbackMultiplier > 0 && proposedKnockbackMultiplier > DataManager.Instance.PlayerDataObject.MaxKnockbackMultiplier)
+                if (DataManager.Instance.PlayerDataObject.MaxKnockbackMultiplier > 0.0f && proposedKnockbackMultiplier > DataManager.Instance.PlayerDataObject.MaxKnockbackMultiplier)
                 {
                     proposedKnockbackMultiplier = DataManager.Instance.PlayerDataObject.MaxKnockbackMultiplier;
                 }
@@ -106,7 +139,7 @@ public class GameManager : Singleton<GameManager>
 
             case StatModifier.range:
                 float proposedRangeMultiplier = DataManager.Instance.PlayerDataObject.RangeMultiplier += DataManager.Instance.PlayerDataObject.RangeMultiplierIncPerLevel;
-                if (DataManager.Instance.PlayerDataObject.MaxRangeMultiplier > 0 && proposedRangeMultiplier > DataManager.Instance.PlayerDataObject.MaxRangeMultiplier)
+                if (DataManager.Instance.PlayerDataObject.MaxRangeMultiplier > 0.0f && proposedRangeMultiplier > DataManager.Instance.PlayerDataObject.MaxRangeMultiplier)
                 {
                     proposedRangeMultiplier = DataManager.Instance.PlayerDataObject.MaxRangeMultiplier;
                 }
@@ -115,7 +148,7 @@ public class GameManager : Singleton<GameManager>
 
             case StatModifier.cooldown:
                 float proposedCooldownDivisor = DataManager.Instance.PlayerDataObject.CooldownDivisor += DataManager.Instance.PlayerDataObject.CooldownDivisorIncPerLevel;
-                if (DataManager.Instance.PlayerDataObject.MaxCooldownDivisor > 0 && proposedCooldownDivisor > DataManager.Instance.PlayerDataObject.MaxCooldownDivisor)
+                if (DataManager.Instance.PlayerDataObject.MaxCooldownDivisor > 0.0f && proposedCooldownDivisor > DataManager.Instance.PlayerDataObject.MaxCooldownDivisor)
                 {
                     proposedCooldownDivisor = DataManager.Instance.PlayerDataObject.MaxCooldownDivisor;
                 }
@@ -392,7 +425,7 @@ public class GameManager : Singleton<GameManager>
                 DataManager.Instance.LevelDataObject.NewEnemySpawnFrequencyMultiplier = DataManager.Instance.LevelDataObject.MaxSpawnFrequencyMultiplier;
             }
 
-            //increase new enemy speed multiplier
+            //increase new enemy special charge divisor
             DataManager.Instance.LevelDataObject.NewEnemySpecialChargeDivisor += (DataManager.Instance.LevelDataObject.FinalSpecialChargeDivisor - 1.0f) / DataManager.Instance.LevelDataObject.FinalCalculatedThreatLevel;
             //clamp new enemy HP multiplier
             if (DataManager.Instance.LevelDataObject.UseMaxSpecialChargeDivisor && DataManager.Instance.LevelDataObject.NewEnemySpecialChargeDivisor > DataManager.Instance.LevelDataObject.MaxSpecialChargeDivisor)

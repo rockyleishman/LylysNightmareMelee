@@ -32,6 +32,7 @@ public class EnemyAIController : PoolObject, IHitPoints
 
     [Header("Animation")]
     [SerializeField] public Sprite[] Sprites;
+    [SerializeField] public Sprite HitSprite;
     [SerializeField] public float KeyframeTime = 0.5f;
     private int _spriteIndex;
 
@@ -155,6 +156,7 @@ public class EnemyAIController : PoolObject, IHitPoints
     private IEnumerator Flash()
     {
         _spriteRenderer.material.color = _flashColour;
+        _spriteRenderer.sprite = HitSprite;//will change back with animation coroutine
 
         yield return new WaitForSeconds(DataManager.Instance.LevelDataObject.FlashTime);
 
@@ -220,7 +222,7 @@ public class EnemyAIController : PoolObject, IHitPoints
     public void OnDeath()
     {
         //add special charge
-        DataManager.Instance.PlayerDataObject.SpecialCharge += SpecialCharge;
+        DataManager.Instance.PlayerDataObject.SpecialCharge += SpecialCharge / DataManager.Instance.LevelDataObject.NewEnemySpecialChargeDivisor;
 
         Death();
     }
@@ -238,11 +240,11 @@ public class EnemyAIController : PoolObject, IHitPoints
         //TEMP
         if (DataManager.Instance.PlayerDataObject.SpecialCharge > 1.0f)
         {
-            Debug.Log("Special: 100%");
+            Debug.Log("Special: 100%    HP: " + Mathf.FloorToInt(DataManager.Instance.PlayerDataObject.CurrentHP));
         }
         else
         {
-            Debug.Log("Special: " + Mathf.FloorToInt(DataManager.Instance.PlayerDataObject.SpecialCharge * 100) + "%");
+            Debug.Log("Special: " + Mathf.FloorToInt(DataManager.Instance.PlayerDataObject.SpecialCharge * 100) + "%    HP: " + Mathf.FloorToInt(DataManager.Instance.PlayerDataObject.CurrentHP));
         }
         //END TEMP
 

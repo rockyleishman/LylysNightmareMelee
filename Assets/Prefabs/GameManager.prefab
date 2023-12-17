@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   CursorObject: {fileID: 0}
+  GameOverUI: {fileID: 0}
+  VictoryUI: {fileID: 0}
 --- !u!114 &6843315448132260989
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -36,6 +36,9 @@ public class LevelData : ScriptableObject
     [SerializeField] public float FlashTime = 0.1f;
     [SerializeField] public float FlashColourMultiplier = 2.0f;
 
+    [Header("Victory Condition")]
+    [SerializeField] public int MirrorsToDestroy = 10;
+
     [Header("Initial Mirror Prefab")]
     [SerializeField] public MirrorAIController InitialMirror;
 
