@@ -139,17 +139,25 @@ public class EnemyAIController : PoolObject, IHitPoints
 
     private IEnumerator ApplyKnockback(float knockback)
     {
-        float remainingTime = DataManager.Instance.LevelDataObject.KnockbackTime;
+        float remainingKnockback = knockback;
 
-        while (remainingTime > 0.0f)
+        while (remainingKnockback > 0.0f)
         {
-            float deltaKnockback = knockback / _weight * Time.deltaTime / DataManager.Instance.LevelDataObject.KnockbackTime;
-            remainingTime -= Time.deltaTime;
+            yield return null;
+
+            float deltaKnockback = knockback * Time.deltaTime * DataManager.Instance.LevelDataObject.KnockbackSpeed / _weight;
+            if (deltaKnockback > remainingKnockback)
+            {
+                deltaKnockback = remainingKnockback;
+                remainingKnockback = 0.0f;
+            }
+            else
+            {
+                remainingKnockback -= deltaKnockback;
+            }
 
             //apply knockback movement
-            transform.Translate((_target - transform.position).normalized * -deltaKnockback);
-
-            yield return null;
+            transform.Translate((transform.position - _target).normalized * deltaKnockback);            
         }
     }
 
