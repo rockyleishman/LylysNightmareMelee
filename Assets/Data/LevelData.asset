@@ -54,7 +54,7 @@ MonoBehaviour:
   FinalWeightMultiplier: 1.1
   UseMaxWeightMultiplier: 1
   MaxWeightMultiplier: 2
-  KnockbackTime: 0.1
+  KnockbackSpeed: 2
   FinalSpawnFrequencyMultiplier: 1.5
   UseMaxSpawnFrequencyMultiplier: 0
   MaxSpawnFrequencyMultiplier: 100

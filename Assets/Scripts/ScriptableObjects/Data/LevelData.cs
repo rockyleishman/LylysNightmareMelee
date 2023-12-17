@@ -106,7 +106,7 @@ public class LevelData : ScriptableObject
     [SerializeField] public bool UseMaxWeightMultiplier = true;
     [SerializeField] [Range(1.0f, 10.0f)] public float MaxWeightMultiplier = 1.0f;
     internal float NewEnemyWeightMultiplier;
-    [SerializeField] [Range(0.0333333f, 5.0f)] public float KnockbackTime = 0.1f;
+    [SerializeField] [Range(1.0f, 50.0f)] public float KnockbackSpeed = 20.0f;
     [Header("        Enemy Spawn Frequency")]
     [SerializeField] [Range(1.0f, 100.0f)] public float FinalSpawnFrequencyMultiplier = 1.0f;
     [SerializeField] public bool UseMaxSpawnFrequencyMultiplier = false;
