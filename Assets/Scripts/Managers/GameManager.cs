@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -87,13 +88,21 @@ public class GameManager : Singleton<GameManager>
 
     public void OnGameOver()
     {
+        //disable player controls
+        DataManager.Instance.PlayerDataObject.Player.GetComponent<PlayerInput>().SwitchCurrentActionMap("ForcedMenu");
+
         _isGameFinished = true;
+        Cursor.visible = true;
         GameOverUI.SetActive(true);
     }
 
     public void OnVictory()
     {
+        //disable player controls
+        DataManager.Instance.PlayerDataObject.Player.GetComponent<PlayerInput>().SwitchCurrentActionMap("ForcedMenu");
+
         _isGameFinished = true;
+        Cursor.visible = true;
         VictoryUI.SetActive(true);
     }
 

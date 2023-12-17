@@ -70,8 +70,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a905b5e947c16824e847c98b0b0827fc, type: 2}
-  m_sharedMaterial: {fileID: -8172188640706287747, guid: a905b5e947c16824e847c98b0b0827fc, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 977b5c61ca42265459c5cf482ae4d985, type: 2}
+  m_sharedMaterial: {fileID: 3475182275667236032, guid: 977b5c61ca42265459c5cf482ae4d985, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -205,8 +205,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a905b5e947c16824e847c98b0b0827fc, type: 2}
-  m_sharedMaterial: {fileID: -8172188640706287747, guid: a905b5e947c16824e847c98b0b0827fc, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 977b5c61ca42265459c5cf482ae4d985, type: 2}
+  m_sharedMaterial: {fileID: 3475182275667236032, guid: 977b5c61ca42265459c5cf482ae4d985, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -630,8 +630,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: GAME OVER
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a905b5e947c16824e847c98b0b0827fc, type: 2}
-  m_sharedMaterial: {fileID: -8172188640706287747, guid: a905b5e947c16824e847c98b0b0827fc, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 977b5c61ca42265459c5cf482ae4d985, type: 2}
+  m_sharedMaterial: {fileID: 3475182275667236032, guid: 977b5c61ca42265459c5cf482ae4d985, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

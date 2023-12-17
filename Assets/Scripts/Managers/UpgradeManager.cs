@@ -67,7 +67,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
     private void ShowUpgradeUI()
     {
         //disable player controls
-        DataManager.Instance.PlayerDataObject.Player.GetComponent<PlayerInput>().SwitchCurrentActionMap("UpgradeMenu");
+        DataManager.Instance.PlayerDataObject.Player.GetComponent<PlayerInput>().SwitchCurrentActionMap("ForcedMenu");
 
         Time.timeScale = 0.0f;
         Cursor.visible = true;
