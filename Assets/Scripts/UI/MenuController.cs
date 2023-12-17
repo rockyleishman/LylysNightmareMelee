@@ -15,7 +15,10 @@ public class MenuController : MonoBehaviour
     }
     public void Play()
     {
-        SceneManager.LoadScene("Level_01");
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Level_01"))
+        {
+            SceneManager.LoadScene("Level_01");
+        }        
     }
 
     public void Restart()
