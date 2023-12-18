@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67deb6b4db2b394e8fc888d1b0f6b44, type: 3}
   m_Name: SoundData
   m_EditorClassIdentifier: 
-  backgroundSound: {fileID: 0}
-  pauseSound: {fileID: 0}
-  hitSound: {fileID: 0}
-  upgradeSound: {fileID: 0}
+  mainmenuSound: {fileID: 8300000, guid: 4849f81cbc7f8354380cc7c2bad4f66b, type: 3}
+  backgroundSound: {fileID: 8300000, guid: 9fa4857f8b7a14543833829a6f365f01, type: 3}
+  pauseSound: {fileID: 8300000, guid: 1b821788d81869147876cb7e04813096, type: 3}
+  hitSound: {fileID: 8300000, guid: 7e49dec6cbc93aa4c8bf788cc70e58bb, type: 3}
+  upgradeSound: {fileID: 8300000, guid: 5acecd639814527488adc2ea2aba9090, type: 3}

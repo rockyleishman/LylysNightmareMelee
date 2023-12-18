@@ -36,6 +36,7 @@ public class SpecialAttack : LimitedTimeObject
         if (enemy != null && !_enemiesHit.Contains(enemy))
         {
             enemy.OnDeathNoCharge();
+            SoundManager.Instance.PlayHit();
             /*enemy.DamageHP(DataManager.Instance.PlayerDataObject.SpecialAttackDamage * DataManager.Instance.PlayerDataObject.DamageMultiplier);
 
             if (enemy.isActiveAndEnabled)

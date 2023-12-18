@@ -93,6 +93,7 @@ public class WaveOfRelief : LimitedTimeObject
             {
                 OnDespawn();
             }
+
         }
     }
 }

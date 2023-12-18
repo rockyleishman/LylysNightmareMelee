@@ -181,6 +181,7 @@ public class PlayerController : MonoBehaviour, IHitPoints
 
         //secondary attacks handle their own cooldowns
         EventManager.Instance.SecondaryAttackTriggered.TriggerEvent(transform.position);
+        
     }
 
     private void OnSpecialAttack()
@@ -195,6 +196,7 @@ public class PlayerController : MonoBehaviour, IHitPoints
     private void OnPause()
     {
         EventManager.Instance.PauseGame.TriggerEvent(transform.position);
+        SoundManager.Instance.PlayPase();
     }
 
     private void OnResume()

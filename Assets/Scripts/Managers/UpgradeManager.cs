@@ -66,6 +66,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
     private void ShowUpgradeUI()
     {
+        SoundManager.Instance.PlayUpgrade();
         //disable player controls
         DataManager.Instance.PlayerDataObject.Player.GetComponent<PlayerInput>().SwitchCurrentActionMap("ForcedMenu");
 

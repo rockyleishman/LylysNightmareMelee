@@ -15,4 +15,17 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
             return _instance;
         }
     }
+
+    protected virtual void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = (T)this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 }
