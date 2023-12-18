@@ -180,8 +180,7 @@ public class PlayerController : MonoBehaviour, IHitPoints
         }
 
         //secondary attacks handle their own cooldowns
-        EventManager.Instance.SecondaryAttackTriggered.TriggerEvent(transform.position);
-        
+        EventManager.Instance.SecondaryAttackTriggered.TriggerEvent(transform.position);        
     }
 
     private void OnSpecialAttack()
@@ -195,13 +194,12 @@ public class PlayerController : MonoBehaviour, IHitPoints
 
     private void OnPause()
     {
-        EventManager.Instance.PauseGame.TriggerEvent(transform.position);
-        SoundManager.Instance.PlayPase();
+        EventManager.Instance.PauseGameTriggered.TriggerEvent(transform.position);
     }
 
     private void OnResume()
     {
-        EventManager.Instance.ResumeGame.TriggerEvent(transform.position);
+        EventManager.Instance.ResumeGameTriggered.TriggerEvent(transform.position);
     }
 
     #endregion

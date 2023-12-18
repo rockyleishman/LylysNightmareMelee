@@ -63,8 +63,7 @@ public class WaveOfRelief : LimitedTimeObject
         }
 
         //rotate sprite
-        _spriteRenderer.gameObject.transform.eulerAngles = new Vector3(0, 0, rotationValue / 4 * 90);
-        
+        _spriteRenderer.gameObject.transform.eulerAngles = new Vector3(0, 0, rotationValue / 4 * 90);        
     }
 
     private void Update()
@@ -93,7 +92,6 @@ public class WaveOfRelief : LimitedTimeObject
             {
                 OnDespawn();
             }
-
         }
     }
 }

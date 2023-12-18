@@ -6,6 +6,7 @@ public class SpecialAttack : LimitedTimeObject
 {
     private Animator _animator;
     private List<EnemyAIController> _enemiesHit;
+    private bool _mirrorDestroyed;
 
     private void Awake()
     {
@@ -14,6 +15,9 @@ public class SpecialAttack : LimitedTimeObject
 
         //init enemies hit list
         _enemiesHit = new List<EnemyAIController>();
+
+        //allow one mirror to be destroyed
+        _mirrorDestroyed = false;
     }
 
     private void OnEnable()
@@ -23,6 +27,9 @@ public class SpecialAttack : LimitedTimeObject
 
         //reset enemies hit list
         _enemiesHit.Clear();
+
+        //reallow mirror destruction
+        _mirrorDestroyed = false;
 
         //limit duration
         StartCoroutine(LifeTimer(DataManager.Instance.PlayerDataObject.SpecialAttackDuration));
@@ -35,18 +42,14 @@ public class SpecialAttack : LimitedTimeObject
 
         if (enemy != null && !_enemiesHit.Contains(enemy))
         {
+            //destroy enemies
             enemy.OnDeathNoCharge();
-            SoundManager.Instance.PlayHit();
-            /*enemy.DamageHP(DataManager.Instance.PlayerDataObject.SpecialAttackDamage * DataManager.Instance.PlayerDataObject.DamageMultiplier);
-
-            if (enemy.isActiveAndEnabled)
-            {
-                enemy.Knockback(DataManager.Instance.PlayerDataObject.SpecialAttackKnockback * DataManager.Instance.PlayerDataObject.KnockbackMultiplier);
-                _enemiesHit.Add(enemy);
-            }*/
+            
+            //TODO: apply damage and knockback to bosses (if bosses get implemented)
         }
-        else if (mirror != null)
+        else if (mirror != null && !_mirrorDestroyed)
         {
+            _mirrorDestroyed = true;
             mirror.Death();
         }
     }

@@ -79,8 +79,6 @@ public class ProjectileAttack : LimitedTimeObject
             {
                 OnDespawn();
             }
-            Debug.Log("hit");
-            SoundManager.Instance.PlayHit();
         }
     }
 }

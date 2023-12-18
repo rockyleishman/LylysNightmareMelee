@@ -53,12 +53,14 @@ MonoBehaviour:
   SecondaryAttackTriggered: {fileID: 11400000, guid: 99eec3f69f79c1e458dfd33cdd4b0a12, type: 2}
   SpecialAttackTriggered: {fileID: 11400000, guid: 9572391de37a9914590d1f688272b7d7, type: 2}
   TrailOfAssuranceTriggered: {fileID: 11400000, guid: 13fe391a8983cdc48a9af74d12ec977d, type: 2}
-  PauseGame: {fileID: 11400000, guid: 173bb72f3aeb37f47a4425cd5717a819, type: 2}
-  ResumeGame: {fileID: 11400000, guid: f79b591aa38fc5842844e827512cd8d8, type: 2}
+  PauseGameTriggered: {fileID: 11400000, guid: 173bb72f3aeb37f47a4425cd5717a819, type: 2}
+  OnGamePaused: {fileID: 11400000, guid: 683460a1fdba4c64d93caedbfc98fa06, type: 2}
+  ResumeGameTriggered: {fileID: 11400000, guid: f79b591aa38fc5842844e827512cd8d8, type: 2}
+  OnGameResumed: {fileID: 11400000, guid: 4c9088e1f290f4e4ca616e8f8fe4e21c, type: 2}
   GameOverTriggered: {fileID: 11400000, guid: be968d545710ee842bc93e9188722ae6, type: 2}
   VictoryTriggered: {fileID: 11400000, guid: 930cf499069778b45aa5a3308dd4cbe4, type: 2}
   IncreaseThreat: {fileID: 11400000, guid: f9401acf50f0fe74890072bd86400ec7, type: 2}
-  TriggerUpgrade: {fileID: 11400000, guid: dc3f478e18f4b934eae20c7538e95b55, type: 2}
+  UpgradeTriggered: {fileID: 11400000, guid: dc3f478e18f4b934eae20c7538e95b55, type: 2}
   PlayerDamaged: {fileID: 11400000, guid: cf596747dc0a46140948c3ce74d2b534, type: 2}
   PlayerKilled: {fileID: 11400000, guid: a33363fce12812b439dfadde8ff9fdd5, type: 2}
   EnemyDamaged: {fileID: 11400000, guid: 585bf4317c0973841800acf1e9931e6b, type: 2}
@@ -80,6 +82,8 @@ GameObject:
   - component: {fileID: 679661202}
   - component: {fileID: 1319720799923819151}
   - component: {fileID: 9077344497471585410}
+  - component: {fileID: 8282059202039702111}
+  - component: {fileID: 9052272411229695623}
   m_Layer: 0
   m_Name: GameEventListeners
   m_TagString: Untagged
@@ -214,6 +218,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlayUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1319720799923819151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +286,62 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8282059202039702111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76713116027664362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b0f6f24934f9234781f9f6c7f15611d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameEvent: {fileID: 11400000, guid: 683460a1fdba4c64d93caedbfc98fa06, type: 2}
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlayPase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &9052272411229695623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76713116027664362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b0f6f24934f9234781f9f6c7f15611d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameEvent: {fileID: 11400000, guid: 4c9088e1f290f4e4ca616e8f8fe4e21c, type: 2}
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlayBG
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &76713116799044159
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +352,6 @@ GameObject:
   m_Component:
   - component: {fileID: 76713116799044156}
   - component: {fileID: 76713116799044157}
-  - component: {fileID: 5721607453949310975}
   m_Layer: 0
   m_Name: PlayerEventListeners
   m_TagString: Untagged
@@ -331,22 +402,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5721607453949310975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 76713116799044159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b0f6f24934f9234781f9f6c7f15611d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameEvent: {fileID: 11400000, guid: a33363fce12812b439dfadde8ff9fdd5, type: 2}
-  OnEventTriggered:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &76713116988701587
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,6 +698,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: EffectManager, Assembly-CSharp
         m_MethodName: TriggerEnemyHitEffect
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlayHit
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

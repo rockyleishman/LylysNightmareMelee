@@ -75,6 +75,9 @@ public class GameManager : Singleton<GameManager>
         //hide and constain cursor
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
+
+        //play bg music
+        SoundManager.Instance.PlayBG();
     }
 
     private void Update()

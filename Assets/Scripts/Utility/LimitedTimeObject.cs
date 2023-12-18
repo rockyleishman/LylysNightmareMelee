@@ -6,7 +6,7 @@ public class LimitedTimeObject : PoolObject
 {
     protected IEnumerator LifeTimer(float lifeTime)
     {
-        yield return new WaitForSecondsRealtime(lifeTime);
+        yield return new WaitForSeconds(lifeTime);
 
         OnDespawn();
     }

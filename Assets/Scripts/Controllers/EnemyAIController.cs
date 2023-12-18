@@ -225,7 +225,6 @@ public class EnemyAIController : PoolObject, IHitPoints
 
         //trigger effects
         EventManager.Instance.EnemyDamaged.TriggerEvent(transform.position);
-        SoundManager.Instance.PlayHit();
     }
 
     public void OnDeath()

@@ -85,7 +85,7 @@ public class MirrorAIController : PoolObject
         }
 
         //upgrade
-        EventManager.Instance.TriggerUpgrade.TriggerEvent(transform.position);
+        EventManager.Instance.UpgradeTriggered.TriggerEvent(transform.position);
 
         //spawn new mirrors
         for (int i = AmountOfMirrorsToSpawnOnDeath[Random.Range(0, AmountOfMirrorsToSpawnOnDeath.Length)]; i > 0; i--)

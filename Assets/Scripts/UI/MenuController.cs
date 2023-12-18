@@ -8,7 +8,10 @@ public class MenuController : MonoBehaviour
 {
     private void Start()
     {
-        SoundManager.Instance.PlayMainMenu();
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MainMenu"))
+        {
+            SoundManager.Instance.PlayMainMenu();
+        }
     }
 
     void Update()
@@ -17,7 +20,6 @@ public class MenuController : MonoBehaviour
         if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
         {
             Play();
-            SoundManager.Instance.PlayBG();
         }
     }
     public void Play()

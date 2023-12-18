@@ -8,6 +8,10 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        //play bg music
+        EventManager.Instance.OnGameResumed.TriggerEvent(transform.position);
+
+        //resume
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1.0f;
 
@@ -20,8 +24,12 @@ public class PauseMenu : MonoBehaviour
         //disable player controls
         DataManager.Instance.PlayerDataObject.Player.GetComponent<PlayerInput>().SwitchCurrentActionMap("Menu");
 
+        //pause
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0.0f;
+
+        //play pause music
+        EventManager.Instance.OnGamePaused.TriggerEvent(transform.position);
     }
 
     public void LoadMenu()
