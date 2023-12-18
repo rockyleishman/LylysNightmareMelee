@@ -208,16 +208,16 @@ public class PlayerController : MonoBehaviour, IHitPoints
 
     public void InitHP()
     {
-        DataManager.Instance.PlayerDataObject.CurrentHP = DataManager.Instance.PlayerDataObject.MaxHP;
+        DataManager.Instance.PlayerDataObject.CurrentHP = DataManager.Instance.PlayerDataObject.MaxHP * DataManager.Instance.PlayerDataObject.HPMultiplier;
     }
 
     public void HealHP(float hp)
     {
         float currentHP = DataManager.Instance.PlayerDataObject.CurrentHP + hp;
 
-        if (currentHP > DataManager.Instance.PlayerDataObject.MaxHP)
+        if (currentHP > DataManager.Instance.PlayerDataObject.MaxHP * DataManager.Instance.PlayerDataObject.HPMultiplier)
         {
-            DataManager.Instance.PlayerDataObject.CurrentHP = DataManager.Instance.PlayerDataObject.MaxHP;
+            DataManager.Instance.PlayerDataObject.CurrentHP = DataManager.Instance.PlayerDataObject.MaxHP * DataManager.Instance.PlayerDataObject.HPMultiplier;
         }
         else
         {

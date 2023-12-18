@@ -120,6 +120,8 @@ public class GameManager : Singleton<GameManager>
                     proposedHPMultiplier = DataManager.Instance.PlayerDataObject.MaxHPMultiplier;
                 }
                 DataManager.Instance.PlayerDataObject.HPMultiplier = proposedHPMultiplier;
+                //also heal player
+                Player.HealHP(DataManager.Instance.PlayerDataObject.HPMultiplierIncPerLevel * DataManager.Instance.PlayerDataObject.MaxHP);
                 break;
 
             case StatModifier.movementSpeed:
