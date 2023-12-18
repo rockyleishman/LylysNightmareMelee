@@ -549,6 +549,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.trailOfAssurace:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.trailOfAssurace);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.trailOfAssurace))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.trailOfAssurace);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel >= DataManager.Instance.PlayerDataObject.TOAAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.trailOfAssurace);
@@ -557,6 +562,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.shieldOfLight:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.shieldOfLight);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.shieldOfLight))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.shieldOfLight);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.ShieldOfLightLevel >= DataManager.Instance.PlayerDataObject.SOLAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.shieldOfLight);
@@ -565,6 +575,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.wishingWell:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.wishingWell);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.wishingWell))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.wishingWell);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.WishingWellLevel >= DataManager.Instance.PlayerDataObject.WWAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.wishingWell);
@@ -573,6 +588,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.radiantOrb:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.radiantOrb);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.radiantOrb))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.radiantOrb);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.RadiantOrbLevel >= DataManager.Instance.PlayerDataObject.ROAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.radiantOrb);
@@ -581,6 +601,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.flickerOfHope:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.flickerOfHope);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.flickerOfHope))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.flickerOfHope);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.FlickerOfHopeLevel >= DataManager.Instance.PlayerDataObject.FlickAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.flickerOfHope);
@@ -589,6 +614,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.sparkOfJoy:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.sparkOfJoy);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.sparkOfJoy))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.sparkOfJoy);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.SparkOfJoyLevel >= DataManager.Instance.PlayerDataObject.SparkAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.sparkOfJoy);
@@ -597,6 +627,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.moonBurst:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.moonBurst);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.moonBurst))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.moonBurst);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.MoonBurstLevel >= DataManager.Instance.PlayerDataObject.MBAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.moonBurst);
@@ -605,6 +640,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.floodOfHope:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.floodOfHope);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.floodOfHope))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.floodOfHope);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.FloodOfHopeLevel >= DataManager.Instance.PlayerDataObject.FloodAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.floodOfHope);
@@ -613,6 +653,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.surgeOfJoy:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.surgeOfJoy);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.surgeOfJoy))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.surgeOfJoy);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.SurgeOfJoyLevel >= DataManager.Instance.PlayerDataObject.SurgeAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.surgeOfJoy);
@@ -621,6 +666,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.sunBurst:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.sunBurst);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.sunBurst))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.sunBurst);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.SunBurstLevel >= DataManager.Instance.PlayerDataObject.SBAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.sunBurst);
@@ -629,6 +679,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.waveOfRelief:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.waveOfRelief);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.waveOfRelief))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.waveOfRelief);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.WaveOfReliefLevel >= DataManager.Instance.PlayerDataObject.WORAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.waveOfRelief);
@@ -637,6 +692,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.pendantOfLife:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.pendantOfLife);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.pendantOfLife))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.pendantOfLife);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.PendantOfLifeLevel >= DataManager.Instance.PlayerDataObject.POLHealingSpeed.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.pendantOfLife);
@@ -718,6 +778,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.trailOfAssurace:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.trailOfAssurace);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.trailOfAssurace))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.trailOfAssurace);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.TrailOfAssuranceLevel >= DataManager.Instance.PlayerDataObject.TOAAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.trailOfAssurace);
@@ -726,6 +791,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.shieldOfLight:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.shieldOfLight);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.shieldOfLight))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.shieldOfLight);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.ShieldOfLightLevel >= DataManager.Instance.PlayerDataObject.SOLAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.shieldOfLight);
@@ -734,6 +804,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.wishingWell:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.wishingWell);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.wishingWell))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.wishingWell);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.WishingWellLevel >= DataManager.Instance.PlayerDataObject.WWAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.wishingWell);
@@ -742,6 +817,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.radiantOrb:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.radiantOrb);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.radiantOrb))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.radiantOrb);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.RadiantOrbLevel >= DataManager.Instance.PlayerDataObject.ROAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.radiantOrb);
@@ -750,6 +830,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.flickerOfHope:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.flickerOfHope);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.flickerOfHope))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.flickerOfHope);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.FlickerOfHopeLevel >= DataManager.Instance.PlayerDataObject.FlickAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.flickerOfHope);
@@ -758,6 +843,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.sparkOfJoy:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.sparkOfJoy);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.sparkOfJoy))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.sparkOfJoy);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.SparkOfJoyLevel >= DataManager.Instance.PlayerDataObject.SparkAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.sparkOfJoy);
@@ -766,6 +856,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.moonBurst:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.moonBurst);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.moonBurst))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.moonBurst);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.MoonBurstLevel >= DataManager.Instance.PlayerDataObject.MBAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.moonBurst);
@@ -774,6 +869,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.floodOfHope:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.floodOfHope);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.floodOfHope))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.floodOfHope);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.FloodOfHopeLevel >= DataManager.Instance.PlayerDataObject.FloodAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.floodOfHope);
@@ -782,6 +882,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.surgeOfJoy:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.surgeOfJoy);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.surgeOfJoy))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.surgeOfJoy);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.SurgeOfJoyLevel >= DataManager.Instance.PlayerDataObject.SurgeAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.surgeOfJoy);
@@ -790,6 +895,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.sunBurst:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.sunBurst);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.sunBurst))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.sunBurst);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.SunBurstLevel >= DataManager.Instance.PlayerDataObject.SBAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.sunBurst);
@@ -798,6 +908,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.waveOfRelief:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.waveOfRelief);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.waveOfRelief))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.waveOfRelief);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.WaveOfReliefLevel >= DataManager.Instance.PlayerDataObject.WORAttackDamage.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.waveOfRelief);
@@ -806,6 +921,11 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
             case UpgradeType.pendantOfLife:
                 GameManager.Instance.UpgradeAttack(SecondaryAttack.pendantOfLife);
+                if (!_chosenAttackUpgrades.Contains(UpgradeType.pendantOfLife))
+                {
+                    _chosenAttackUpgrades.Add(UpgradeType.pendantOfLife);
+                    CheckAttackUpgradesLimit();
+                }
                 if (DataManager.Instance.PlayerDataObject.PendantOfLifeLevel >= DataManager.Instance.PlayerDataObject.POLHealingSpeed.Length - 1)
                 {
                     _availableStatUpgrades.Remove(UpgradeType.pendantOfLife);

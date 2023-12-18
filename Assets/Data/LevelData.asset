@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FlashTime: 0.1
   FlashColourMultiplier: 2
-  MirrorsToDestroy: 10
+  MirrorsToDestroy: 20
   InitialMirror: {fileID: 2045083803306708946, guid: 75bafd5c864aa5944bc3acf6208b8dac, type: 3}
   Enemy0: {fileID: 6575186996657049984, guid: 5fe16c4e33b51b542a6a8a7c7e15f243, type: 3}
   Enemy1: {fileID: 0}
@@ -36,13 +36,13 @@ MonoBehaviour:
   MinMirrorSpawnDistance: 20
   UseWanderingEnemySpawning: 1
   BaseMinSpawnTime: 0
-  BaseMaxSpawnTime: 5
+  BaseMaxSpawnTime: 2
   SpawnDistance: 25
-  FinalCalculatedThreatLevel: 15
+  FinalCalculatedThreatLevel: 20
   FinalHPMultiplier: 2
   UseMaxHPMultiplier: 0
   MaxHPMultiplier: 1000
-  FinalDamageMultiplier: 3
+  FinalDamageMultiplier: 2
   UseMaxDamageMultiplier: 0
   MaxDamageMultiplier: 1000
   FinalCooldownDivisor: 2
@@ -61,7 +61,7 @@ MonoBehaviour:
   FinalSpecialChargeDivisor: 10
   UseMaxSpecialChargeDivisor: 0
   MaxSpecialChargeDivisor: 100
-  InitialMaxEnemyCount: 250
+  InitialMaxEnemyCount: 25
   FinalMaxEnemyCount: 250
   AbsoluteMaxEnemyCount: 250
   IncreaseThreatAfterMirrorDestruction: 1
